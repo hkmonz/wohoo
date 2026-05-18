@@ -1,4 +1,4 @@
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 
 
 function HomeLogos({logos}: {logos?: { src: string; alt: string; link: string }[]}) {

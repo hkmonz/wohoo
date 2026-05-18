@@ -1,5 +1,3 @@
-
-
 function Description() {
   return (
     <div className=" px-4 lg:px-10 py-20 bg-[#F2F2F2]">

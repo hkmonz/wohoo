@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import {  useRef } from 'react';
 import { Carousel } from 'antd';
 import 'antd/dist/reset.css';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';

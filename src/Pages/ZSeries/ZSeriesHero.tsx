@@ -1,19 +1,18 @@
-
 import ZseriesHeroImg from "../../assets/Images/zserieshero.png";
 import Tick from "../../assets/Icons/tick.svg";
 import soundLogo from "../../assets/Icons/sound.svg";
 import brandLogo from "../../assets/Icons/woohoo.svg";
 function ZSeriesHero() {
-const features = [
-    "2 way soundbar for home theatre and music",
-    "Bluetooth audio streaming (reception)",
-    "USB interface with MP3/WMA playback and charging function",
-    "Reflex & Optical port for connection with LED TVs",
-    "HDMI™ with ARC",
-    "Integrated DSP (Digital Signal Processor) – for improved sound",
-];
-  return (
-    <section
+    const features = [
+        "2 way soundbar for home theatre and music",
+        "Bluetooth audio streaming (reception)",
+        "USB interface with MP3/WMA playback and charging function",
+        "Reflex & Optical port for connection with LED TVs",
+        "HDMI™ with ARC",
+        "Integrated DSP (Digital Signal Processor) – for improved sound",
+    ];
+    return (
+        <section
             className="flex justify-center items-center px-4 sm:px-8  h-auto pt-36 md:pt-20 lg:h-screen xl:h-90vh py-10"
         >
             <div className="rounded-2xl  flex flex-col md:flex-row w-full max-w-5xl mx-auto p-6 md:p-8 gap-8">
@@ -73,7 +72,7 @@ const features = [
                 </div>
             </div>
         </section>
-  );
+    );
 };
 
 export default ZSeriesHero;

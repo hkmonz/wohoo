@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import HospitalityHeroBg from "/assets/BackgroundImages/hospitalityberobg.webp";
 import TabletHeroImg from "../../assets/Images/tablethero.png";
 import SamsungLogo from "../../assets/Icons/samsung.svg";
 import WoohooLogo from "../../assets/Icons/woohoo.svg";

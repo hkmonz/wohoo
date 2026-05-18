@@ -7,7 +7,7 @@ interface ProductCardProps {
   logo?: any;
 }
 
-export function ProductCard({ id, title, image, description, badge , logo }: ProductCardProps) {
+export function ProductCard({ title, image, description, badge , logo }: ProductCardProps) {
   return (
     <div className="group relative w-full h-auto  overflow-hidden  rounded-3xl bg-white shadow-lg transition-all ">
       {/* Image Container */}

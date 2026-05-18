@@ -60,7 +60,7 @@ function Avatar() {
             <Contact/>
             {sections.map((section, index) => (
                 <ProductSection
-                    // key={index}
+                    key={index}
                     category={section?.category}
                     label={section?.label}
                     labelColor={section?.labelColor}

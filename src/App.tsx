@@ -14,31 +14,29 @@ import WellnessDashboard from './Pages/WellnessDashboard/WellnessDashboard'
 import Soundboard from './Pages/Soundboard/Soundboard'
 import Avatar from './Pages/Avatar/Avatar'
 
-
-
 function App() {
   return (
     <>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
-      <Route path="/" element={<Base />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/careers" element={<Careers />} />
-        <Route path="/x-series" element={<XSeries />} />
-        <Route path="/y-series" element={<YSeries />} />
-        <Route path="/z-series" element={<ZSeries />} />
-        <Route path="/tablet" element={<Tablet />} />
-        <Route path="/qrcode" element={<QrCode />} />
-        <Route path="/wellness-dashboard" element={<WellnessDashboard />} />
+        <Route path="/" element={<Base />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/x-series" element={<XSeries />} />
+          <Route path="/y-series" element={<YSeries />} />
+          <Route path="/z-series" element={<ZSeries />} />
+          <Route path="/tablet" element={<Tablet />} />
+          <Route path="/qrcode" element={<QrCode />} />
+          <Route path="/wellness-dashboard" element={<WellnessDashboard />} />
           <Route path="/meeting-room-tablet" element={<MeetingRoom />} />
           <Route path="/soundboard" element={<Soundboard />} />
           <Route path="/avatar" element={<Avatar />} />
-      </Route>
-       <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
     </>
-    
+
   )
 }
 

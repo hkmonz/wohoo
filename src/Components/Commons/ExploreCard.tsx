@@ -1,5 +1,4 @@
 import React from 'react';
-// import { MdOpenInNew as ExternalLink } from 'react-icons/md';
 import ExploreBg from '../../assets/Images/explorebg.png';
 
 interface FeatureCardProps {

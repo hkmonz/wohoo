@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import SoundBar from "../../assets/Images/soundbar.png";
 import Tick from "../../assets/Icons/tick.svg";

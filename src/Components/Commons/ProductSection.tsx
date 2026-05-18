@@ -1,6 +1,6 @@
 import ProductCard from './Cards';
 
-export default function ProductSection({ logoUrl, label, labelColor, mainTitle, highlightText, description, buttonColor, products }:any) {
+export default function ProductSection({  label, labelColor, mainTitle, highlightText, description, buttonColor, products }:any) {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -23,8 +23,6 @@ export default function ProductSection({ logoUrl, label, labelColor, mainTitle, 
             Explore
           </button>
         </div>
-
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.map((product:any, index:any) => (
             <ProductCard
