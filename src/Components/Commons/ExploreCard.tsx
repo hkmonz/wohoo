@@ -1,5 +1,5 @@
 import React from 'react';
-import ExploreBg from '../../assets/Images/explorebg.png';
+import ExploreBg from '../../assets/Images/explorebg.webp';
 
 interface FeatureCardProps {
   label: string;

@@ -1,4 +1,4 @@
-import ZseriesHeroImg from "../../assets/Images/zserieshero.png";
+import ZseriesHeroImg from "../../assets/Images/zserieshero.webp";
 import Tick from "../../assets/Icons/tick.svg";
 import soundLogo from "../../assets/Icons/sound.svg";
 import brandLogo from "../../assets/Icons/woohoo.svg";

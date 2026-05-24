@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabletHeroImg from "../../assets/Images/meetingroom.png";
+import TabletHeroImg from "../../assets/Images/meetingroom.webp";
 import BookDemo from "../../Components/Commons/BookDemo";
 import WoohooLogo from "../../assets/Icons/woohoo.svg";
 
@@ -24,7 +24,11 @@ const MeetingRoomHero: React.FC = () => {
                             className="lg:w-155 relative z-10 "
                         />
                     </div>
-                    <button onClick={() => setOpen(true)} className="px-6 py-2 duration-500 hover:scale-105 sm:px-8 sm:py-3 rounded-full bg-[#1e7e5a] !text-white font-inter font-medium text-sm sm:text-base lg:text-lg shadow hover:bg-[#155c41] transition">
+                    <button onClick={() => setOpen(true)} className="
+        bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
+        duration-500 hover:scale-105 !text-white !font-normal 
+        !px-6 !py-3 !rounded-[16px] shadow transition
+    ">
                         Book A Demo
                     </button>
                 </div>

@@ -1,4 +1,4 @@
-import Logo from "../../assets/Images/logo-black.png";
+import Logo from "../../assets/Images/logo-black.webp";
 import Sound from "../../assets/Icons/sound.svg";
 function Design() {
   return (

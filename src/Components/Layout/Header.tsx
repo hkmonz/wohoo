@@ -26,24 +26,31 @@ const Header: React.FC = () => {
     };
 
 
-    useEffect(() => {
-        if (
-            location.pathname.startsWith("/products") ||
-            location.pathname.startsWith("/hospitality")
-        ) {
-            setActiveTab("Hospitality");
-        } else {
-            const current = tabs.find((t) => location.pathname.startsWith(t.path));
-            setActiveTab(current?.name ?? "");
-        }
-        setMenuOpen(false);
-    }, [location.pathname]);
-
     const tabs = [
         { name: "Health Care", path: "/x-series" },
         { name: "Hospitality", path: "/y-series" },
         { name: "Workplace", path: "/z-series" },
     ];
+
+    const tabRoutes: Record<string, string[]> = {
+        "Health Care": ["/x-series", "/tablet", "/qrcode"],
+        Hospitality: ["/y-series", "/wellness-dashboard", "/soundboard"],
+        Workplace: ["/z-series", "/meeting-room-tablet", "/avatar"],
+    };
+
+    const getActiveTabFromPath = (pathname: string) => {
+        const match = tabs.find((tab) =>
+            tabRoutes[tab.name]?.includes(pathname)
+        );
+        return match?.name ?? "";
+    };
+
+    useEffect(() => {
+        const active = getActiveTabFromPath(location.pathname);
+        setActiveTab(active);
+        if (active) setSelected(active);
+        setMenuOpen(false);
+    }, [location.pathname]);
     const menuLinks = [
         { name: "Home", to: "/" },
         { name: "Products", to: "" },
@@ -78,124 +85,159 @@ const Header: React.FC = () => {
         setMenuOpen(false);
     };
 
+    const scrollToExplore = () => {
+        document.getElementById("explore")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    const handleProductsClick = () => {
+        setMenuOpen(false);
+        if (location.pathname === "/") {
+            scrollToExplore();
+        } else {
+            navigate("/#explore");
+        }
+    };
+
     return (
         <>
-           { isSimpleNav && (
+            {isSimpleNav && (
                 <section className="relative min-h-20 ">
                     <header
                         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
                             ? "bg-white/80 backdrop-blur-md shadow-lg"
                             : "bg-transparent"
                             }`}
-                >
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex justify-between items-center h-16 md:h-20">
-                            <div className="flex-shrink-0">
+                    >
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex justify-between items-center h-16 md:h-20">
+                                <div className="flex-shrink-0">
 
-                                <Link to="/">
-                                    <img src={Logo} alt="Logo" className="" />
-                                </Link>
-
-
-                            </div>
-                            {/* Desktop Navigation */}
-                            <nav className="hidden md:flex items-center gap-8">
-                                {menuLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        to={link.to}
-                                        className={` font-normal text-[19.2px]  transition text-black`}
-                                    >
-                                        {link.name}
+                                    <Link to="/">
+                                        <img src={Logo} alt="Logo" className="" />
                                     </Link>
-                                ))}
-                                {/* <Link to={} > */}
-                                <Button
-                                    size="lg"
-                                    onClick={() => setOpen(true)}
-                                    className="
+
+
+                                </div>
+                                {/* Desktop Navigation */}
+                                <nav className="hidden md:flex items-center gap-8">
+                                    {menuLinks.map((link) =>
+                                        link.name === "Products" ? (
+                                            <button
+                                                key={link.name}
+                                                type="button"
+                                                onClick={handleProductsClick}
+                                                className="font-normal text-[19.2px] transition text-black"
+                                            >
+                                                {link.name}
+                                            </button>
+                                        ) : (
+                                            <Link
+                                                key={link.name}
+                                                to={link.to}
+                                                className="font-normal text-[19.2px] transition text-black"
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        )
+                                    )}
+                                    {/* <Link to={} > */}
+                                    <Button
+                                        size="lg"
+                                        onClick={() => setOpen(true)}
+                                        className="
         bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
         duration-500 hover:scale-105 !text-white !font-normal 
         !px-6 !py-3 !rounded-[16px] shadow transition
     "
-                                >
-                                    Contact Us
-                                </Button>
-                            </nav>
-                             <div className="md:hidden flex items-center">
-                            <button
-                                onClick={() => setMenuOpen(!menuOpen)}
-                                className="focus:outline-none"
-                                aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-                            >
-                                {menuOpen ? (
-                                    // Cross (Close) Icon
-                                    <svg
-                                        className="h-9 w-9 text-black"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>
-                                ) : (
-                                    // Hamburger Icon
-                                    <svg
-                                        className="h-9 w-9 text-black"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
+                                        Contact Us
+                                    </Button>
+                                </nav>
+                                <div className="md:hidden flex items-center">
+                                    <button
+                                        onClick={() => setMenuOpen(!menuOpen)}
+                                        className="focus:outline-none"
+                                        aria-label={menuOpen ? "Close Menu" : "Open Menu"}
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M4 6h16M4 12h16M4 18h16"
-                                        />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                        </div>
-                         {menuOpen && (
-                    <div className="md:hidden absolute h-screen left-0 w-full bg-white shadow-lg z-50 flex items-center justify-center">
-                        <div className="flex flex-col items-center justify-center w-full gap-4">
-                            {menuLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.to}
-                                    className="font-inter font-semibold text-lg text-black w-full text-center"
-                                    onClick={() => setMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                            <Button
-                                size="lg"
-                                // onClick={handleBookDemo}
-                                className="
+                                        {menuOpen ? (
+                                            // Cross (Close) Icon
+                                            <svg
+                                                className="h-9 w-9 text-black"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M6 18L18 6M6 6l12 12"
+                                                />
+                                            </svg>
+                                        ) : (
+                                            // Hamburger Icon
+                                            <svg
+                                                className="h-9 w-9 text-black"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M4 6h16M4 12h16M4 18h16"
+                                                />
+                                            </svg>
+                                        )}
+                                    </button>
+                                </div>
+                            </div>
+                            {menuOpen && (
+                                <div className="md:hidden absolute h-screen left-0 w-full bg-white shadow-lg z-50 flex items-center justify-center">
+                                    <div className="flex flex-col items-center justify-center w-full gap-4">
+                                        {menuLinks.map((link) =>
+                                            link.name === "Products" ? (
+                                                <button
+                                                    key={link.name}
+                                                    type="button"
+                                                    onClick={handleProductsClick}
+                                                    className="font-inter font-semibold text-lg text-black w-full text-center"
+                                                >
+                                                    {link.name}
+                                                </button>
+                                            ) : (
+                                                <Link
+                                                    key={link.name}
+                                                    to={link.to}
+                                                    className="font-inter font-semibold text-lg text-black w-full text-center"
+                                                    onClick={() => setMenuOpen(false)}
+                                                >
+                                                    {link.name}
+                                                </Link>
+                                            )
+                                        )}
+                                        <Button
+                                            size="lg"
+                                            // onClick={handleBookDemo}
+                                            className="
     bg-gradient-to-r from-[#7D58EE] to-[#2B117E] !text-[19.2px]
     duration-500 hover:scale-105 !text-white !font-normal 
     !px-6 !py-3 !rounded-[16px] shadow transition
   "
-                            >
-                                Contact Us
-                            </Button>
+                                        >
+                                            Contact Us
+                                        </Button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    </div>
-                )}
-                    </div>
 
-                </header>
-                <BookDemo open={open} onClose={() => setOpen(false)} />
-            </section>)}
+                    </header>
+                    <BookDemo open={open} onClose={() => setOpen(false)} />
+                </section>)}
 
-           {!isSimpleNav && ( <header className={`fixed productNavbar top-0 left-0 right-0 z-50 transition-all duration-300
+            {!isSimpleNav && (<header className={`fixed productNavbar top-0 left-0 right-0 z-50 transition-all duration-300
                 ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex  justify-between items-center  h-16 md:h-20">
@@ -208,15 +250,15 @@ const Header: React.FC = () => {
                             <div className="flex space-x-1 rounded-full bg-black p-1 flex-shrink-0">
                                 {tabs.map((tab) => (
                                     <button
-    key={tab.name}
-    onClick={() => { setActiveTab(tab.name); navigate(tab.path); }}
-    className={`px-4 py-2 !text-base lg:!text-lg !font-medium rounded-full 
+                                        key={tab.name}
+                                        onClick={() => { setActiveTab(tab.name); navigate(tab.path); }}
+                                        className={`px-4 py-2 !text-base lg:!text-lg !font-medium rounded-full 
     font-clash-display transition-all duration-200 whitespace-nowrap  // 👈 add this
     ${activeTab === tab.name
-        ? "bg-white text-[#181A1B] shadow-sm"
-        : "!text-white hover:bg-white/20"
-    }`}
->
+                                                ? "bg-white text-[#181A1B] shadow-sm"
+                                                : "!text-white hover:bg-white/20"
+                                            }`}
+                                    >
                                         {tab.name}
                                     </button>
                                 ))}
@@ -267,13 +309,23 @@ const Header: React.FC = () => {
                                             <ul className="flex flex-col gap-1">
                                                 {menuLinks.map((link) => (
                                                     <li key={link.name}>
-                                                        <Link
-                                                            to={link.to}
-                                                            className="block px-5 py-2 font-inter text-base font-normal rounded-lg hover:bg-[#e6f4ef] text-black transition"
-                                                            onClick={() => setMenuOpen(false)}
-                                                        >
-                                                            {link.name}
-                                                        </Link>
+                                                        {link.name === "Products" ? (
+                                                            <button
+                                                                type="button"
+                                                                onClick={handleProductsClick}
+                                                                className="block w-full text-left px-5 py-2 font-inter text-base font-normal rounded-lg hover:bg-[#e6f4ef] text-black transition"
+                                                            >
+                                                                {link.name}
+                                                            </button>
+                                                        ) : (
+                                                            <Link
+                                                                to={link.to}
+                                                                className="block px-5 py-2 font-inter text-base font-normal rounded-lg hover:bg-[#e6f4ef] text-black transition"
+                                                                onClick={() => setMenuOpen(false)}
+                                                            >
+                                                                {link.name}
+                                                            </Link>
+                                                        )}
                                                     </li>
                                                 ))}
                                                 <li className="flex w-auto justify-center px-4">
@@ -301,15 +353,23 @@ const Header: React.FC = () => {
                                             <ul className="flex flex-col items-center  w-full">
                                                 {menuLinks.map((link) => (
                                                     <li key={link.name} className="w-full">
-                                                        <Link
-                                                            to={link.to}
-                                                            className="block w-full text-center px-5 py-3 
-                            font-inter text-lg font-normal rounded-lg 
-                            hover:bg-[#e6f4ef] text-[#17423b] transition"
-                                                            onClick={() => setMenuOpen(false)}
-                                                        >
-                                                            {link.name}
-                                                        </Link>
+                                                        {link.name === "Products" ? (
+                                                            <button
+                                                                type="button"
+                                                                onClick={handleProductsClick}
+                                                                className="block w-full text-center px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] text-[#17423b] transition"
+                                                            >
+                                                                {link.name}
+                                                            </button>
+                                                        ) : (
+                                                            <Link
+                                                                to={link.to}
+                                                                className="block w-full text-center px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] text-[#17423b] transition"
+                                                                onClick={() => setMenuOpen(false)}
+                                                            >
+                                                                {link.name}
+                                                            </Link>
+                                                        )}
                                                     </li>
                                                 ))}
                                             </ul>

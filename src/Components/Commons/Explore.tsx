@@ -1,13 +1,13 @@
 import ProductSection from './ProductSection';
-import xSeriesImg from '../../assets/Images/x-series.png';
-import tabletImg from '../../assets/Images/tablet.png';
-import qrcodeImg from '../../assets/Images/qrcode.png';
-import YSeriesImg from '../../assets/Images/healthcareyseries.png';
-import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.png';
-import SoundbarImg from '../../assets/Images/healthcaresoundbar.png';
-import KingdomImg from '../../assets/Images/workplacekingdom.png';
-import AvatarImg from '../../assets/Images/workplaceavatar.png';
-import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.png';
+import xSeriesImg from '../../assets/Images/x-series.webp';
+import tabletImg from '../../assets/Images/tablet.webp';
+import qrcodeImg from '../../assets/Images/qrcode.webp';
+import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
+import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
+import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
+import KingdomImg from '../../assets/Images/workplacekingdom.webp';
+import AvatarImg from '../../assets/Images/workplaceavatar.webp';
+import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.webp';
 import woohooLogo from '../../assets/Icons/logo.svg';
 
 export default function Explore() {
@@ -24,29 +24,30 @@ export default function Explore() {
       ],
       logoUrl: woohooLogo,
       highlightText: { color: 'text-[#6B9A86]' },
+      textWidth: '',
       description: '',
-      buttonColor: 'bg-[#BDD9CD]  text[#090909]',
+      buttonColor: '!bg-white  !text[#090909]',
       products: [
         {
           image: xSeriesImg,
           logo: woohooLogo,
           title: 'X-Series',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
           route: '/x-series',
         },
         {
           image: tabletImg,
           logo: woohooLogo,
           title: 'Tablets',
-          route:'/tablet',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          route: '/tablet',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: qrcodeImg,
           logo: woohooLogo,
           title: 'QR Code',
-          route:'/qrcode',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          route: '/qrcode',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
     },
@@ -60,6 +61,7 @@ export default function Explore() {
         { text: ' is an AI-Powered Experience.', highlight: false },
       ],
       logoUrl: woohooLogo,
+      textWidth: '',
 
       highlightText: { color: 'text-[#6366F1]' },
       description: '',
@@ -70,77 +72,83 @@ export default function Explore() {
           logo: woohooLogo,
           title: 'Y-Series',
           route: '/y-series',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: WellnessDashboardImg,
           logo: woohooLogo,
           title: 'Wellness Dashboard',
           route: '/wellness-dashboard',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: SoundbarImg,
           logo: woohooLogo,
           title: 'Soundboard',
           route: '/soundboard',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
     },
     {
       category: 'workplace',
       label: 'Workplace',
-      labelColor: 'text-[#083735]',
+      labelColor: 'text-white',
       mainTitle: [
-        { text: 'Designing Smart Cities for a', highlight: false },
-        { text: ' Smarter Future', highlight: false },
+        { text: 'Designing Smart Cities for a', highlight: true },
+        { text: ' Smarter Future', highlight: true },
       ],
       logoUrl: woohooLogo,
-      highlightText: { color: 'text-teal-900' },
+      highlightText: { color: 'text-white ' },
       description: '',
-      buttonColor: 'bg-[#083735] !text-white',
+      buttonColor: 'bg-white !text-black',
+      textWidth: 'max-w-3xl',
       products: [
         {
           image: KingdomImg,
           logo: woohooLogo,
           title: 'Kingdome Series',
           route: '/z-series',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: WorkplaceMeetingTabletImg,
           logo: woohooLogo,
           title: 'Meeting Room Tablet',
           route: '/meeting-room-tablet',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: AvatarImg,
           logo: woohooLogo,
           title: 'Avatar',
           route: '/avatar',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div id="explore" className="min-h-screen scroll-mt-24">
       {sections.map((section, index) => (
-        <ProductSection
+        <div
           key={index}
-          logoUrl={section.logoUrl}
-          category={section.category}
-          label={section.label}
-          labelColor={section.labelColor}
-          mainTitle={section.mainTitle}
-          highlightText={section.highlightText}
-          description={section.description}
-          buttonColor={section.buttonColor}
-          products={section.products}
-        />
+
+        >
+          <ProductSection
+            textWidth={section.textWidth}
+            logoUrl={section.logoUrl}
+            category={section.category}
+            label={section.label}
+            labelColor={section.labelColor}
+            mainTitle={section.mainTitle}
+            highlightText={section.highlightText}
+            description={section.description}
+            buttonColor={section.buttonColor}
+            products={section.products}
+          />
+        </div>
       ))}
     </div>
   );

@@ -1,23 +1,24 @@
 import XSeriesCard from "../../Components/Commons/XSeriesCard";
-import xseriessmall1 from "../../assets/Images/yseriessmall1.png";
-import xseriessmall2 from "../../assets/Images/yseriessmall2.png";
-import xseriessmall3 from "../../assets/Images/yseriessmall3.png";
-import xserieslarge1 from "../../assets/Images/yserieslarge1.png";
-import xserieslarge2 from "../../assets/Images/yserieslarge2.png";
-import xserieslarge3 from "../../assets/Images/yserieslarge3.png";
+import xseriessmall1 from "../../assets/Images/yseriessmall1.webp";
+import xseriessmall2 from "../../assets/Images/yseriessmall2.webp";
+import xseriessmall3 from "../../assets/Images/yseriessmall3.webp";
+import xserieslarge1 from "../../assets/Images/yserieslarge1.webp";
+import xserieslarge2 from "../../assets/Images/yserieslarge2.webp";
+import xserieslarge3 from "../../assets/Images/yserieslarge3.webp";
 import WoohooLogo from "../../assets/Icons/sound.svg";
 import Wohoo from "../../assets/Icons/woohoo.svg";
 function YSeriesHero() {
-    const smallImages = [xseriessmall1, xseriessmall2, xseriessmall3];
+  const smallImages = [xseriessmall1, xseriessmall2, xseriessmall3];
   const largeImages = [xserieslarge1, xserieslarge2, xserieslarge3];
-  
+
   const features = [
-    "Enterprise Voice AI Assistant",
-    "Immersive Audio with JBL by HARMAN",
-    "7 inch interactive touch display",
-    "Enterprise grade security with MDM",
-    "Anti-Theft Locking system",
-    "In-built Battery",
+
+    "In-Room assistant (Phone, Clock, Speaker, Tablet)",
+    "Virtual care giving & remote monitoring",
+    "Help with telehealth consultations",
+    "Gen AI based avatars with pill reminder",
+    "Video conferencing with friends and families"
+
   ];
   return (
     <div>
@@ -26,12 +27,12 @@ function YSeriesHero() {
       >
 
         <XSeriesCard
-        title="Y Series"
-      largeImages={largeImages}
-      smallImages={smallImages}
-      features={features}
-      soundLogo={WoohooLogo}
-      brandLogo={Wohoo}
+          title="Y Series"
+          largeImages={largeImages}
+          smallImages={smallImages}
+          features={features}
+          soundLogo={WoohooLogo}
+          brandLogo={Wohoo}
         />
       </section>
     </div>

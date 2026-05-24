@@ -1,10 +1,10 @@
 import XSeriesCard from "../../Components/Commons/XSeriesCard";
-import xseriessmall1 from "../../assets/Images/xseriessmall1.png";
-import xseriessmall2 from "../../assets/Images/xseriessmall2.png";
-import xseriessmall3 from "../../assets/Images/xseriessmall3.png";
-import xserieslarge1 from "../../assets/Images/xserieslarge1.png";
-import xserieslarge2 from "../../assets/Images/xserieslarge2.png";
-import xserieslarge3 from "../../assets/Images/xserieslarge3.png";
+import xseriessmall1 from "../../assets/Images/xseriessmall1.webp";
+import xseriessmall2 from "../../assets/Images/xseriessmall2.webp";
+import xseriessmall3 from "../../assets/Images/xseriessmall3.webp";
+import xserieslarge1 from "../../assets/Images/xserieslarge1.webp";
+import xserieslarge2 from "../../assets/Images/xserieslarge2.webp";
+import xserieslarge3 from "../../assets/Images/xserieslarge3.webp";
 import WoohooLogo from "../../assets/Icons/sound.svg";
 import Wohoo from "../../assets/Icons/woohoo.svg";
 function XSeriesHero() {

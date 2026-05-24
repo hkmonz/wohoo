@@ -78,7 +78,7 @@ const BookDemo: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           type="text"
           required
           placeholder="Name"
-          className="w-full px-4 py-3 rounded-lg border border-[#e6f4ef] focus:border-[#1D6748] focus:ring-2 focus:ring-[#1D6748]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
+          className="w-full px-4 py-3 rounded-lg border border-[#7D58EE] focus:border-[#7D58EE] focus:ring-2 focus:ring-[#7D58EE]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -86,7 +86,7 @@ const BookDemo: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           type="email"
           required
           placeholder="Email"
-          className="w-full px-4 py-3 rounded-lg border border-[#e6f4ef] focus:border-[#1D6748] focus:ring-2 focus:ring-[#1D6748]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
+          className="w-full px-4 py-3 rounded-lg border border-[#7D58EE] focus:border-[#7D58EE] focus:ring-2 focus:ring-[#7D58EE]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -95,7 +95,7 @@ const BookDemo: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           type="tel"
           required
           placeholder="Phone Number"
-          className="w-full px-4 py-3 rounded-lg border border-[#e6f4ef] focus:border-[#1D6748] focus:ring-2 focus:ring-[#1D6748]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
+          className="w-full px-4 py-3 rounded-lg border border-[#7D58EE] focus:border-[#7D58EE] focus:ring-2 focus:ring-[#7D58EE]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
@@ -103,13 +103,18 @@ const BookDemo: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
         <textarea
           required
           placeholder="Description"
-          className="w-full px-4 py-3 rounded-lg border border-[#e6f4ef] focus:border-[#1D6748] focus:ring-2 focus:ring-[#1D6748]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition min-h-[100px] resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-[#7D58EE] focus:border-[#7D58EE] focus:ring-2 focus:ring-[#7D58EE]/20 outline-none font-inter text-[#17423b] bg-[#f9fafb] transition min-h-[100px] resize-none"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
         />
         <button
           type="submit"
-          className="w-full mt-2 px-5 py-3 bg-[#1D6748] !text-white font-inter font-semibold rounded-full shadow hover:bg-[#155c41] transition text-lg"
+          // className="w-full mt-2 px-5 py-3 bg-[#1D6748] !text-white font-inter font-semibold rounded-full shadow hover:bg-[#155c41] transition text-lg"
+          className="
+        bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
+        duration-500 hover:scale-105 !text-white !font-normal 
+        !px-6 !py-3 !rounded-[16px] shadow transition
+    "
           disabled={submitting}
         >
           {submitting ? "Submitting..." : "Submit"}

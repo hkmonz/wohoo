@@ -20,13 +20,11 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   const baseClasses =
-    `bg-gradient-to-r from-[#7D58EE] to-[#2B117E] !text-[19.2px]
-    duration-500 hover:scale-105 !text-white !font-normal 
-    !px-6 !py-3 !rounded-[16px] shadow transition`;
+    ``;
   
   const variantClasses = {
-    primary: 'bg-white text-black hover:bg-gray-100 focus:ring-white',
-    secondary: 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-black focus:ring-white',
+    primary: 'bg-gradient-to-r from-[#7D58EE] to-[#2B117E] !text-[19.2px] duration-500 hover:scale-105 !text-white font-normal !px-6 !py-3 !rounded-[16px] shadow transition',
+    secondary: 'bg-transparent !text-[19.2px] border-1 border-black rounded-[16px]',
     outline: 'border-2 border-white text-white hover:bg-white hover:text-black focus:ring-white',
     ghost: 'text-white hover:bg-white/10 focus:ring-white',
   };

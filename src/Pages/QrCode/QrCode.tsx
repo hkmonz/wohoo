@@ -2,13 +2,13 @@ import Design from "../../Components/Commons/Design"
 import Description from "./Description"
 import QrCodeHero from "./QrCodeHero"
 import woohooLogo from '../../assets/Icons/logo.svg';
-import xSeriesImg from '../../assets/Images/x-series.png';
-import tabletImg from '../../assets/Images/tablet.png';
-import qrcodeImg from '../../assets/Images/qrcodes.png';
+import xSeriesImg from '../../assets/Images/x-series.webp';
+import tabletImg from '../../assets/Images/tablet.webp';
+import qrcodeImg from '../../assets/Images/qrcodes.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
 import InsightSection from "../../Components/Commons/InsightSection";
 function QrCode() {
-     const sections = [
+  const sections = [
     {
       category: 'hospitality',
       labelColor: 'text-[#6B9A86]',
@@ -21,52 +21,59 @@ function QrCode() {
       ],
       logoUrl: woohooLogo,
       highlightText: { color: 'text-[#6B9A86]' },
+      textWidth: '',
       description: '',
-      buttonColor: 'bg-[#BDD9CD]  text[#090909]',
+      buttonColor: '!bg-white  !text[#090909]',
       products: [
         {
           image: xSeriesImg,
           logo: woohooLogo,
           title: 'X-Series',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
           route: '/x-series',
         },
         {
           image: tabletImg,
           logo: woohooLogo,
           title: 'Tablets',
-          route:'/tablet',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          route: '/tablet',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: qrcodeImg,
           logo: woohooLogo,
           title: 'QR Code',
-          route:'/qrcode',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          route: '/qrcode',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
     },
   ];
   return (
     <div>
-        <QrCodeHero/>
-        <Description/>
-        <Design/>
-        {sections.map((section, index) => (
-                        <ProductSection
-                          key={index}
-                          category={section?.category}
-                          label={section?.label}
-                          labelColor={section?.labelColor}
-                          mainTitle={section?.mainTitle}
-                          highlightText={section?.highlightText}
-                          description={section?.description}
-                          buttonColor={section?.buttonColor}
-                          products={section?.products}
-                        />
-                      ))}
-                      <InsightSection/>
+      <QrCodeHero />
+      <Description />
+      <Design />
+      {sections.map((section, index) => (
+        <div
+          key={index}
+
+        >
+          <ProductSection
+            textWidth={section.textWidth}
+            logoUrl={section.logoUrl}
+            category={section.category}
+            label={section.label}
+            labelColor={section.labelColor}
+            mainTitle={section.mainTitle}
+            highlightText={section.highlightText}
+            description={section.description}
+            buttonColor={section.buttonColor}
+            products={section.products}
+          />
+        </div>
+      ))}
+      <InsightSection />
     </div>
   )
 }

@@ -10,6 +10,7 @@ export interface CarouselProduct {
   title?: string;
   description?: string;
   image?: string;
+    video?: string;  
 }
 
 export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
@@ -32,14 +33,14 @@ export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
       <div className="max-w-7xl mx-auto mb-12 sm:mb-16">
         <div className="inline-block mb-4 sm:mb-6">
           <span className="text-sm sm:text-base md:text-lg font-normal text-[#FF2A2D] tracking-widest uppercase">
-            Structure
+            Hardware that earns its place in every room
           </span>
         </div>
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
-              Designed & Engineered Just Perfect
+            <h1 className="text-3xl sm:text-4xl md:text-5xl  font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
+              Designed in California. Trusted by the world.
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Sed molestie urna etiam eget adipiscing. Adipiscing eleifend vitae imperdiet massa volutpat morbi mi ultrices. Id congue sed lacus scelerisque bibendum placerat integer.
@@ -97,6 +98,8 @@ export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
               <div className="px-2 sm:px-3 lg:px-4">
                 <SliderCard
                   image={product?.image ?? ''}
+                    video={product?.video}     
+
                   title={product?.title ?? ''}
                   description={product?.description ?? ''}
                   isActive={true}

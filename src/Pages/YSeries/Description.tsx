@@ -1,20 +1,5 @@
 import React from "react";
-
-const integrations = [
-  { label: "PMS", value: "Oracle Opera | WINs | Info | MEWS etc." },
-  { label: "POS", value: "Agilysys | Infrasys | Lightspeed | Symphony etc." },
-  { label: "PBX", value: "Alcatel Lucent | NetSapiens | Grandstream  etc." },
-  {
-    label: "Room Automation",
-    value:
-      "INTEREL | Honeywell | iRIS | VDA | Schneider | AMX | Lutron | Schneider etc.",
-  },
-  {
-    label: "Housekeeping",
-    value: "Messagebox | Amadeus HotSOS | Knowcross | FCS | Go tickin  etc.",
-  },
-  { label: "Table Management System", value: "Table check etc." },
-];
+import Blueprint from '../../assets/Images/print.webp'
 
 const specificationRows = [
   {
@@ -28,6 +13,16 @@ const specificationRows = [
       {
         name: "Acoustic Chamber",
         value: "Custom build JBL by Harman acoustic chamber (0.4 L)",
+      },
+    ],
+  },
+  {
+    label: "Camera Configuration",
+    specs: [
+      { name: "Camera", value: "5 MP HD Camera with 110° Wide Angle" },
+      {
+        name: "",
+        value: "330° Rotation for Camera to Cover Full Perimeter",
       },
     ],
   },
@@ -74,10 +69,6 @@ const specificationRows = [
     label: "Bluetooth Spec",
     specs: [
       { name: "Version", value: "V5.0 SBC/AAC" },
-      {
-        name: "4 Buttons",
-        value: "Vol up, Vol down, Power on/off/, Screen on/off, Mic mute",
-      },
     ],
   },
   {
@@ -97,59 +88,27 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          The WooHoo® X Series is an award-winning, enterprise-grade AI
-          assistant designed for the luxury hospitality industry. This
-          all-in-one device combines a phone, alarm clock, smart hub, and a
-          premium speaker powered by JBL for business, concierge automation,
-          guest data, and service digital menus for hotels. The X Series offers
-          third-party integration support to enable guest controls, automation,
-          menus, data, and beverage digital menus. For hotels, the X Series
-          offers the complete solution—includes personalized branding and voice
-          menus—and seamless integration with over 40+ hospitality systems to
-          streamline operations.
+          Empowering Senior Care with the WooHoo Y-Series <br /> In response to the
+          critical shortage of caregivers and the needs of a rapidly aging
+          population, WooHoo has developed the Y-Series, an AI-powered digital
+          voice assistant specifically designed to enhance safety, connectivity,
+          and independence in senior care facilities and private homes. The
+          Y-Series offers a compelling solution that balances patient safety
+          with a personalized user experience. <br /> <br /> The WooHoo Y-Series is an
+          all-in-one device that acts as a lifeline for seniors and a powerful
+          tool for caregivers, directly addressing the staffing shortage in
+          healthcare.
         </p>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
-          Integrations
+          Blueprints
         </h4>
-        {/* Desktop Table for Integrations */}
-        <div className="hidden sm:block overflow-x-auto mb-6">
-          <table className="min-w-full bg-white rounded-lg border border-[#f3f3f3]">
-            <tbody>
-              {integrations.map((item, idx) => (
-                <tr key={idx} className="border-b border-[#f3f3f3] text-left">
-                  <td className="py-3 px-4 font-normal font-inter text-base text-[#606060] bg-[#F9F9F9] w-[220px] border border-[#EEF2F6]">
-                    {item.label}
-                  </td>
-                  <td className="py-3 px-4 font-normal font-inter text-base text-[#606060] bg-[#F9F9F9] border border-[#EEF2F6]">
-                    {item.value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        {/* Mobile Card View for Integrations */}
-        <div className="sm:hidden flex flex-col gap-4 mb-6">
-          {integrations.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#F9F9F9] rounded-lg border border-[#EEF2F6] p-0"
-            >
-              <div className="px-4 py-3 border-b border-[#EEF2F6] font-inter font-semibold text-[#0F172A] text-base">
-                {item.label}
-              </div>
-              <div className="px-4 py-2">
-                <div className="text-[#606060] font-inter text-sm">
-                  {item.value}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="flex justify-center items-center my-6">
+          <img src={Blueprint} alt="Blueprint" />
         </div>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Specification
         </h4>
-        {/* Responsive Table */}
+        {/* Desktop Table */}
         <div className="hidden sm:block overflow-x-auto">
           <table className="min-w-full bg-white rounded-lg border border-[#f3f3f3]">
             <tbody>
@@ -163,15 +122,15 @@ const Description: React.FC = () => {
                       {specIdx === 0 && (
                         <td
                           rowSpan={row.specs.length}
-                          className="py-3 px-4 font-normal font-inter text-base text-[#606060] bg-[#F9F9F9] w-[220px] align-middle border border-[#EEF2F6]"
+                          className="py-3 px-4 font-normal font-inter text-base text-[#606060] bg-[#ECF0F6] w-[220px]  align-middle border border-[#EEF2F6]"
                         >
                           {row.label}
                         </td>
                       )}
-                      <td className="py-3 px-4 align-top font-normal font-inter text-base text-[#606060] bg-[#F9F9F9] w-[180px] border border-[#EEF2F6]">
+                      <td className="py-3 px-4 align-top font-normal font-inter text-base text-[#606060] bg-[#ECF0F6] w-[180px] border border-[#EEF2F6]">
                         {spec.name}
                       </td>
-                      <td className="py-3 px-4 align-top bg-[#F9F9F9] font-normal font-inter text-base text-[#606060]">
+                      <td className="py-3 px-4 align-top bg-[#ECF0F6] font-normal font-inter text-base text-[#606060]">
                         {spec.value}
                       </td>
                     </tr>
@@ -186,25 +145,28 @@ const Description: React.FC = () => {
           {specificationRows.map((row, idx) => (
             <div
               key={idx}
-              className="bg-[#F9F9F9] rounded-lg border border-[#EEF2F6] p-0"
+              className="bg-[#ECF0F6] rounded-lg border border-[#EEF2F6] p-0"
             >
-              <div className="px-4 py-3 border-b border-[#EEF2F6] font-inter font-semibold text-[#0F172A] text-base">
+              <div className="px-4 py-3 border-b border-[#EEF2F6] font-inter font-bold text-[#0F172A] text-lg">
                 {row.label}
               </div>
               <div className="divide-y divide-[#EEF2F6]">
-                {row.specs.map((spec, specIdx) => (
-                  <div key={specIdx} className="flex flex-col px-4 py-2">
-                    {spec.name && (
-                      <div className="text-black font-inter text-sm font-medium mb-1">
-                        {spec.name}
-                      </div>
-                    )}
-                    <div className="text-[#606060] font-inter text-sm">
-                      {spec.value}
-                    </div>
+
+              
+              {row.specs.map((spec, specIdx) => (
+                <div
+                  key={specIdx}
+                  className="flex flex-col px-4 pb-2 border-b border-[#EEF2F6]"
+                >
+                  <div className="text-black font-inter text-sm font-medium mb-2">
+                    {spec.name}
                   </div>
-                ))}
-              </div>
+                  <div className="font-inter font-normal text-[#606060] text-sm">
+                    {spec.value}
+                  </div>
+                </div>
+              ))}
+            </div>
             </div>
           ))}
         </div>

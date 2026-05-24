@@ -34,7 +34,7 @@ export function AwardAndRecognition({ Award }: { Award: AwardCarousel[] }) {
               Awards & Recognition
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Sed molestie urna etiam eget adipiscing. Adipiscing eleifend vitae imperdiet massa volutpat morbi mi ultrices. Id congue sed lacus scelerisque bibendum placerat integer.
+Our commitment to redefining guest experiences has earned us recognition across global hospitality and technology platforms.
             </p>
           </div>
           <div className="flex items-center gap-3 sm:gap-4">

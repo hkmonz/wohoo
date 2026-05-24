@@ -1,5 +1,5 @@
 import React from "react";
-import WhyImg from "../../assets/Images/why.png";
+import WhyImg from "../../assets/Images/why.webp";
 import Tick from "../../assets/Icons/tick.svg";
 
 const reasons = [

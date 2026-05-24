@@ -1,12 +1,12 @@
 import { Carousel } from 'antd';
 import 'antd/dist/reset.css';
 
-import Awardbg1 from "../../assets/BackgroundImages/awardbg1.png";
-import Awardbg2 from "../../assets/BackgroundImages/awardbg2.png";
-import Awardbg3 from "../../assets/BackgroundImages/awardbg3.png";
-import Awardbg4 from "../../assets/BackgroundImages/awardbg4.png";
-import Awardbg5 from "../../assets/BackgroundImages/awardbg5.png";
-import Awardbg6 from "../../assets/BackgroundImages/awardbg6.png";
+import Awardbg1 from "../../assets/BackgroundImages/awardbg1.webp";
+import Awardbg2 from "../../assets/BackgroundImages/awardbg2.webp";
+import Awardbg3 from "../../assets/BackgroundImages/awardbg3.webp";
+import Awardbg4 from "../../assets/BackgroundImages/awardbg4.webp";
+import Awardbg5 from "../../assets/BackgroundImages/awardbg5.webp";
+import Awardbg6 from "../../assets/BackgroundImages/awardbg6.webp";
 
 const AwardCarousel = () => {
   const slides = [
@@ -30,7 +30,7 @@ const AwardCarousel = () => {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="relative min-h-[90vh] "
+            className="relative min-h-[110vh] "
           >
             <div
               className="absolute inset-0 bg-cover bg-center"

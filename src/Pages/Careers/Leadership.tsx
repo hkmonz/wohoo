@@ -1,9 +1,9 @@
 import React from 'react';
-import Team1 from '../../assets/Images/team1.png'
-import Team2 from '../../assets/Images/team2.png'
-import Team3 from '../../assets/Images/team3.png'
-import Team4 from '../../assets/Images/team4.png'
-import Team5 from '../../assets/Images/team5.png'
+import Team1 from '../../assets/Images/team1.webp'
+import Team2 from '../../assets/Images/team2.webp'
+import Team3 from '../../assets/Images/team3.webp'
+import Team4 from '../../assets/Images/team4.webp'
+import Team5 from '../../assets/Images/team5.webp'
 interface TeamMember {
     id: number;
     name: string;

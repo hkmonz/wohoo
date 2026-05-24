@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import QrCodeImg from "../../assets/Images/qrcodes.png";
+import QrCodeImg from "../../assets/Images/qrcodes.webp";
 import WoohooLogo from "../../assets/Icons/woohoo.svg";
 import AppleLogo from "../../assets/Icons/apple.svg";
 import AndroidLogo from "../../assets/Icons/android.svg";
@@ -39,7 +39,11 @@ const QrCodeHero: React.FC = () => {
                             with the power of technology
                         </h3>
                         <div className="flex justify-center md:justify-start w-full">
-                            <button onClick={() => setOpen(true)} className="px-6 sm:px-8 duration-500 hover:scale-105 py-3 rounded-full bg-[#1e7e5a] !text-white font-inter font-medium text-sm sm:text-base shadow hover:bg-[#155c41] transition">
+                            <button onClick={() => setOpen(true)} className="
+        bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
+        duration-500 hover:scale-105 !text-white !font-normal 
+        !px-6 !py-3 !rounded-[16px] shadow transition
+    ">
                                 Book A Demo
                             </button>
                         </div>

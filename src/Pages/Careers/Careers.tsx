@@ -3,11 +3,11 @@ import Hero from './Hero'
 import ExploreCard from '../../Components/Commons/ExploreCard'
 import AwardCarousel from '../../Components/Commons/AwardCarousel'
 import InsightSection from '../../Components/Commons/InsightSection'
-import ExploreCareer1 from '../../assets/Images/explorecareer1.png'
-import ExploreCareer2 from '../../assets/Images/explorecareer2.png'
-import ExploreCareer3 from '../../assets/Images/explorecareer3.png'
-import ExploreCareer4 from '../../assets/Images/explorecareer4.png'
-import ExploreCareer5 from '../../assets/Images/explorecareer5.png'
+import ExploreCareer1 from '../../assets/Images/explorecareer1.webp'
+import ExploreCareer2 from '../../assets/Images/explorecareer2.webp'
+import ExploreCareer3 from '../../assets/Images/explorecareer3.webp'
+import ExploreCareer4 from '../../assets/Images/explorecareer4.webp'
+import ExploreCareer5 from '../../assets/Images/explorecareer5.webp'
 function Careers() {
     const ExploreCardData = [
         {

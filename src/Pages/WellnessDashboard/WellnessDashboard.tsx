@@ -2,9 +2,9 @@ import Design from "../../Components/Commons/Design"
 import Description from "./Description"
 import WellnessDashboardHero from "./WellnessDashboardHero"
 import woohooLogo from '../../assets/Icons/logo.svg';
-import YSeriesImg from '../../assets/Images/healthcareyseries.png';
-import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.png';
-import SoundbarImg from '../../assets/Images/healthcaresoundbar.png';
+import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
+import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
+import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
 import InsightSection from "../../Components/Commons/InsightSection";
 export interface CarouselProduct {
@@ -35,21 +35,21 @@ function WellnessDashboard() {
           logo: woohooLogo,
           title: 'Y-Series',
           route: '/y-series',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: WellnessDashboardImg,
           logo: woohooLogo,
           title: 'Wellness Dashboard',
           route: '/wellness-dashboard',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
           image: SoundbarImg,
           logo: woohooLogo,
           title: 'Soundboard',
           route: '/soundboard',
-          description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
+          // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
     },

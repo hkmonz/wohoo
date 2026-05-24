@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SoundBar from "../../assets/Images/soundbar.png";
+import SoundBar from "../../assets/Images/soundbar.webp";
 import Tick from "../../assets/Icons/tick.svg";
 import BookDemo from "../../Components/Commons/BookDemo";
 import soundLogo from "../../assets/Icons/sound.svg";

@@ -10,8 +10,10 @@ export interface FeatureProduct {
   description?: string;
 }
 
-export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
+const isVideoMedia = (src?: string) =>
+  !!src && /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
 
+export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
   const carouselRef = useRef<CarouselRef>(null);
 
   if (features.length === 0) {
@@ -27,9 +29,8 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
   };
 
   return (
-    <div className="bg-[#ECECFA] ">
+    <div className="bg-[#ECECFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        {/* Header Section */}
         <div className="mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
             <span className="text-sm sm:text-base md:text-2xl font-normal text-[#FF2A2D] tracking-widest uppercase">
@@ -39,9 +40,9 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <div className="flex-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
-                More features to empower 
-hospitality & health care industry
+              <h1 className="text-3xl sm:text-4xl md:text-5xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
+                More features to empower
+                hospitality & health care industry
               </h1>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -63,14 +64,10 @@ hospitality & health care industry
           </div>
         </div>
 
-
-        {/* Carousel Section */}
         <Carousel
           ref={carouselRef}
-          // autoplay
           autoplaySpeed={5000}
           dots
-          // dotsClass="custom-dots"
           infinite
           slidesToShow={3}
           slidesToScroll={1}
@@ -79,13 +76,13 @@ hospitality & health care industry
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 2,  // md screens: 2 cards
+                slidesToShow: 2,
               },
             },
             {
               breakpoint: 768,
               settings: {
-                slidesToShow: 1,  // sm screens: 1 card
+                slidesToShow: 1,
               },
             },
           ]}
@@ -93,13 +90,25 @@ hospitality & health care industry
         >
           {features.map((feature, index) => (
             <div key={index}>
-              <div className="relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
-                  style={{ backgroundImage: `url(${feature.image})` }}
-                />
+              <div className="group relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden bg-black">
+                {feature.image && isVideoMedia(feature.image) ? (
+                  <video
+                    src={feature.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 "
+                  />
+                ) : (
+                  <img
+                    src={feature.image}
+                    alt={feature.title ?? `Feature ${index + 1}`}
+                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 "
+                  />
+                )}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
                 {feature.title && (
                   <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">

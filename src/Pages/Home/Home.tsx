@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Explore from "../../Components/Commons/Explore";
 import InsightSection from "../../Components/Commons/InsightSection";
 import HomeLogos from "../../Components/Commons/Logos";
@@ -5,15 +7,20 @@ import { ProductCarousel } from "../../Components/Commons/ProductCarousel";
 import { FeatureCarousel } from "../../Components/Commons/FeatureCarousel";
 import HealthcareProduct from "./HealthcareProduct";
 import Hero from "./Hero";
-import Speaker1 from '../../assets/Images/speaker1.png'
-import Speaker2 from '../../assets/Images/speaker2.png'
-import Speaker3 from '../../assets/Images/speaker3.png'
-import Speaker4 from '../../assets/Images/speaker4.png'
-import Feature1 from '../../assets/Images/feature1.png'
-import Award1 from '../../assets/Images/award1.png'
-import Award2 from '../../assets/Images/award2.png'
-import Award3 from '../../assets/Images/award3.png'
-import Award4 from '../../assets/Images/award4.png'
+import Plateform from "./Plateform";
+import Speaker1 from '../../assets/Images/Optimized Gif 1.mp4'
+import Speaker2 from '../../assets/Images/Optmized Gif 2.mp4'
+import Speaker3 from '../../assets/Images/Optmized Gif 3.mp4'
+import Speaker4 from '../../assets/Images/Optmized Gif 4.mp4'
+import Feature1 from '../../assets/Images/gif1.mp4'
+import Feature2 from '../../assets/Images/gif2.mp4'
+import Feature3 from '../../assets/Images/gif3.mp4'
+import Feature4 from '../../assets/Images/gif4.mp4'
+import Feature5 from '../../assets/Images/gif5.mp4'
+import Award1 from '../../assets/Images/award1.webp'
+import Award2 from '../../assets/Images/award2.webp'
+import Award3 from '../../assets/Images/award3.webp'
+import Award4 from '../../assets/Images/award4.webp'
 import Logo1 from "../../assets/Icons/logo1.svg";
 import Logo2 from "../../assets/Icons/logo2.svg";
 import Logo3 from "../../assets/Icons/logo3.svg";
@@ -41,7 +48,8 @@ export interface CarouselProduct {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
+    video?: string;  
 }
 
 export interface FeatureCarousel {
@@ -51,37 +59,45 @@ export interface AwardCarousel {
   image: string;
 }
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== "#explore") return;
+    requestAnimationFrame(() => {
+      document.getElementById("explore")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, [location.pathname, location.hash]);
 
    const products: CarouselProduct[] = [
+      // {
+      //   id: '1',
+      //   title: 'Lorem ipsum dolor ',
+      //   description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
+      //   image: Speaker1,
+      // },
       {
         id: '1',
-        title: 'Lorem ipsum dolor ',
-        description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-        image: Speaker1,
+        title: 'Enterprise-Grade Reliability ',
+        description: 'Designed for high-traffic environments, the X, Y, and Z series feature anti-theft locking systems and a robust chassis. The integrated battery ensures uninterrupted operation, keeping your AI agent active even during power fluctuations.',
+        video: Speaker2,
       },
       {
         id: '2',
-        title: 'Lorem ipsum dolor ',
-        description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-        image: Speaker2,
+        title: 'Precision Acoustic Excellence',
+        description: 'Custom-engineered Sound by JBL by Harman, the internal acoustic chamber utilizes dual woofers and balanced passive radiators to deliver deep, room-filling sound that transforms any physical space into an immersive audio environment.',
+        video: Speaker4,
       },
       {
         id: '3',
-        title: 'Lorem ipsum dolor ',
-        description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-        image: Speaker3,
+        title: 'Intuitive Control Interface',
+        description: 'Experience the perfect blend of voice and touch. The high-definition IPS display provides a crisp, interactive gateway to hotel services, telehealth portals, or office workflows, backed by a responsive I2C touch interface.',
+        video: Speaker1,
       },
       {
         id: '4',
-        title: 'Lorem ipsum dolor ',
-        description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-        image: Speaker4,
-      },
-      {
-        id: '5',
-        title: 'Lorem ipsum dolor ',
-        description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-        image: Speaker1,
+        title: 'Advanced Neural Processing',
+        description: 'Built on 3rd Gen Intel® Xeon® architecture, the device features a dedicated on-device wake-word chip. This ensures lightning-fast voice responsiveness while maintaining enterprise-grade privacy by processing local commands without cloud reliance.',
+        video: Speaker3,
       },
     ];
 
@@ -90,16 +106,16 @@ function Home() {
         image: Feature1,
       },
       {
-        image: Feature1,
+        image: Feature2,
       },
       {
-        image: Feature1,
+        image: Feature3,
       },
       {
-        image: Feature1,
+        image: Feature4,
       },
       {
-        image: Feature1,
+        image: Feature5,
       },
     ];
 
@@ -138,7 +154,10 @@ function Home() {
       <HealthcareProduct />
       <ProductCarousel products={products} />
       <FeatureCarousel features={Features} />
-      <HomeLogos logos={[
+      <HomeLogos
+      direction="right"
+      marqueeOnLg={true}
+      logos={[
         { src: Logo8, alt: "logo8", link: "" },
         { src: Logo9, alt: "logo9", link: "" },
         { src: Logo10, alt: "logo10", link: "" },
@@ -146,8 +165,25 @@ function Home() {
         { src: Logo12, alt: "logo12", link: "" },
         { src: Logo13, alt: "logo13", link: "" },
         { src: Logo14, alt: "logo14", link: "" },
+         { src: Logo15, alt: "logo15", link: "" },
+        { src: Logo16, alt: "logo16", link: "" },
+        { src: Logo17, alt: "logo17", link: "" },
+        { src: Logo18, alt: "logo18", link: "" },
+        { src: Logo19, alt: "logo19", link: "" },
+        { src: Logo20, alt: "logo20", link: "" },
+        { src: Logo21, alt: "logo21", link: "" },
       ]} />
-      <HomeLogos logos={[
+      <HomeLogos
+      direction="left"
+      marqueeOnLg={true}
+      logos={[
+        { src: Logo8, alt: "logo8", link: "" },
+        { src: Logo9, alt: "logo9", link: "" },
+        { src: Logo10, alt: "logo10", link: "" },
+        { src: Logo11, alt: "logo11", link: "" },
+        { src: Logo12, alt: "logo12", link: "" },
+        { src: Logo13, alt: "logo13", link: "" },
+        { src: Logo14, alt: "logo14", link: "" },
         { src: Logo15, alt: "logo15", link: "" },
         { src: Logo16, alt: "logo16", link: "" },
         { src: Logo17, alt: "logo17", link: "" },
@@ -156,6 +192,7 @@ function Home() {
         { src: Logo20, alt: "logo20", link: "" },
         { src: Logo21, alt: "logo21", link: "" },
       ]} />
+      <Plateform />
 
       <Explore />
       <AwardAndRecognition Award={Award} />
