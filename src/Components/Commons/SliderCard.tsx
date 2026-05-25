@@ -1,3 +1,5 @@
+import { useRef, useEffect } from 'react';
+
 interface SliderCardProps {
   image?: string;
   title?: string;
@@ -7,17 +9,41 @@ interface SliderCardProps {
 }
 
 export function SliderCard({ image, video, title, description }: SliderCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 1024) {
+      videoRef.current?.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) {
+      videoRef.current?.pause();
+      if (videoRef.current) videoRef.current.currentTime = 0;
+    }
+  };
+
   return (
     <div>
-      <div className="rounded-2xl overflow-hidden bg-[#ECF0F6] transition-all duration-500">
+      <div className="rounded-2xl overflow-hidden bg-[#ECECFA] transition-all duration-500">
         {video ? (
           <video
+            ref={videoRef}
             src={video}
-            autoPlay
             loop
             muted
             playsInline
-            className="object-cover p-5 w-full"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="object-cover p-5 w-full cursor-pointer"
           />
         ) : (
           <img

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Cards({ image, title, description, logoUrl, route }:any) {
   return (
     <Link to={route}>
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-[#BDBDBD] hover:shadow-lg transition-shadow">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden  hover:shadow-lg transition-shadow">
       <div className=" overflow-hidden  justify-center items-center flex ">
         <img
           src={image}

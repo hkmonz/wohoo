@@ -1,6 +1,6 @@
 import { Carousel } from 'antd';
 import 'antd/dist/reset.css';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import type { CarouselRef } from 'antd/es/carousel';
 
@@ -13,20 +13,45 @@ export interface FeatureProduct {
 const isVideoMedia = (src?: string) =>
   !!src && /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
 
+function VideoCard({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 1024) {
+      videoRef.current?.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) {
+      videoRef.current?.pause();
+    }
+  };
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      loop
+      muted
+      playsInline
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500"
+    />
+  );
+}
+
 export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
   const carouselRef = useRef<CarouselRef>(null);
 
-  if (features.length === 0) {
-    return null;
-  }
-
-  const handlePrev = () => {
-    carouselRef.current?.prev();
-  };
-
-  const handleNext = () => {
-    carouselRef.current?.next();
-  };
+  if (features.length === 0) return null;
 
   return (
     <div className="bg-[#ECECFA]">
@@ -47,14 +72,14 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
               <button
-                onClick={handlePrev}
+                onClick={() => carouselRef.current?.prev()}
                 className="p-3 rounded-full bg-[#000000] !text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
                 aria-label="Previous slide"
               >
                 <MdChevronLeft size={24} />
               </button>
               <button
-                onClick={handleNext}
+                onClick={() => carouselRef.current?.next()}
                 className="p-3 rounded-full bg-[#000000] !text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
                 aria-label="Next slide"
               >
@@ -74,16 +99,24 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
           pauseOnHover
           responsive={[
             {
+              breakpoint: 1280,
+              settings: { slidesToShow: 3 },
+            },
+            {
               breakpoint: 1024,
-              settings: {
-                slidesToShow: 2,
-              },
+              settings: { slidesToShow: 2 },
             },
             {
               breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-              },
+              settings: { slidesToShow: 1 },
+            },
+            {
+              breakpoint: 640,
+              settings: { slidesToShow: 1 },
+            },
+            {
+              breakpoint: 480,
+              settings: { slidesToShow: 1 },
             },
           ]}
           className="feature-carousel"
@@ -92,19 +125,12 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
             <div key={index}>
               <div className="group relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden bg-black">
                 {feature.image && isVideoMedia(feature.image) ? (
-                  <video
-                    src={feature.image}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 "
-                  />
+                  <VideoCard src={feature.image} />
                 ) : (
                   <img
                     src={feature.image}
                     alt={feature.title ?? `Feature ${index + 1}`}
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 "
+                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500"
                   />
                 )}
 
@@ -131,18 +157,9 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
       </div>
 
       <style>{`
-        .feature-carousel .slick-slide {
-          padding: 0 8px;
-        }
-
-        .feature-carousel .slick-list {
-          margin: 0 -8px;
-        }
-
-        .feature-carousel .slick-dots {
-          bottom: -40px;
-        }
-
+        .feature-carousel .slick-slide { padding: 0 8px; }
+        .feature-carousel .slick-list { margin: 0 -8px; }
+        .feature-carousel .slick-dots { bottom: -40px; }
         .feature-carousel .slick-dots li button {
           background: #000;
           border-radius: 50%;
@@ -150,41 +167,21 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
           height: 8px;
           transition: all 0.3s ease;
         }
-
         .feature-carousel .slick-dots li.slick-active button {
           background: #140D2D;
           width: 24px;
           border-radius: 4px;
         }
-
-        .feature-carousel .slick-dots li button:before {
-          display: none;
-        }
-
-        .feature-carousel .slick-dots li {
-          width: auto;
-          height: auto;
-          margin: 0 6px;
-        }
+        .feature-carousel .slick-dots li button:before { display: none; }
+        .feature-carousel .slick-dots li { width: auto; height: auto; margin: 0 6px; }
 
         @media (min-width: 640px) {
-          .feature-carousel .slick-slide {
-            padding: 0 12px;
-          }
-
-          .feature-carousel .slick-list {
-            margin: 0 -12px;
-          }
+          .feature-carousel .slick-slide { padding: 0 12px; }
+          .feature-carousel .slick-list { margin: 0 -12px; }
         }
-
         @media (min-width: 1024px) {
-          .feature-carousel .slick-slide {
-            padding: 0 16px;
-          }
-
-          .feature-carousel .slick-list {
-            margin: 0 -16px;
-          }
+          .feature-carousel .slick-slide { padding: 0 16px; }
+          .feature-carousel .slick-list { margin: 0 -16px; }
         }
       `}</style>
     </div>

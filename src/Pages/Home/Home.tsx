@@ -21,6 +21,11 @@ import Award1 from '../../assets/Images/award1.webp'
 import Award2 from '../../assets/Images/award2.webp'
 import Award3 from '../../assets/Images/award3.webp'
 import Award4 from '../../assets/Images/award4.webp'
+import Award5 from '../../assets/Images/award5.webp'
+import Award6 from '../../assets/Images/award6.webp'
+import Award7 from '../../assets/Images/award7.webp'
+import Award8 from '../../assets/Images/award8.webp'
+import Award9 from '../../assets/Images/award9.webp'
 import Logo1 from "../../assets/Icons/logo1.svg";
 import Logo2 from "../../assets/Icons/logo2.svg";
 import Logo3 from "../../assets/Icons/logo3.svg";
@@ -69,12 +74,6 @@ function Home() {
   }, [location.pathname, location.hash]);
 
    const products: CarouselProduct[] = [
-      // {
-      //   id: '1',
-      //   title: 'Lorem ipsum dolor ',
-      //   description: 'Lorem ipsum dolor sit amet consectetur. Maecenas fringilla vulputate aliquam volutpat proin. Sit neque ornare mauris risus.',
-      //   image: Speaker1,
-      // },
       {
         id: '1',
         title: 'Enterprise-Grade Reliability ',
@@ -133,7 +132,19 @@ function Home() {
         image: Award4,
       },
       {
-        image: Award1,
+        image: Award5,
+      },
+      {
+        image: Award6,
+      },
+      {
+        image: Award7,
+      },
+      {
+        image: Award8,
+      },
+      {
+        image: Award9,
       },
     ];
 
@@ -193,7 +204,6 @@ function Home() {
         { src: Logo21, alt: "logo21", link: "" },
       ]} />
       <Plateform />
-
       <Explore />
       <AwardAndRecognition Award={Award} />
       <InsightSection/>

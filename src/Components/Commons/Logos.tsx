@@ -43,7 +43,7 @@ function HomeLogos({
                 rel="noopener noreferrer"
                 className="flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:opacity-100"
               >
-                <img src={logo?.src} alt={logo?.alt} className="h-16 w-auto" />
+                <img src={logo?.src} alt={logo?.alt} className="h-16 md:h-20 w-auto" />
               </a>
             ))}
           </div>
@@ -68,7 +68,7 @@ function HomeLogos({
                   rel="noopener noreferrer"
                   className="mx-8 flex justify-center items-center hover:scale-105 transition-transform duration-300"
                 >
-                  <img src={logo?.src} alt={logo?.alt} className="h-14 md:w-auto object-contain" />
+                  <img src={logo?.src} alt={logo?.alt} className="h-16 md:h-20 md:w-auto object-contain" />
                 </a>
               ))}
             </Marquee>

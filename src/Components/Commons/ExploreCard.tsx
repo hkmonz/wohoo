@@ -13,13 +13,13 @@ interface FeatureCardProps {
 const ExploreCard: React.FC<FeatureCardProps> = ({ label, title, description, labelColor, image, imgWidth }) => {
   return (
     <div className="relative max-w-7xl h-96 sm:h-[28rem] md:h-[32rem] lg:h-116 mx-auto rounded-3xl bg-[#ECECFA] overflow-hidden cursor-pointer group mb-6">
-      {/* Background image */}
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={ExploreBg}
           alt="Background"
-          className="absolute inset-0 h-full w-full object-cover object-left z-20"
+          className="absolute inset-0 h-full w-full object-cover object-left z-10"
         />
+        <div className="absolute inset-0 bg-white/60 z-10" />
       </div>
 
       <div className="absolute inset-0 z-20 flex flex-col sm:flex-row">
