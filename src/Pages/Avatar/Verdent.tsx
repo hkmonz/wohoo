@@ -1,6 +1,8 @@
 import React from "react";
-import { Carousel } from "antd";
-import "antd/dist/reset.css";
+import ReactMultiCarousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const Carousel = (ReactMultiCarousel as any).default ?? ReactMultiCarousel;
 
 const features = [
   {
@@ -17,6 +19,29 @@ const features = [
   },
 ];
 
+const responsive = {
+  desktopLarge: {
+    breakpoint: { max: 3000, min: 1280 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  desktop: {
+    breakpoint: { max: 1280, min: 900 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {
+    breakpoint: { max: 900, min: 600 },
+    items: 2,
+    slidesToSlide: 1,
+  },
+  mobile: {
+    breakpoint: { max: 600, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
+
 const Verdent: React.FC = () => {
   return (
     <section className="py-12 px-4 bg-white">
@@ -24,48 +49,25 @@ const Verdent: React.FC = () => {
         <h2 className="text-[#222] !font-bold text-2xl font-inter md:text-[51px] mb-2 max-w-lg">
           Verdant™: Your City's Central AI Officer
         </h2>
-        <div className="mt-8">
+        <div className="mt-8 pb-4">
           <Carousel
-            autoplay
-            autoplaySpeed={3000}
-            dots={false}
+            responsive={responsive}
+            autoPlay
+            autoPlaySpeed={3000}
             infinite
             draggable
-            slidesToShow={3}
-            slidesToScroll={1}
             pauseOnHover
-            responsive={[
-              {
-                breakpoint: 1280,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                },
-              },
-              {
-                breakpoint: 900,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1,
-                },
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                },
-              },
-            ]}
-            className="specialized-carousel"
+            showDots={false}
+            arrows={false}
+            itemClass="verdent-carousel-item"
           >
             {features.map((feature, idx) => (
-              <div key={idx} className="px-2">
+              <div key={idx}>
                 <div className="rounded-xl shadow-sm border border-[#f3f3f3] p-6 flex flex-col min-h-[280px] mb-5">
-                  <h3 className="text-[#222] font-medium font-inter text-[23px] mb-3">
+                  <h3 className="text-[#222] font-medium  text-[23px] mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-[#5A6476] font-inter font-normal text-[17px]">
+                  <p className="text-[#5A6476]  font-normal text-[17px]">
                     {feature.desc}
                   </p>
                 </div>
@@ -74,6 +76,12 @@ const Verdent: React.FC = () => {
           </Carousel>
         </div>
       </div>
+
+      <style>{`
+        .verdent-carousel-item {
+          padding: 0 8px;
+        }
+      `}</style>
     </section>
   );
 };

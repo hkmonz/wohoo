@@ -1,14 +1,38 @@
-import { Carousel } from 'antd';
-import 'antd/dist/reset.css';
 import { useEffect, useRef } from 'react';
+import ReactMultiCarousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import type { CarouselRef } from 'antd/es/carousel';
+
+const Carousel = (ReactMultiCarousel as any).default ?? ReactMultiCarousel;
 
 export interface FeatureProduct {
   image?: string;
   title?: string;
   description?: string;
 }
+
+const responsive = {
+  desktopLarge: {
+    breakpoint: { max: 3000, min: 1280 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  desktop: {
+    breakpoint: { max: 1280, min: 1024 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 2,
+    slidesToSlide: 1,
+  },
+  mobile: {
+    breakpoint: { max: 768, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 
 const isVideoMedia = (src?: string) =>
   !!src && /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
@@ -22,6 +46,7 @@ function VideoCard({ src }: { src: string }) {
       videoRef.current.play();
     }
   }, []);
+
   const handleMouseEnter = () => {
     if (window.innerWidth >= 1024) {
       videoRef.current?.play();
@@ -49,13 +74,14 @@ function VideoCard({ src }: { src: string }) {
 }
 
 export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
-  const carouselRef = useRef<CarouselRef>(null);
+  const carouselRef = useRef<any>(null);
 
   if (features.length === 0) return null;
 
   return (
     <div className="bg-[#ECECFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        {/* Header */}
         <div className="mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
             <span className="text-sm sm:text-base md:text-2xl font-normal text-[#FF2A2D] tracking-widest uppercase">
@@ -66,13 +92,12 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <div className="flex-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
-                More features to empower
-                hospitality & health care industry
+                More features to empower hospitality & health care industry
               </h1>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
               <button
-                onClick={() => carouselRef.current?.prev()}
+                onClick={() => carouselRef.current?.previous()}
                 className="p-3 rounded-full bg-[#000000] !text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
                 aria-label="Previous slide"
               >
@@ -89,41 +114,25 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
           </div>
         </div>
 
-        <Carousel
-          ref={carouselRef}
-          autoplaySpeed={5000}
-          dots
-          infinite
-          slidesToShow={3}
-          slidesToScroll={1}
-          pauseOnHover
-          responsive={[
-            {
-              breakpoint: 1280,
-              settings: { slidesToShow: 3 },
-            },
-            {
-              breakpoint: 1024,
-              settings: { slidesToShow: 2 },
-            },
-            {
-              breakpoint: 768,
-              settings: { slidesToShow: 1 },
-            },
-            {
-              breakpoint: 640,
-              settings: { slidesToShow: 1 },
-            },
-            {
-              breakpoint: 480,
-              settings: { slidesToShow: 1 },
-            },
-          ]}
-          className="feature-carousel"
-        >
-          {features.map((feature, index) => (
-            <div key={index}>
-              <div className="group relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden bg-black">
+        {/* Carousel */}
+        <div className="pb-12">
+          <Carousel
+            ref={carouselRef}
+            responsive={responsive}
+            autoPlay
+            autoPlaySpeed={5000}
+            infinite
+            pauseOnHover
+            showDots
+            arrows={false}
+            itemClass="feature-carousel-item"
+            dotListClass="feature-dot-list"
+          >
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="group relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden bg-black"
+              >
                 {feature.image && isVideoMedia(feature.image) ? (
                   <VideoCard src={feature.image} />
                 ) : (
@@ -151,37 +160,54 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
                   </div>
                 )}
               </div>
-            </div>
-          ))}
-        </Carousel>
+            ))}
+          </Carousel>
+        </div>
       </div>
 
       <style>{`
-        .feature-carousel .slick-slide { padding: 0 8px; }
-        .feature-carousel .slick-list { margin: 0 -8px; }
-        .feature-carousel .slick-dots { bottom: -40px; }
-        .feature-carousel .slick-dots li button {
-          background: #000;
-          border-radius: 50%;
-          width: 8px;
-          height: 8px;
-          transition: all 0.3s ease;
+        .feature-carousel-item {
+          padding: 0 8px;
         }
-        .feature-carousel .slick-dots li.slick-active button {
-          background: #140D2D;
-          width: 24px;
-          border-radius: 4px;
-        }
-        .feature-carousel .slick-dots li button:before { display: none; }
-        .feature-carousel .slick-dots li { width: auto; height: auto; margin: 0 6px; }
 
         @media (min-width: 640px) {
-          .feature-carousel .slick-slide { padding: 0 12px; }
-          .feature-carousel .slick-list { margin: 0 -12px; }
+          .feature-carousel-item {
+            padding: 0 12px;
+          }
         }
+
         @media (min-width: 1024px) {
-          .feature-carousel .slick-slide { padding: 0 16px; }
-          .feature-carousel .slick-list { margin: 0 -16px; }
+          .feature-carousel-item {
+            padding: 0 16px;
+          }
+        }
+
+        .feature-dot-list {
+          bottom: -40px;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        .feature-dot-list li button {
+          background: #000 !important;
+          border-radius: 50%;
+          width: 8px !important;
+          height: 8px !important;
+          border: none !important;
+          padding: 0 !important;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .feature-dot-list li.react-multi-carousel-dot--active button {
+          background: #140D2D !important;
+          width: 24px !important;
+          border-radius: 4px;
         }
       `}</style>
     </div>

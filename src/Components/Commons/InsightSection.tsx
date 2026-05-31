@@ -193,7 +193,6 @@ const InsightSection: React.FC = () => {
                                     </button>
                                 </div>
 
-                                {/* Carousel indicator dots */}
                                 <div className="mt-4 flex justify-center gap-2">
                                     {newsArticles.map((_, idx) => (
                                         <button
