@@ -1,8 +1,6 @@
 import { useRef } from 'react';
 import ReactMultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-
 import Awardbg1 from "../../assets/BackgroundImages/awardbg1.webp";
 import Awardbg2 from "../../assets/BackgroundImages/awardbg2.webp";
 import Awardbg3 from "../../assets/BackgroundImages/awardbg3.webp";
