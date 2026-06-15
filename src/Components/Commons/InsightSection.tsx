@@ -3,7 +3,11 @@ import { MdPlayArrow as Play, MdChevronRight as ChevronRight, MdChevronLeft as C
 import { Modal } from 'antd';
 import 'antd/dist/reset.css';
 import NewsImage from '../../assets/Images/news.webp';
-import KirtiIcon from '../../assets/Icons/favicon.svg';
+import NewsImage1 from '../../assets/Images/news1.png';
+import NewsImage2 from '../../assets/Images/news2.png';
+import NewsImage3 from '../../assets/Images/news3.png';
+import NewsImage4 from '../../assets/Images/news4.png';
+import NewsImage5 from '../../assets/Images/news5.png';
 import VidImg1 from '../../assets/Images/vid1.webp';
 import VidImg2 from '../../assets/Images/vid2.webp';
 import VidImg3 from '../../assets/Images/vid3.webp';
@@ -42,6 +46,16 @@ const InsightSection: React.FC = () => {
         'https://www.youtube.com/embed/5wh7BBoapxY?autoplay=1&mute=1',
     ];
 
+    // Array of images corresponding to news articles
+    const newsImages = [
+        NewsImage,
+        NewsImage1,
+        NewsImage2,
+        NewsImage3,
+        NewsImage4,
+        NewsImage5,
+    ];
+
     const handleVideoClick = (videoIndex: number) => {
         setCurrentVideoUrl(videoUrls[videoIndex]);
         setIsModalOpen(true);
@@ -55,39 +69,47 @@ const InsightSection: React.FC = () => {
     const newsArticles: NewsArticle[] = [
         {
             id: 1,
-            title: "Women's empowerment is vital to success, says UNWTO executive director",
+            title: "WooHoo X-Series Selected by Elisium City Hotels for City-Wide Hospitality Upgrade",
             date: "August 25, 2025",
-            author: "Sparklehaze",
+            author: "WooHoo",
             link: "https://www.arabnews.com/node/2381546/saudi-arabia",
         },
         {
             id: 2,
-            title: "WooHoo Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
+            title: "Women's empowerment is vital to success, says UNWTO executive director",
             date: "September 21, 2023",
-            author: "Sparklehaze",
+            author: "WooHoo",
             link: "https://hoteltechnologynews.com/2023/11/woohoo-partners-with-intel-to-redefine-the-hotel-guest-experience-with-next-generation-voice-ai-assistant-speaker/",
         },
-        {
+         {
             id: 3,
-            title: "SparkleHaze part of the Ministry of Economy, UAE Grant program for Innovation",
-            date: "August 09, 2025",
-            author: "Sparklehaze",
-            link: "https://www.arabianbusiness.com/startup/ministry-of-economy-ewa-launch-acceleration-programme-for-women-led-startups-in-uae",
+            title: "WooHoo Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
+            date: "August 25, 2025",
+            author: "WooHoo",
+            link: "https://www.arabnews.com/node/2381546/saudi-arabia",
         },
         {
             id: 4,
-            title: "Inside the bold version of America's first cognitive city",
-            date: "July 06, 2025",
-            author: "Sparklehaze",
-            link: "https://www.forbes.com/sites/jonathanreichental/2025/07/06/inside-the-bold-vision-for-americas-first-cognitive-city/",
+            title: "SparkleHaze part of the Ministry of Economy, UAE Grant program for Innovation",
+            date: "August 09, 2025",
+            author: "WooHoo",
+            link: "https://www.arabianbusiness.com/startup/ministry-of-economy-ewa-launch-acceleration-programme-for-women-led-startups-in-uae",
         },
         {
             id: 5,
+            title: "Inside the bold version of America's first cognitive city",
+            date: "July 06, 2025",
+            author: "WooHoo",
+            link: "https://www.forbes.com/sites/jonathanreichental/2025/07/06/inside-the-bold-vision-for-americas-first-cognitive-city/",
+        },
+        {
+            id: 6,
             title: "SparkleHaze and COGNITIVE, ELISIUM's Tech Subsidiary team up together to spearhead Development of Next-Generation Hardware and Software for Cities of Tomorrow",
             date: "February 05, 2025",
-            author: "Sparklehaze",
+            author: "WooHoo",
             link: "https://www.linkedin.com/posts/sparklehaze_elisiumkey-usa-elisiumkey-activity-7376716352591392768-_Db5?utm_source=share&utm_medium=member_ios&rcm=ACoAAAElvqsBz0cNSrZXCydh3ToSpuhAPA5J2pk",
         },
+        
     ];
 
     const testimonial: Testimonial = {
@@ -129,6 +151,7 @@ const InsightSection: React.FC = () => {
     };
 
     const currentArticle = newsArticles[currentArticleIndex];
+    const currentImage = newsImages[currentArticleIndex];
 
     return (
         <div className="w-full">
@@ -153,11 +176,6 @@ const InsightSection: React.FC = () => {
                                         </h2>
 
                                         <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                                            <img
-                                                src={KirtiIcon}
-                                                alt="News"
-                                                className="h-9 w-9 rounded-full object-cover"
-                                            />
                                             <span className="font-medium text-[#000000]">{currentArticle.author}</span>
                                             <div className="border-l h-5 border-[#00000040]"></div>
                                             <span className="text-[#000000BF]">{currentArticle.date}</span>
@@ -165,12 +183,12 @@ const InsightSection: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="mt-6 sm:mt-8 flex flex-wrap  gap-4">
+                                <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">
                                     <a
                                         href={currentArticle.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="ml-auto inline-flex h-11 px-6 items-center justify-center !text-[#7C56EC] text-sm sm:text-base hover:opacity-80 transition-opacity"
+                                        className="inline-flex h-20  !text-[#7C56EC] text-sm sm:text-base hover:opacity-80 transition-opacity"
                                     >
                                         Read More →
                                     </a>
@@ -213,9 +231,9 @@ const InsightSection: React.FC = () => {
                     <div className="overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl">
                         <div className="relative h-[300px] sm:h-[380px] md:h-[420px] lg:h-full">
                             <img
-                                src={NewsImage}
-                                alt="Featured hotel"
-                                className="h-full w-full object-cover"
+                                src={currentImage}
+                                alt="Featured news"
+                                className="h-full w-full object-cover transition-all duration-300"
                                 onError={(e) => {
                                     (e.target as HTMLImageElement).src =
                                         'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';

@@ -35,7 +35,7 @@ const HospitalityHero: React.FC = () => {
     return (
         <div>
             <section
-                className="pt-40 px-4 sm:px-8 min-h-[80vh] md:min-h-screen bg-[#6366F1]"
+                className="flex justify-center items-center pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen bg-[#6366F1]"
 
             >
                 <div className="max-w-5xl mx-auto text-center">
@@ -57,7 +57,7 @@ const HospitalityHero: React.FC = () => {
             </section>
 
             <BookDemo open={open} onClose={() => setOpen(false)} />
-            <div className="max-w-6xl mx-auto relative mt-5 sm:-mt-28 md:-mt-36 lg:-mt-66 px-4 sm:px-6 lg:px-8 mb-20">
+            <div className="max-w-6xl mx-auto relative mt-5 sm:-mt-28 md:-mt-36 lg:-mt-46 px-4 sm:px-6 lg:px-8 mb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-8">
                     {products.map((product) => (
                             <Cards
