@@ -6,7 +6,7 @@ import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtable
 import BookDemo from "../../Components/Commons/BookDemo";
 import Cards from "../../Components/Commons/Cards";
 
-const Hero: React.FC = () => {
+const WorkplaceHero: React.FC = () => {
     const [open, setOpen] = useState(false)
 
     const products = [
@@ -74,4 +74,4 @@ const Hero: React.FC = () => {
     );
 };
 
-export default Hero;
+export default WorkplaceHero;

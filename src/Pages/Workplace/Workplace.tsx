@@ -1,5 +1,4 @@
 import HomeLogos from "../../Components/Commons/Logos"
-import Hero from "./hero"
 import Logo1 from "../../assets/Icons/logow1.svg";
 import Logo2 from "../../assets/Icons/logow2.svg";
 import Logo3 from "../../assets/Icons/logow3.svg";
@@ -8,10 +7,11 @@ import Logo5 from "../../assets/Icons/logow5.svg";
 import Logo6 from "../../assets/Icons/logow6.svg";
 import Logo7 from "../../assets/Icons/logow7.svg";
 import Industries from "./Industries";
+import WorkplaceHero from "./WorkplaceHero";
 function Workplace() {
   return (
     <div>
-        <Hero/>
+      <WorkplaceHero/>
               <HomeLogos bgColor={'bg-white'} logos={[
         { src: Logo1, alt: "logo1", link: "https://www.untourism.int/" },
         { src: Logo2, alt: "logo2", link: "https://elisium.city/" },
