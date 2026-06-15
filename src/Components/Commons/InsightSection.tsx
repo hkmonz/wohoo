@@ -79,14 +79,14 @@ const InsightSection: React.FC = () => {
             title: "Women's empowerment is vital to success, says UNWTO executive director",
             date: "September 21, 2023",
             author: "WooHoo",
-            link: "https://hoteltechnologynews.com/2023/11/woohoo-partners-with-intel-to-redefine-the-hotel-guest-experience-with-next-generation-voice-ai-assistant-speaker/",
+            link: "https://www.arabnews.com/node/2381546/saudi-arabia",
         },
          {
             id: 3,
             title: "WooHoo Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
             date: "August 25, 2025",
             author: "WooHoo",
-            link: "https://www.arabnews.com/node/2381546/saudi-arabia",
+            link: "https://hoteltechnologynews.com/2023/11/woohoo-partners-with-intel-to-redefine-the-hotel-guest-experience-with-next-generation-voice-ai-assistant-speaker/",
         },
         {
             id: 4,
