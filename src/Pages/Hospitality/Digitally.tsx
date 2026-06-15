@@ -4,7 +4,7 @@ import digitally1 from "../../assets/Images/digitally1.png";
 import digitally2 from "../../assets/Images/digitally2.png";
 import digitally3 from "../../assets/Images/digitally3.png";
 import SpendspereLogo from "../../assets/Icons/Spendsphere.svg";
-import SparklehazeLogo from "../../assets/Icons/smartbeings.svg";
+import SparklehazeLogo from "../../assets/Icons/SmartBeings.svg";
 import X3niaLogo from "../../assets/Icons/x3nia.svg";
 import BookDemo from "../../Components/Commons/BookDemo";
 

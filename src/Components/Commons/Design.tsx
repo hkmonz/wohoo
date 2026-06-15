@@ -1,4 +1,4 @@
-import Logo from "../../assets/Icons/smartbeings.svg";
+import Logo from "../../assets/Icons/SmartBeings.svg";
 import Sound from "../../assets/Icons/sound.svg";
 function Design() {
   return (
