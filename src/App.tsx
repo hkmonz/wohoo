@@ -13,6 +13,9 @@ import MeetingRoom from './Pages/MeetingRoom/MeetingRoom'
 import WellnessDashboard from './Pages/WellnessDashboard/WellnessDashboard'
 import Soundboard from './Pages/Soundboard/Soundboard'
 import Avatar from './Pages/Avatar/Avatar'
+import Hospitality from './Pages/Hospitality/Hospitality'
+import Healthcare from './Pages/Healthcare/Healthcare'
+import Workplace from './Pages/Workplace/Workplace'
 
 function App() {
   return (
@@ -31,6 +34,10 @@ function App() {
           <Route path="/meeting-room-tablet" element={<MeetingRoom />} />
           <Route path="/soundboard" element={<Soundboard />} />
           <Route path="/avatar" element={<Avatar />} />
+          <Route path="/hospitality" element={<Hospitality />} />
+          <Route path="/products" element={<Hospitality />} />
+          <Route path="/healthcare" element={<Healthcare/>} />
+          <Route path="/workplace" element={<Workplace/>} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

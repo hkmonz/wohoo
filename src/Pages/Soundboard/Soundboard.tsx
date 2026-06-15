@@ -6,7 +6,6 @@ import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
 import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
 import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
-import InsightSection from "../../Components/Commons/InsightSection";
 
 function Soundboard() {
     const sections = [
@@ -68,7 +67,6 @@ function Soundboard() {
                     products={section?.products}
                 />
             ))}
-            <InsightSection />
         </div>
     )
 }

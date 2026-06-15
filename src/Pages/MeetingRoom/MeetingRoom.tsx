@@ -6,7 +6,6 @@ import KingdomImg from '../../assets/Images/workplacekingdom.webp';
 import AvatarImg from '../../assets/Images/workplaceavatar.webp';
 import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
-import InsightSection from "../../Components/Commons/InsightSection";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -32,7 +31,7 @@ function MeetingRoom() {
         {
           image: KingdomImg,
           logo: woohooLogo,
-          title: 'Kingdome Series',
+          title: 'Z Series',
           route: '/z-series',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
@@ -77,7 +76,6 @@ function MeetingRoom() {
           />
         </div>
               ))}
-              <InsightSection/>
     </div>
   )
 }

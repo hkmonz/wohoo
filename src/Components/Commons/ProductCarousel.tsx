@@ -55,10 +55,7 @@ export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
               Designed in California. Trusted by the world.
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Sed molestie urna etiam
-              eget adipiscing. Adipiscing eleifend vitae imperdiet massa volutpat
-              morbi mi ultrices. Id congue sed lacus scelerisque bibendum
-              placerat integer.
+              Reliable performance engineered for modern spaces. Built with precision materials and intelligent technology to deliver seamless experiences in homes, offices, and commercial environments.
             </p>
           </div>
           <div className="flex items-center gap-3 sm:gap-4">

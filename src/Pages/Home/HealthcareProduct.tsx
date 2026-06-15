@@ -9,6 +9,8 @@ const healthcareProducts = [
   {
     id: "1",
     title: "X-Series",
+    subTitle:'Hospitality',
+    subTitleColor:'text-[#237C58]',
     logo: WohooLogo,
     image: HealthcareImage1,
     badge: ArrowIcon,
@@ -25,11 +27,13 @@ const healthcareProducts = [
   {
     id: "2",
     title: "Y-Series",
+    subTitle:'Senior Healthcare',
+    subTitleColor:'text-[#6366F1]',
     logo: WohooLogo,
     image: HealthcareImage2,
     badge: ArrowIcon,
     description:
-      "The guestroom, reimagined. Nine native revenue channels and the AI Recommendation Engine that doubles attach rates.",
+      "One caregiver, many patients. Built-in telehealth, medication reminders, social connection, and 330° patient view.",
     list: [
       "5MP HD camera with 330° rotation",
       "One-touch telehealth video",
@@ -41,11 +45,13 @@ const healthcareProducts = [
   {
     id: "3",
     title: "Z-Series",
+    subTitle:'Workplace',
+    subTitleColor:'text-[#06413F]',
     logo: WohooLogo,
     image: HealthcareImage3,
     badge: ArrowIcon,
     description:
-      "The guestroom, reimagined. Nine native revenue channels and the AI Recommendation Engine that doubles attach rates.",
+      "The office, automated. Meeting room control, visitor management, and ambient AI for the modern workplace.",
     list: [
       "Uniquely designed form factor",
       "Meeting room booking & control",
@@ -83,6 +89,8 @@ function HealthcareProduct() {
               key={product.id}
               id={product.id}
               title={product.title}
+              subTitle={product.subTitle}
+              subTitleColor={product.subTitleColor}
               image={product.image}
               logo={product.logo}
               description={product.description}

@@ -6,7 +6,6 @@ import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtable
 import woohooLogo from '../../assets/Icons/logo.svg';
 import ProductSection from '../../Components/Commons/ProductSection';
 import Specialized from './Specialized';
-import InsightSection from '../../Components/Commons/InsightSection';
 import Why from './Why';
 import Verdent from './Verdent';
 import Contact from './Contact';
@@ -30,7 +29,7 @@ function Avatar() {
         {
           image: KingdomImg,
           logo: woohooLogo,
-          title: 'Kingdome Series',
+          title: 'Z Series',
           route: '/z-series',
         //   description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
@@ -78,7 +77,6 @@ function Avatar() {
           />
         </div>
             ))}
-            <InsightSection/>
         </div>
     )
 }

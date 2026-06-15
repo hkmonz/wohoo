@@ -1,4 +1,4 @@
-import Logo from "../../assets/Images/logo-black.webp";
+import Logo from "../../assets/Icons/smartbeings.svg";
 import Sound from "../../assets/Icons/sound.svg";
 function Design() {
   return (
@@ -16,7 +16,7 @@ function Design() {
               Design in California, USA
             </h1>
             <p className="text-[#606060] font-inter font-normal text-base">
-              info@sparklehaze.com | www.sparklehaze.com
+              info@smartbeings.com | www.smartbeings.com
             </p>
           </div>
         </div>

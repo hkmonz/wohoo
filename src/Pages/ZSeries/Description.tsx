@@ -1,19 +1,18 @@
 import React from "react";
 
 const integrations = [
-  { label: "PMS", value: "Oracle Opera | WINs | Info | MEWS etc." },
-  { label: "POS", value: "Agilysys | Infrasys | Lightspeed | Symphony etc." },
-  { label: "PBX", value: "Alcatel Lucent | NetSapiens | Grandstream  etc." },
+  { label: "PMS", value: "Oracle Opera | WINs | MEWS " },
+  { label: "POS", value: "Agilysys | Infrasys | Lightspeed " },
+  { label: "PBX", value: "Alcatel Lucent | NetSapiens " },
   {
     label: "Room Automation",
     value:
-      "INTEREL | Honeywell | iRIS | VDA | Schneider | AMX | Lutron | Schneider etc.",
+      "INTEREL | Honeywell | VDA | Messerschmitt",
   },
   {
     label: "Housekeeping",
-    value: "Messagebox | Amadeus HotSOS | Knowcross | FCS | Go tickin  etc.",
+    value: "Messagebox | Amadeus HotSOS | Knowcross | FCS ",
   },
-  { label: "Table Management System", value: "Table check etc." },
 ];
 
 const specificationRows = [
@@ -97,16 +96,9 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          The WooHoo® X Series is an award-winning, enterprise-grade AI
-          assistant designed for the luxury hospitality industry. This
-          all-in-one device combines a phone, alarm clock, smart hub, and a
-          premium speaker powered by JBL for business, concierge automation,
-          guest data, and service digital menus for hotels. The X Series offers
-          third-party integration support to enable guest controls, automation,
-          menus, data, and beverage digital menus. For hotels, the X Series
-          offers the complete solution—includes personalized branding and voice
-          menus—and seamless integration with over 40+ hospitality systems to
-          streamline operations.
+          The WooHoo® Z-Series is a premium enterprise AI assistant engineered for modern hospitality, executive spaces, and smart environments where performance, design, and intelligent interaction come together. Combining immersive Sound by JBL audio, a vibrant 7-inch interactive touchscreen, integrated projection capabilities, and advanced voice AI into a single elegant device, the Z-Series delivers a seamless connected experience for both guests and professionals. <br />
+          Designed to simplify communication and room control, the Z-Series enables users to access digital services, manage smart room functions, place requests, make calls, and interact with personalized content through voice or touch. Its enterprise-grade security architecture, mobile device management (MDM) support, anti-theft protection, and built-in battery make it ideal for high-traffic Workplace & Office environments. <br />
+          With refined aesthetics and intelligent functionality, the WooHoo® Z-Series transforms everyday interactions into intuitive, immersive, and highly personalized experiences
         </p>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Integrations

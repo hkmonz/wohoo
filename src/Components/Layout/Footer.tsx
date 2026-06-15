@@ -53,7 +53,7 @@ export default function Footer({
           </h2>
           <p className="text-[#7C8A9F] leading-relaxed text-sm sm:text-base lg:text-lg">
             {aboutText ||
-              "WooHoo®️ is a Silicon Valley-based company and the developer of WooHoo®️ X Series powered by sound by JBL, an award-winning world's first Generative AI Voice Assistant. Redefining the landscape of technology, WooHoo®️ brings the power of Voice-as-a-Service (VaaS), and a Cloud-based AI Platform to Hospitality Industry, Senior care and Enterprises alike, delivering unparalleled convenience through advanced voice AI technologies."}
+              "SmartBeings is a Silicon Valley-based company and the developer of Agentic AI operating system for the physical enterprise, powered by sound by JBL, an award-winning world’s first Generative AI Voice Assistant. Redefining the landscape of technology, SmartBeings brings the power of Voice-as-a-Service (VaaS), and a Cloud-based AI Platform to Hospitality Industry, Senior care and Enterprises alike, delivering unparalleled convenience through advanced voice AI technologies."}
           </p>
         </div>
 

@@ -46,8 +46,7 @@ export function AwardAndRecognition({ Award }: { Award: AwardCarousel[] }) {
               Awards & Recognition
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
-              Our commitment to redefining guest experiences has earned us
-              recognition across global hospitality and technology platforms.
+              Recognized globally for innovation, craftsmanship, and product excellence, our solutions continue to earn industry-leading awards across design, performance, and user experience.
             </p>
           </div>
           <div className="flex items-center gap-3 sm:gap-4">

@@ -6,7 +6,6 @@ import woohooLogo from '../../assets/Icons/logo.svg';
 import KingdomImg from '../../assets/Images/workplacekingdom.webp';
 import AvatarImg from '../../assets/Images/workplaceavatar.webp';
 import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.webp';
-import InsightSection from "../../Components/Commons/InsightSection";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -33,7 +32,7 @@ function ZSeries() {
         {
           image: KingdomImg,
           logo: woohooLogo,
-          title: 'Kingdome Series',
+          title: 'Z Series',
           route: '/z-series',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
@@ -79,8 +78,6 @@ function ZSeries() {
           />
         </div>
       ))}
-      <InsightSection />
-
     </div>
   )
 }

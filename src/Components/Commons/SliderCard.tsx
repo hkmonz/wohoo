@@ -56,7 +56,7 @@ export function SliderCard({ image, video, title, description }: SliderCardProps
           <h3 className="text-lg sm:text-xl font-bold text-[#131313] mb-2">
             {title}
           </h3>
-          <p className="text-sm sm:text-base text-[#606060] line-clamp-3">
+          <p className="text-sm sm:text-base text-[#606060] line-clamp-8">
             {description}
           </p>
         </div>

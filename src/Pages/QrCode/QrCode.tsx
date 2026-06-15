@@ -6,7 +6,6 @@ import xSeriesImg from '../../assets/Images/x-series.webp';
 import tabletImg from '../../assets/Images/tablet.webp';
 import qrcodeImg from '../../assets/Images/qrcodes.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
-import InsightSection from "../../Components/Commons/InsightSection";
 function QrCode() {
   const sections = [
     {
@@ -73,7 +72,6 @@ function QrCode() {
           />
         </div>
       ))}
-      <InsightSection />
     </div>
   )
 }

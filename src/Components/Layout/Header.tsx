@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Logo from "../../assets/Icons/logo.svg";
+import WhiteLogo from "../../assets/Icons/whitelogo.svg";
 import BookDemo from "../Commons/BookDemo";
 import { FaCaretDown } from "react-icons/fa";
 import Button from "../Commons/Button";
@@ -18,7 +19,8 @@ const Header: React.FC = () => {
     const location = useLocation();
 
     const isSimpleNav = location.pathname === "/" || location.pathname === "/careers";
-
+const shouldShowWhiteLogo = location.pathname.includes("/healthcare") || location.pathname.includes("/workplace");
+const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
     const handleSelect = (label: string, path: string) => {
         setSelected(label);
         setOpenDropdown(false);
@@ -27,15 +29,15 @@ const Header: React.FC = () => {
 
 
     const tabs = [
-        { name: "Health Care", path: "/x-series" },
-        { name: "Hospitality", path: "/y-series" },
-        { name: "Workplace", path: "/z-series" },
+        { name: "Hospitality", path: "/hospitality" },
+        { name: "Health Care", path: "/healthcare" },
+        { name: "Workplace", path: "/workplace" },
     ];
 
     const tabRoutes: Record<string, string[]> = {
-        "Health Care": ["/x-series", "/tablet", "/qrcode"],
-        Hospitality: ["/y-series", "/wellness-dashboard", "/soundboard"],
-        Workplace: ["/z-series", "/meeting-room-tablet", "/avatar"],
+        "Hospitality": ["/hospitality" ,"/x-series", "/tablet", "/qrcode" ,"/products"],
+        "Health Care": ["/healthcare","/y-series", "/wellness-dashboard", "/soundboard"],
+        "Workplace": ["/workplace","/z-series", "/meeting-room-tablet", "/avatar"],
     };
 
     const getActiveTabFromPath = (pathname: string) => {
@@ -53,7 +55,7 @@ const Header: React.FC = () => {
     }, [location.pathname]);
     const menuLinks = [
         { name: "Home", to: "/" },
-        { name: "Products", to: "" },
+        { name: "Products", to: "/products" },
         { name: "Careers", to: "/careers" },
     ];
 
@@ -85,17 +87,10 @@ const Header: React.FC = () => {
         setMenuOpen(false);
     };
 
-    const scrollToExplore = () => {
-        document.getElementById("explore")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
 
     const handleProductsClick = () => {
-        setMenuOpen(false);
-        if (location.pathname === "/") {
-            scrollToExplore();
-        } else {
-            navigate("/#explore");
-        }
+
+            navigate("/products");
     };
 
     return (
@@ -243,7 +238,7 @@ const Header: React.FC = () => {
                     <div className="flex  justify-between items-center  h-16 md:h-20">
                         <div className="flex-shrink-0">
                             <Link to="/">
-                                <img src={Logo} alt="Logo" className="md:w-50 lg:w-auto" />
+                                <img src={currentLogo} alt="Logo" className="md:w-50 lg:w-auto" />
                             </Link>
                         </div>
                         <nav className="hidden md:flex flex-1 items-center justify-center">
@@ -252,7 +247,7 @@ const Header: React.FC = () => {
                                     <button
                                         key={tab.name}
                                         onClick={() => { setActiveTab(tab.name); navigate(tab.path); }}
-                                        className={`px-4 py-2 !text-base lg:!text-lg !font-medium rounded-full 
+                                        className={`px-4 py-2 !text-base lg:!text-lg !font-normal rounded-full 
     font-clash-display transition-all duration-200 whitespace-nowrap  // 👈 add this
     ${activeTab === tab.name
                                                 ? "bg-white text-[#181A1B] shadow-sm"

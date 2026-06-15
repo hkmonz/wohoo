@@ -4,7 +4,7 @@ function Description() {
       <div className="max-w-5xl mx-auto ">
         <div className="max-w-md">
         <h1 className="font-inter text-[30px] text-[#0F172A] font-semibold mb-6 pr-2">
-          SparkleHaze Services Intelligent Urban Management
+          SmartBeings Services Intelligent Urban Management
         </h1>
         </div>
         <p className="font-inter text-xl text-[#0F172A] font-normal">

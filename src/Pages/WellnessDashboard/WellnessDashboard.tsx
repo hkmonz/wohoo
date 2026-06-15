@@ -6,7 +6,6 @@ import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
 import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
 import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
-import InsightSection from "../../Components/Commons/InsightSection";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -72,7 +71,6 @@ function WellnessDashboard() {
                   products={section?.products}
                 />
               ))}
-              <InsightSection/>
     </div>
   )
 }

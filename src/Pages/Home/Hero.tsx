@@ -2,7 +2,8 @@ import HomeHeroImg from '../../assets/Images/HeaderGif.mp4'
 import IntelIcon from "../../assets/Icons/hero1.svg"
 import AppleIcon from "../../assets/Icons/hero2.svg"
 import AndriodIcon from "../../assets/Icons/hero3.svg"
-import UblIcon from '../../assets/Icons/hero4.svg'
+import SmartIcon from '../../assets/Icons/hero4.svg'
+import UblIcon from '../../assets/Icons/hero5.svg'
 import Button from '../../Components/Commons/Button'
 import { useState } from 'react'
 import BookDemo from '../../Components/Commons/BookDemo'
@@ -14,6 +15,7 @@ export default function Hero() {
     { name: "Intel", icon: IntelIcon, description: "Lorem ipsum dolor sit amet consectetur." },
     { name: "Apple", icon: AppleIcon, description: "Lorem ipsum dolor sit amet consectetur." },
     { name: "Android", icon: AndriodIcon, description: "Lorem ipsum dolor sit amet consectetur." },
+    { name: "Smart", icon: SmartIcon, description: "Lorem ipsum dolor sit amet consectetur." },
     { name: "UBL", icon: UblIcon, description: "Lorem ipsum dolor sit amet consectetur." }
   ]
 
@@ -29,12 +31,14 @@ export default function Hero() {
             </div>
             <div>
               <h1 className="text-[32px] sm:text-[48px] lg:text-[66px] max-w-3xl font-medium text-black leading-[1.2] lg:leading-[71.53px] tracking-tight">
-                Now experience the world of digital AI Assistants
+                The agentic 
+operating system <br />
+<span className='text-[#6B5FEF]'>for the physical 
+enterprise.</span>
               </h1>
             </div>
             <p className="text-[16px] sm:text-[18px] lg:text-[23px] max-w-2xl text-[#616161] leading-relaxed lg:leading-[26px] font-normal">
-              We&apos;re curating the future of digital ai through high-precision
-              engineering and human-centric product design.
+              We are curating the future of digital AI Assistants through high-precision engineering and human-centric product design.
             </p>
             <div className='flex flex-col md:flex-row gap-3'>
               <Button
@@ -49,7 +53,7 @@ export default function Hero() {
                 variant='secondary'
                 className='!px-6 sm:!px-8 lg:!px-9 !py-3 sm:!py-4 !text-sm sm:!text-base lg:!text-lg !font-normal'
               >
-                Explore Woohoo
+                Explore WooHoo
               </Button>
             </div>
           </div>

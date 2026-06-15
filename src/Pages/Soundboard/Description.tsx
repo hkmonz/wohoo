@@ -85,9 +85,9 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          SparkleHaze SoundBoard : Sound That Thrills. Audio That Heals. <br />{" "}
+          SmartBeings SoundBoard : Sound That Thrills. Audio That Heals. <br />{" "}
           Experience your favorite movies and music with breathtaking,
-          room-filling sound. But the SparkleHaze Sound Board is designed for
+          room-filling sound. But the SmartBeings Sound Board is designed for
           more. When the action is over, it becomes your personal tool for
           tranquility. Its advanced audio technology is perfectly tuned to
           create a calming atmosphere, helping you de-stress and unwind. From

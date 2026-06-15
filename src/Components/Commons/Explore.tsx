@@ -107,7 +107,7 @@ export default function Explore() {
         {
           image: KingdomImg,
           logo: woohooLogo,
-          title: 'Kingdome Series',
+          title: 'Z Series',
           route: '/z-series',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },

@@ -1,10 +1,10 @@
 import XSeriesCard from "../../Components/Commons/XSeriesCard";
-import xseriessmall1 from "../../assets/Images/yseriessmall1.webp";
-import xseriessmall2 from "../../assets/Images/yseriessmall2.webp";
-import xseriessmall3 from "../../assets/Images/yseriessmall3.webp";
-import xserieslarge1 from "../../assets/Images/yserieslarge1.webp";
-import xserieslarge2 from "../../assets/Images/yserieslarge2.webp";
-import xserieslarge3 from "../../assets/Images/yserieslarge3.webp";
+import xseriessmall1 from "../../assets/Images/yseriessmall1.png";
+import xseriessmall2 from "../../assets/Images/yseriessmall2.png";
+import xseriessmall3 from "../../assets/Images/yseriessmall3.png";
+import xserieslarge1 from "../../assets/Images/yserieslarge1.png";
+import xserieslarge2 from "../../assets/Images/yserieslarge2.png";
+import xserieslarge3 from "../../assets/Images/yserieslarge3.png";
 import WoohooLogo from "../../assets/Icons/sound.svg";
 import Wohoo from "../../assets/Icons/woohoo.svg";
 function YSeriesHero() {
@@ -14,10 +14,12 @@ function YSeriesHero() {
   const features = [
 
     "In-Room assistant (Phone, Clock, Speaker, Tablet)",
-    "Virtual care giving & remote monitoring",
+    "5MP HD camera with 330° rotation",
     "Help with telehealth consultations",
     "Gen AI based avatars with pill reminder",
-    "Video conferencing with friends and families"
+    "Video conferencing with friends and families",
+    "Meditative music helping with a sound sleep",
+    "Virtual care giving & remote monitoring"
 
   ];
   return (

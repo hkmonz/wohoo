@@ -6,7 +6,6 @@ import woohooLogo from '../../assets/Icons/logo.svg';
 import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
 import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
 import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
-import InsightSection from "../../Components/Commons/InsightSection";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -73,8 +72,6 @@ function YSeries() {
             products={section?.products}
           />
         ))}
-              <InsightSection/>
-
     </div>
   )
 }

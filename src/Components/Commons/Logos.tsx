@@ -12,16 +12,13 @@ type LogoItem = { src: string; alt: string; link: string };
 
 type HomeLogosProps = {
   logos?: LogoItem[];
-  /** Scroll direction for the marquee on smaller screens (and optionally lg) */
   direction?: "left" | "right";
-  /**
-   * If true, marquee is visible on lg screens as well (no static row).
-   * If false (default), static row on lg, marquee only below lg.
-   */
   marqueeOnLg?: boolean;
+  bgColor?:string
 };
 
 function HomeLogos({
+  bgColor,
   logos,
   direction = "left",
   marqueeOnLg = false,
@@ -30,9 +27,8 @@ function HomeLogos({
   const hasLogos = safeLogos.length > 0;
 
   return (
-    <div className="bg-black py-8">
+    <div className={`${bgColor ? bgColor : 'bg-black'} py-8`}>
       <div className="px-4">
-        {/* Desktop View (static row, only when marqueeOnLg is false) */}
         {!marqueeOnLg && (
           <div className="hidden lg:flex justify-around items-center">
             {safeLogos.map((logo, idx) => (
@@ -43,21 +39,18 @@ function HomeLogos({
                 rel="noopener noreferrer"
                 className="flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:opacity-100"
               >
-                <img src={logo?.src} alt={logo?.alt} className="h-16 md:h-20 w-auto" />
+                <img src={logo?.src} alt={logo?.alt} className="h-15 md:h-18 w-auto" />
               </a>
             ))}
           </div>
         )}
 
-        {/* Marquee View */}
         <div className={marqueeOnLg ? "" : "lg:hidden"}>
           {hasLogos ? (
             <Marquee
-              // core marquee behavior
               speed={40}
               pauseOnHover={true}
               gradient={false}
-              // custom direction
               direction={direction}
             >
               {safeLogos.map((logo, idx) => (

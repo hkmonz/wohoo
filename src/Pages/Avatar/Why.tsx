@@ -40,7 +40,7 @@ const Why: React.FC = () => {
         {/* Right: Content */}
         <div className="md:w-1/2 w-full flex flex-col items-start">
           <h2 className="text-black font-bold text-xl md:text-[32px] mb-4">
-            Why SparkleHaze with <br /> Verdant AI & Agents?
+            Why SmartBeings with <br /> Verdant AI & Agents?
           </h2>
           <ul className="space-y-5">
             {reasons.map((item, idx) => (
