@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom';
 import ProductCard from './Cards';
 
 export default function ProductSection({
@@ -11,6 +12,17 @@ export default function ProductSection({
   products,
   textWidth
 }: any) {
+    const navigate = useNavigate();
+
+  const handleExplore = () => {
+    if (category === 'hospitality') {
+      navigate('/hospitality');
+    } else if (category === 'healthcare') {
+      navigate('/healthcare');
+    } else if (category === 'workplace') {
+      navigate('/workplace');
+    }
+  };
   return (
     <section
       className={`py-16 ${
@@ -43,9 +55,9 @@ export default function ProductSection({
           <p className="text-gray-600 text-lg mb-8">{description}</p>
 
           <button
-          
+          onClick={handleExplore}
             className={`px-12 py-4 rounded-xl font-normal transition-all hover:shadow-lg ${buttonColor}`}
-          >
+            >
             Explore
           </button>
         </div>

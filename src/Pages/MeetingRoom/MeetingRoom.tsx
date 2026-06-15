@@ -45,7 +45,7 @@ function MeetingRoom() {
         {
           image: AvatarImg,
           logo: woohooLogo,
-          title: 'Avatar',
+          title: 'Conversational AI Avatar',
           route: '/avatar',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },

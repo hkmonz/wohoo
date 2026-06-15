@@ -72,7 +72,7 @@ const InsightSection: React.FC = () => {
             title: "WooHoo X-Series Selected by Elisium City Hotels for City-Wide Hospitality Upgrade",
             date: "August 25, 2025",
             author: "WooHoo",
-            link: "https://www.arabnews.com/node/2381546/saudi-arabia",
+            link: "https://www.forbes.com/sites/jonathanreichental/2025/07/06/inside-the-bold-vision-for-americas-first-cognitive-city/",
         },
         {
             id: 2,
