@@ -83,6 +83,7 @@ const Description: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <h3 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Description
+          
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
           SmartBeings SoundBoard : Sound That Thrills. Audio That Heals. <br />{" "}
