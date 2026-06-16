@@ -61,18 +61,18 @@ export default function Explore() {
     {
       category: 'healthcare',
       label: 'Health Care',
-      labelColor: 'text-[#6366F1]',
+      labelColor: 'text-white',
       mainTitle: [
-        { text: 'The Future of ', highlight: false },
+        { text: 'The Future of ', highlight: true },
         { text: 'Connected Healthcare', highlight: true },
-        { text: ' is an AI-Powered Experience.', highlight: false },
+        { text: ' is an AI-Powered Experience.', highlight: true },
       ],
       logoUrl: woohooLogo,
       textWidth: '',
 
-      highlightText: { color: 'text-[#6366F1]' },
+      highlightText: { color: 'text-white' },
       description: '',
-      buttonColor: 'bg-[#6366F1] !text-white',
+      buttonColor: 'bg-white !text-black',
       products: [
         {
           image: YSeriesImg,
