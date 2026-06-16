@@ -151,7 +151,7 @@ export default function Footer({
                     href="mailto:info@heywooohoo.com"
                     className="block hover:text-white transition-colors"
                   >
-                    info@heywooohoo.com
+                    Info@smartbeings.com
                   </a>
                 </div>
               </div>

@@ -29,7 +29,7 @@ export default function ProductSection({
         category === 'hospitality'
           ? 'bg-[#C0D9CF]'
           : category === 'healthcare'
-          ? 'bg-[#ECECFA]'
+          ? 'bg-[#6366F1]'
           : 'bg-[#06413F]'
       }`}
     >

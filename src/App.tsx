@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ScrollToTop from './Components/Commons/ScrollTop'
+import CookieConsent from './Components/Commons/CookieConsent'
 import Base from './Components/Layout/Base'
 import Home from './Pages/Home/Home'
 import Careers from './Pages/Careers/Careers'
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <CookieConsent />
       <Routes>
         <Route path="/" element={<Base />}>
           <Route path="/" element={<Home />} />
