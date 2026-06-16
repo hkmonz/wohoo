@@ -49,7 +49,7 @@ const WorkplaceHero: React.FC = () => {
                     <button
                         aria-label="Book a demo for digital AI voice assistants in hospitality"
                         onClick={() => setOpen(true)}
-                        className="mt-6 sm:mt-8 md:mt-10 duration-500 px-7 py-3 rounded-full bg-white font-inter !text-black font-medium text-lg shadow hover:bg-[#155c41] transition hover:scale-105"
+                        className="mt-6 sm:mt-8 md:mt-10 duration-500 px-7 py-3 rounded-full bg-white font-inter !text-black font-medium text-lg shadow  transition hover:scale-105"
                     >
                         Book A Demo
                     </button>

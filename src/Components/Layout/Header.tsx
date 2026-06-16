@@ -19,14 +19,18 @@ const Header: React.FC = () => {
     const location = useLocation();
 
     const isSimpleNav = location.pathname === "/" || location.pathname === "/careers";
-const shouldShowWhiteLogo = location.pathname.includes("/healthcare") || location.pathname.includes("/workplace");
-const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
+    const shouldShowWhiteLogo = location.pathname.includes("/healthcare") || location.pathname.includes("/workplace");
+
+    // Logo logic: 
+    // - On healthcare/workplace routes: show white logo when NOT scrolled, regular logo when scrolled
+    // - On other routes: always show regular logo
+    const currentLogo = shouldShowWhiteLogo && !isScrolled ? WhiteLogo : Logo;
+
     const handleSelect = (label: string, path: string) => {
         setSelected(label);
         setOpenDropdown(false);
         navigate(path);
     };
-
 
     const tabs = [
         { name: "Hospitality", path: "/hospitality" },
@@ -35,9 +39,9 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
     ];
 
     const tabRoutes: Record<string, string[]> = {
-        "Hospitality": ["/hospitality" ,"/x-series", "/tablet", "/qrcode" ,"/products"],
-        "Health Care": ["/healthcare","/y-series", "/wellness-dashboard", "/soundboard"],
-        "Workplace": ["/workplace","/z-series", "/meeting-room-tablet", "/avatar"],
+        "Hospitality": ["/hospitality", "/x-series", "/tablet", "/qrcode", "/products"],
+        "Health Care": ["/healthcare", "/y-series", "/wellness-dashboard", "/soundboard"],
+        "Workplace": ["/workplace", "/z-series", "/meeting-room-tablet", "/avatar"],
     };
 
     const getActiveTabFromPath = (pathname: string) => {
@@ -53,6 +57,7 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
         if (active) setSelected(active);
         setMenuOpen(false);
     }, [location.pathname]);
+
     const menuLinks = [
         { name: "Home", to: "/" },
         { name: "Products", to: "/products" },
@@ -87,10 +92,8 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
         setMenuOpen(false);
     };
 
-
     const handleProductsClick = () => {
-
-            navigate("/products");
+        navigate("/products");
     };
 
     return (
@@ -106,12 +109,9 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <div className="flex justify-between items-center h-16 md:h-20">
                                 <div className="flex-shrink-0">
-
                                     <Link to="/">
                                         <img src={Logo} alt="Logo" className="" />
                                     </Link>
-
-
                                 </div>
                                 {/* Desktop Navigation */}
                                 <nav className="hidden md:flex items-center gap-8">
@@ -135,7 +135,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                             </Link>
                                         )
                                     )}
-                                    {/* <Link to={} > */}
                                     <Button
                                         size="lg"
                                         onClick={() => setOpen(true)}
@@ -155,7 +154,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                         aria-label={menuOpen ? "Close Menu" : "Open Menu"}
                                     >
                                         {menuOpen ? (
-                                            // Cross (Close) Icon
                                             <svg
                                                 className="h-9 w-9 text-black"
                                                 fill="none"
@@ -170,7 +168,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                                 />
                                             </svg>
                                         ) : (
-                                            // Hamburger Icon
                                             <svg
                                                 className="h-9 w-9 text-black"
                                                 fill="none"
@@ -214,7 +211,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                         )}
                                         <Button
                                             size="lg"
-                                            // onClick={handleBookDemo}
                                             className="
     bg-gradient-to-r from-[#7D58EE] to-[#2B117E] !text-[19.2px]
     duration-500 hover:scale-105 !text-white !font-normal 
@@ -238,7 +234,12 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                     <div className="flex  justify-between items-center  h-16 md:h-20">
                         <div className="flex-shrink-0">
                             <Link to="/">
-                                <img src={currentLogo} alt="Logo" className="md:w-50 lg:w-auto" />
+                                {/* Logo changes based on scroll state and route */}
+                                <img
+                                    src={currentLogo}
+                                    alt="Logo"
+                                    className="md:w-50 lg:w-auto transition-all duration-300"
+                                />
                             </Link>
                         </div>
                         <nav className="hidden md:flex flex-1 items-center justify-center">
@@ -248,7 +249,7 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                         key={tab.name}
                                         onClick={() => { setActiveTab(tab.name); navigate(tab.path); }}
                                         className={`px-4 py-2 !text-base lg:!text-lg !font-normal rounded-full 
-    font-clash-display transition-all duration-200 whitespace-nowrap  // 👈 add this
+    font-clash-display transition-all duration-200 whitespace-nowrap
     ${activeTab === tab.name
                                                 ? "bg-white text-[#181A1B] shadow-sm"
                                                 : "!text-white hover:bg-white/20"
@@ -268,7 +269,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                                     type="button"
                                 >
                                     {menuOpen ? (
-                                        // Cross Icon
                                         <svg
                                             className="h-9 w-9"
                                             fill="none"
@@ -408,7 +408,6 @@ const currentLogo = shouldShowWhiteLogo ? WhiteLogo : Logo;
                 ${isScrolled ? "" : "bg-transparent"}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-center items-center">
-                        {/* Button */}
                         <button
                             onClick={() => setOpenDropdown(!openDropdown)}
                             className="
