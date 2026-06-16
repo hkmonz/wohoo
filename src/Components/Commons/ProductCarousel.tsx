@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import ReactMultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';

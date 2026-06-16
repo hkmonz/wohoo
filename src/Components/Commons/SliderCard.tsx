@@ -9,7 +9,7 @@ interface SliderCardProps {
   poster?: string; // Add poster image
 }
 
-export function SliderCard({ image, video, title, description, poster, isActive }: SliderCardProps) {
+export function SliderCard({ image, video, title, description, poster }: SliderCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
