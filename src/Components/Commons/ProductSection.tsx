@@ -66,6 +66,7 @@ export default function ProductSection({
           {products.map((product: any, index: any) => (
             <ProductCard
               key={index}
+              starImg={product.starImg}
               logoUrl={product.logo}
               image={product.image}
               logo={product.logo}

@@ -6,6 +6,9 @@ import xSeriesImg from '../../assets/Images/x-series.webp';
 import tabletImg from '../../assets/Images/tablet.webp';
 import qrcodeImg from '../../assets/Images/qrcodes.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
+import FiveStarImg from '../../assets/Icons/fivestar.svg';
+import FourStarImg from '../../assets/Icons/fourstar.svg';
+import ThreeStarImg from '../../assets/Icons/threestar.svg';
 function QrCode() {
   const sections = [
     {
@@ -28,6 +31,7 @@ function QrCode() {
           image: xSeriesImg,
           logo: woohooLogo,
           title: 'X-Series',
+          starImg: FiveStarImg,
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
           route: '/x-series',
         },
@@ -35,6 +39,7 @@ function QrCode() {
           image: tabletImg,
           logo: woohooLogo,
           title: 'Tablets',
+          starImg: FourStarImg,
           route: '/tablet',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
@@ -42,6 +47,7 @@ function QrCode() {
           image: qrcodeImg,
           logo: woohooLogo,
           title: 'QR Code',
+          starImg: ThreeStarImg,
           route: '/qrcode',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },

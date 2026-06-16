@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 
-export default function Cards({ image, title, description, logoUrl, route }:any) {
+export default function Cards({ image, title, description, logoUrl, route , starImg}:any) {
   return (
     <Link to={route}>
     <div className="bg-white rounded-2xl shadow-md overflow-hidden  hover:shadow-lg transition-shadow">
-      <div className=" overflow-hidden  justify-center items-center flex ">
+      {starImg && (
+          <div className="flex justify-center mt-2">
+            <img
+              src={starImg}
+              alt="Stars"
+              className=""
+            />
+          </div>
+        )}
+      <div className=" overflow-hidden  justify-center items-center flex px-5 pt-5 ">
         <img
           src={image}
           alt={title}
-          className=" rounded-xl px-5 pt-5 mx-3 transition-transform duration-300 transform hover:scale-118"
+          className=" rounded-xl  mx-3 transition-transform duration-300 transform hover:scale-118"
         />
       </div>
       <div className="p-4 text-center">
@@ -27,6 +36,7 @@ export default function Cards({ image, title, description, logoUrl, route }:any)
         <p className="text-sm text-gray-600">
           {description}
         </p>
+        
       </div>
     </div>
     </Link>

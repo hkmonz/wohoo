@@ -9,10 +9,14 @@ import KingdomImg from '../../assets/Images/workplacekingdom.webp';
 import AvatarImg from '../../assets/Images/workplaceavatar.webp';
 import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.webp';
 import woohooLogo from '../../assets/Icons/logo.svg';
+import FiveStarImg from '../../assets/Icons/fivestar.svg';
+import FourStarImg from '../../assets/Icons/fourstar.svg';
+import ThreeStarImg from '../../assets/Icons/threestar.svg';
 
 export default function Explore() {
   const sections = [
     {
+      
       category: 'hospitality',
       labelColor: 'text-[#6B9A86]',
       label: 'Hospitality',
@@ -29,6 +33,7 @@ export default function Explore() {
       buttonColor: '!bg-white  !text[#090909]',
       products: [
         {
+          starImg:FiveStarImg,
           image: xSeriesImg,
           logo: woohooLogo,
           title: 'X-Series',
@@ -36,6 +41,7 @@ export default function Explore() {
           route: '/x-series',
         },
         {
+          starImg:FourStarImg,
           image: tabletImg,
           logo: woohooLogo,
           title: 'Tablets',
@@ -43,6 +49,7 @@ export default function Explore() {
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
+          starImg:ThreeStarImg,
           image: qrcodeImg,
           logo: woohooLogo,
           title: 'QR Code',

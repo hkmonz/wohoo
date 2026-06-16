@@ -5,24 +5,29 @@ import tabletImg from '../../assets/Images/tablet.webp';
 import qrcodeImg from '../../assets/Images/qrcode.webp';
 import BookDemo from "../../Components/Commons/BookDemo";
 import Cards from "../../Components/Commons/Cards";
-
+import FiveStarImg from '../../assets/Icons/fivestar.svg';
+import FourStarImg from '../../assets/Icons/fourstar.svg';
+import ThreeStarImg from '../../assets/Icons/threestar.svg';
 const HospitalityHero: React.FC = () => {
     const [open, setOpen] = useState(false)
 
     const products = [
         {
+            starImg:FiveStarImg,
             image: xSeriesImg,
             logo: woohooLogo,
             title: 'X-Series',
             route: '/x-series',
         },
         {
+            starImg:FourStarImg,
             image: tabletImg,
             logo: woohooLogo,
             title: 'Tablets',
             route: '/tablet',
         },
         {
+            starImg:ThreeStarImg,
             image: qrcodeImg,
             logo: woohooLogo,
             title: 'QR Code',
@@ -67,6 +72,7 @@ const HospitalityHero: React.FC = () => {
                             <Cards
                                 image={product.image}
                                 title={product.title}
+                                starImg={product.starImg}
                                 description=""
                                 logoUrl={product.logo}
                                 route={product.route}

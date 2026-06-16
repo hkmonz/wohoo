@@ -6,6 +6,9 @@ import xSeriesImg from '../../assets/Images/x-series.webp';
 import tabletImg from '../../assets/Images/tablet.webp';
 import qrcodeImg from '../../assets/Images/qrcode.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
+import FiveStarImg from '../../assets/Icons/fivestar.svg';
+import FourStarImg from '../../assets/Icons/fourstar.svg';
+import ThreeStarImg from '../../assets/Icons/threestar.svg';
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -33,6 +36,7 @@ function Tablet() {
         {
           image: xSeriesImg,
           logo: woohooLogo,
+          starImg: FiveStarImg,
           title: 'X-Series',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
           route: '/x-series',
@@ -42,13 +46,16 @@ function Tablet() {
           logo: woohooLogo,
           title: 'Tablets',
           route: '/tablet',
+          starImg: FourStarImg,
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
         {
+          
           image: qrcodeImg,
           logo: woohooLogo,
           title: 'QR Code',
           route: '/qrcode',
+          starImg: ThreeStarImg,
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
         },
       ],
