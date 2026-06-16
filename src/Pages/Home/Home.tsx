@@ -48,6 +48,7 @@ import Logo19 from "../../assets/Icons/logo19.svg";
 import Logo20 from "../../assets/Icons/logo20.svg";
 import Logo21 from "../../assets/Icons/logo21.svg";
 import { AwardAndRecognition } from "../../Components/Commons/AwardAndRecognition";
+import Smartflow from "./Smartflow";
 
 export interface CarouselProduct {
   id: string;
@@ -165,6 +166,7 @@ function Home() {
       <HealthcareProduct />
       <ProductCarousel products={products} />
       <FeatureCarousel features={Features} />
+      <Smartflow/>
       <HomeLogos
       direction="right"
       marqueeOnLg={true}

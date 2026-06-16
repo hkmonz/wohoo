@@ -69,7 +69,7 @@ const Leadership: React.FC = () => {
                         Meet the team
                     </h1>
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#5A5C5D] max-w-4xl mx-auto">
-                        Working at SQUARE means collaborating with a diverse collective of
+                        Working at smartbeings means collaborating with a diverse collective of
                         engineers and designers who value craft above all else.          </p>
                 </div>
             </div>
