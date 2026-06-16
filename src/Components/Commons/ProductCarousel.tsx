@@ -16,18 +16,22 @@ export interface CarouselProduct {
 }
 
 const responsive = {
-  desktopLarge: {
-    breakpoint: { max: 3000, min: 1024 },
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1280 },
     items: 3,
     slidesToSlide: 1,
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 768 },
+  desktop: {
+    breakpoint: { max: 1280, min: 1024 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {    breakpoint: { max: 1024, min: 640 }, // Changed from 768 to 640
     items: 2,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 768, min: 0 },
+    breakpoint: { max: 640, min: 0 }, // Changed from 768 to 640
     items: 1,
     slidesToSlide: 1,
   },
@@ -122,10 +126,10 @@ export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
               <SliderCard
                 image={product?.image ?? ''}
                 video={product?.video}
-                poster={product?.poster || product?.image} // Use poster or fallback to image
+                poster={product?.poster || product?.image} 
                 title={product?.title ?? ''}
                 description={product?.description ?? ''}
-                isActive={currentSlide === index} // Only load when active
+                isActive={currentSlide === index} 
               />
             </div>
           ))}

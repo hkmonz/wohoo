@@ -35,7 +35,7 @@ const LogoImage = ({
     decoding="async"
     width={160}
     height={80}
-    className="h-16 md:h-20 w-auto object-contain"
+    className="h-14 md:h-18  object-contain"
   />
 );
 

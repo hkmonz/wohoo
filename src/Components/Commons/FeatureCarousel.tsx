@@ -12,8 +12,8 @@ export interface FeatureProduct {
 }
 
 const responsive = {
-  desktopLarge: {
-    breakpoint: { max: 3000, min: 1280 },
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1280 },
     items: 3,
     slidesToSlide: 1,
   },
@@ -22,13 +22,12 @@ const responsive = {
     items: 3,
     slidesToSlide: 1,
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 768 },
+  tablet: {    breakpoint: { max: 1024, min: 640 }, // Changed from 768 to 640
     items: 2,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 768, min: 0 },
+    breakpoint: { max: 640, min: 0 }, // Changed from 768 to 640
     items: 1,
     slidesToSlide: 1,
   },
@@ -120,18 +119,20 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
             ref={carouselRef}
             responsive={responsive}
             autoPlay
-            autoPlaySpeed={5000}
+            autoPlaySpeed={3000}
             infinite
             pauseOnHover
             showDots
             arrows={false}
             itemClass="feature-carousel-item"
             dotListClass="feature-dot-list"
+            partialVisible={false} // Add this to prevent partial items
+
           >
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative h-[420px] sm:h-[450px] md:h-[500px] lg:h-[550px] rounded-3xl overflow-hidden bg-black"
+                className="group relative h-[600px] sm:h-[500px] md:h-[500px] lg:h-[700px] rounded-3xl overflow-hidden bg-black"
               >
                 {feature.image && isVideoMedia(feature.image) ? (
                   <VideoCard src={feature.image} />

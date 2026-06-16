@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MdPlayArrow as Play, MdChevronRight as ChevronRight, MdChevronLeft as ChevronLeft } from 'react-icons/md';
 import { Modal } from 'antd';
 import 'antd/dist/reset.css';
@@ -11,6 +11,7 @@ import NewsImage5 from '../../assets/Images/news5.png';
 import VidImg1 from '../../assets/Images/vid1.webp';
 import VidImg2 from '../../assets/Images/vid2.webp';
 import VidImg3 from '../../assets/Images/vid3.webp';
+
 
 interface NewsArticle {
     id: number;
@@ -38,9 +39,6 @@ const InsightSection: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentVideoUrl, setCurrentVideoUrl] = useState('');
     const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
-    const [isVideoVisible, setIsVideoVisible] = useState(false);
-    const videoSectionRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLDivElement>(null);
 
     const videoUrls = [
         'https://www.youtube.com/embed/JS6Dk9lJj84?start=53&autoplay=1&mute=1',
@@ -48,6 +46,7 @@ const InsightSection: React.FC = () => {
         'https://www.youtube.com/embed/5wh7BBoapxY?autoplay=1&mute=1',
     ];
 
+    // Array of images corresponding to news articles
     const newsImages = [
         NewsImage,
         NewsImage1,
@@ -56,25 +55,6 @@ const InsightSection: React.FC = () => {
         NewsImage4,
         NewsImage5,
     ];
-
-    // Lazy load video iframe
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVideoVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.25 }
-        );
-
-        if (videoSectionRef.current) {
-            observer.observe(videoSectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
 
     const handleVideoClick = (videoIndex: number) => {
         setCurrentVideoUrl(videoUrls[videoIndex]);
@@ -101,7 +81,7 @@ const InsightSection: React.FC = () => {
             author: "WooHoo",
             link: "https://www.arabnews.com/node/2381546/saudi-arabia",
         },
-        {
+         {
             id: 3,
             title: "WooHoo Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
             date: "August 25, 2025",
@@ -129,6 +109,7 @@ const InsightSection: React.FC = () => {
             author: "WooHoo",
             link: "https://www.linkedin.com/posts/sparklehaze_elisiumkey-usa-elisiumkey-activity-7376716352591392768-_Db5?utm_source=share&utm_medium=member_ios&rcm=ACoAAAElvqsBz0cNSrZXCydh3ToSpuhAPA5J2pk",
         },
+        
     ];
 
     const testimonial: Testimonial = {
@@ -173,7 +154,7 @@ const InsightSection: React.FC = () => {
     const currentImage = newsImages[currentArticleIndex];
 
     return (
-        <div ref={sectionRef} className="w-full">
+        <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
                 {/* Row 1: News card + Featured image */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
@@ -207,7 +188,7 @@ const InsightSection: React.FC = () => {
                                         href={currentArticle.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex h-11 px-6 !text-[#7C56EC] text-sm sm:text-base hover:opacity-80 transition-opacity"
+                                        className="inline-flex h-20  !text-[#7C56EC] text-sm sm:text-base hover:opacity-80 transition-opacity"
                                     >
                                         Read More →
                                     </a>
@@ -246,47 +227,36 @@ const InsightSection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right: featured image - OPTIMIZED */}
-                    <div className="overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl">
-                        <div className="relative h-[300px] sm:h-[380px] md:h-[420px] lg:h-full bg-slate-200">
-                            <img
-                                src={currentImage}
-                                alt={`Featured news - ${currentArticle.title}`}
-                                loading="lazy"
-                                decoding="async"
-                                className="h-full w-full object-cover transition-all duration-300"
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).src =
-                                        'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
-                                }}
-                            />
-                        </div>
-                    </div>
+                    {/* Right: featured image */}
+                   <div className="overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl h-full">
+    <div className="relative w-full h-full">
+        <img
+            src={currentImage}
+            alt="Featured news"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
+            onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                    'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
+            }}
+        />
+    </div>
+</div>
                 </div>
 
                 {/* Row 2: Video and Testimonial */}
-                <div 
-                    ref={videoSectionRef}
-                    className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[1.05fr_0.95fr]"
-                >
-                    {/* Lazy load video iframe */}
-                    <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-xl">
-                        <div className="relative aspect-video overflow-hidden bg-slate-900">
-                            {isVideoVisible ? (
-                                <iframe
-                                    src="https://www.youtube.com/embed/JS6Dk9lJj84?start=53"
-                                    className="w-full h-full min-h-[200px] sm:min-h-[250px] rounded-xl"
-                                    title="Digital Transformation: Copthorne King's Hotel x Woohoo"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    loading="lazy"
-                                />
-                            ) : (
-                                <div className="w-full h-full bg-slate-800 flex items-center justify-center">
-                                    <div className="text-white/60">Loading video...</div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-xl h-full">
+    <div className="relative w-full h-full">
+        <iframe
+            src="https://www.youtube.com/embed/5wh7BBoapxY?&mute=1"
+            className="absolute inset-0 w-full h-full"
+            title="Digital Transformation: Copthorne King's Hotel x Woohoo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+        />
+    </div>
+</div>
 
                     <div className="overflow-hidden rounded-[2rem] bg-[#ECECFA] shadow-xl border border-slate-200 flex justify-center items-center">
                         <div className="p-8 sm:p-10 lg:p-8 max-w-sm">
@@ -300,6 +270,7 @@ const InsightSection: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Row 3: Feature video cards */}
                 <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     {featureCards.map((card, index) => (
                         <div
@@ -307,21 +278,26 @@ const InsightSection: React.FC = () => {
                             className={`${card.color} h-52 sm:h-56 lg:h-60 w-full relative overflow-hidden rounded-[2rem] p-6 md:p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-pointer group`}
                             onClick={() => handleVideoClick(index)}
                         >
+                            {/* Background image */}
                             <div className="absolute inset-0">
                                 <img
                                     src={card.image}
-                                    alt={`${card.title} background`}
-                                    loading="lazy"
-                                    decoding="async"
+                                    alt="Background"
                                     className="h-full w-full object-cover opacity-30"
                                 />
                             </div>
+
+                            {/* Overlay */}
                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all" />
+
+                            {/* Play button */}
                             <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 z-20">
                                 <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white shadow-2xl">
                                     <Play className="h-6 w-6 sm:h-7 sm:w-7 text-slate-900 ml-1" />
                                 </div>
                             </div>
+
+                            {/* Card title */}
                             <div className="absolute bottom-4 left-4 right-4 px-2 z-10">
                                 <h3 className="text-base sm:text-lg md:text-xl !font-normal text-white leading-tight">
                                     {card.title}
@@ -352,7 +328,6 @@ const InsightSection: React.FC = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                             frameBorder="0"
-                            loading="lazy"
                         />
                     )}
                 </div>

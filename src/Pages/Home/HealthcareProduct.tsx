@@ -9,6 +9,7 @@ const healthcareProducts = [
   {
     id: "1",
     title: "X-Series",
+    category: "Hospitality",
     subTitle:'Hospitality',
     subTitleColor:'text-[#237C58]',
     logo: WohooLogo,
@@ -27,6 +28,7 @@ const healthcareProducts = [
   {
     id: "2",
     title: "Y-Series",
+    category: "Healthcare",
     subTitle:'Senior Healthcare',
     subTitleColor:'text-[#6366F1]',
     logo: WohooLogo,
@@ -45,6 +47,7 @@ const healthcareProducts = [
   {
     id: "3",
     title: "Z-Series",
+    category: "Workplace",
     subTitle:'Workplace',
     subTitleColor:'text-[#06413F]',
     logo: WohooLogo,
@@ -86,6 +89,7 @@ function HealthcareProduct() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {products.map((product) => (
             <ProductCard
+            category={product.category}
               key={product.id}
               id={product.id}
               title={product.title}

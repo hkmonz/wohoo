@@ -7,10 +7,11 @@ import UblIcon from '../../assets/Icons/hero5.svg'
 import Button from '../../Components/Commons/Button'
 import { useState } from 'react'
 import BookDemo from '../../Components/Commons/BookDemo'
+import VideoModal from '../../Components/Commons/VideoModal'
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
-
+  const [openVideo, setOpenVideo] = useState(false);
   const partners = [
     { name: "Intel", icon: IntelIcon, description: "Lorem ipsum dolor sit amet consectetur." },
     { name: "Apple", icon: AppleIcon, description: "Lorem ipsum dolor sit amet consectetur." },
@@ -18,6 +19,11 @@ export default function Hero() {
     { name: "Smart", icon: SmartIcon, description: "Lorem ipsum dolor sit amet consectetur." },
     { name: "UBL", icon: UblIcon, description: "Lorem ipsum dolor sit amet consectetur." }
   ]
+
+  const handleNavigate = () => {
+    setOpenVideo(true);
+  }
+
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
@@ -49,6 +55,7 @@ enterprise.</span>
                 Book a demo
               </Button>
               <Button
+              onClick={handleNavigate}
                 size="lg"
                 variant='secondary'
                 className='!px-6 sm:!px-8 lg:!px-9 !py-3 sm:!py-4 !text-sm sm:!text-base lg:!text-lg !font-normal'
@@ -66,7 +73,7 @@ enterprise.</span>
               loop
               muted
               playsInline
-              className="relative z-10 w-full max-w-[280px] sm:max-w-[380px] md:max-w-[460px] lg:max-w-full h-auto"
+    className="relative z-10 w-full max-w-[620px] md:max-w-[550px] lg:max-w-[1000px] h-auto object-contain"
             />
           </div>
         </div>
@@ -96,6 +103,12 @@ enterprise.</span>
         </div>
       </div>
       <BookDemo open={open} onClose={() => setOpen(false)} />
+      <VideoModal
+        open={openVideo}
+        onClose={() => setOpenVideo(false)}
+        videoUrl="https://www.youtube.com/embed/5wh7BBoapxY?&mute=1"
+        title="Digital Transformation: Copthorne King's Hotel x Woohoo"
+      />
     </section>
   )
 }

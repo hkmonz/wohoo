@@ -15,7 +15,6 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Lazy load video when visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -73,7 +72,6 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
                 </div>
               </div>
             )}
-            
             <video
               ref={videoRef}
               poster={poster || image} 
@@ -86,7 +84,7 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
               onLoadStart={() => setIsLoading(true)}
               onCanPlay={() => setIsLoading(false)}
               onLoadedMetadata={() => setIsLoading(false)}
-              className="object-cover p-5 w-full cursor-pointer"
+              className="object-cover p-5 w-full  cursor-pointer"
             >
               <source src={video} type="video/mp4" />
             </video>
@@ -104,7 +102,7 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
           <h3 className="text-lg sm:text-xl font-bold text-[#131313] mb-2">
             {title}
           </h3>
-          <p className="text-sm sm:text-base text-[#606060] line-clamp-8">
+          <p className="text-sm sm:text-base text-[#606060]  line-clamp-8">
             {description}
           </p>
         </div>

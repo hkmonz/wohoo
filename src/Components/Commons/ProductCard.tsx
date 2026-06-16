@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface ProductCardProps {
   id?: string;
   title?: string;
@@ -8,10 +10,12 @@ interface ProductCardProps {
   badge?: string;
   logo?: any;
   list?: string[]; 
+  category?: string;
 }
 
 export function ProductCard({
   title,
+  category,
   subTitle,
   subTitleColor,
   image,
@@ -20,8 +24,28 @@ export function ProductCard({
   logo,
   list,
 }: ProductCardProps) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    switch (category?.toLowerCase()) {
+      case "hospitality":
+        navigate("/x-series");
+        break;
+
+      case "healthcare":
+        navigate("/y-series");
+        break;
+
+      case "workplace":
+        navigate("/z-series");
+        break;
+
+      default:
+        break;
+    }
+  };
   return (
-    <div className="group relative w-full h-auto overflow-hidden rounded-3xl bg-white shadow-lg transition-all">
+    <div onClick={handleCardClick} className="group relative w-full h-auto overflow-hidden rounded-3xl bg-white shadow-lg transition-all">
             <div className="relative w-full overflow-hidden">
         <img
           src={image}
