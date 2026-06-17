@@ -31,9 +31,15 @@ const ExploreCard: React.FC<FeatureCardProps> = ({ label, title, description, la
             <h2 className="!min-w-3xl text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-medium leading-tight text-[#140D2D] mb-2 sm:mb-3">
               {title}
             </h2>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-[#616161] max-w-xl">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed text-[#616161] max-w-xl mb-5">
               {description}
             </p>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-full bg-[#6B5FEF] px-10 py-3 text-sm md:!text-base font-normal text-white shadow-lg transition hover:bg-[#5848c6]"
+            >
+              Apply
+            </button>
           </div>
         </div>
 
