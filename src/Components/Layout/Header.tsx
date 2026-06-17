@@ -34,13 +34,13 @@ const Header: React.FC = () => {
 
     const tabs = [
         { name: "Hospitality", path: "/hospitality" },
-        { name: "Health Care", path: "/healthcare" },
+        { name: "Healthcare", path: "/healthcare" },
         { name: "Workplace", path: "/workplace" },
     ];
 
     const tabRoutes: Record<string, string[]> = {
         "Hospitality": ["/hospitality", "/x-series", "/tablet", "/qrcode", "/products"],
-        "Health Care": ["/healthcare", "/y-series", "/wellness-dashboard", "/soundboard"],
+        "Healthcare": ["/healthcare", "/y-series", "/wellness-dashboard", "/soundboard"],
         "Workplace": ["/workplace", "/z-series", "/meeting-room-tablet", "/avatar"],
     };
 

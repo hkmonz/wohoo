@@ -11,7 +11,7 @@ function Soundboard() {
     const sections = [
         {
             category: 'healthcare',
-            label: 'Health Care',
+            label: 'Healthcare',
             labelColor: 'text-white',
             mainTitle: [
                 { text: 'The Future of ', highlight: true },

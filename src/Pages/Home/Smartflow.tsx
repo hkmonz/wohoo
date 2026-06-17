@@ -25,7 +25,7 @@ export default function Smartflow() {
 
     return (
         <section>
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-16 sm:py-10 lg:py-20 text-center">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 text-center">
                 <span className="inline-block text-xs sm:text-sm font-normal tracking-[0.2em] text-black uppercase mb-2">
                     SMARTFLOW
                 </span>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { ReactNode } from 'react';
 
 interface FooterSectionItem {
@@ -35,6 +36,7 @@ export default function Footer({
   socialLinks = [],
 }: FooterProps) {
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -106,16 +108,23 @@ export default function Footer({
                   What We Do
                 </h3>
                 <ul className="space-y-2 sm:space-y-3">
-                  {['Hospitality', 'Co-Innovate', 'Senior Care', 'Consumer'].map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
-                        className="text-[#7C8A9F] text-sm sm:text-base lg:text-lg hover:text-white transition-colors"
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  ))}
+                  {['Hospitality', 'Healthcare', 'Workplace'].map((item) => {
+                    const route = `/${item.toLowerCase()}`;
+                    return (
+                      <li key={item}>
+                        <a
+                          href={route}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigate(route);
+                          }}
+                          className="text-[#7C8A9F] text-sm sm:text-base lg:text-lg hover:text-white transition-colors"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 

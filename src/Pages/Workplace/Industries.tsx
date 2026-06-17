@@ -8,7 +8,7 @@ const items = [
   "Architectural Design",
   "Hardware Manufacturing",
   "Real Estate",
-  "Health Care",
+  "Healthcare",
   "Hospitality",
   "Government",
 ];

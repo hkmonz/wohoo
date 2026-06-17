@@ -60,7 +60,7 @@ export default function Explore() {
     },
     {
       category: 'healthcare',
-      label: 'Health Care',
+      label: 'Healthcare',
       labelColor: 'text-white',
       mainTitle: [
         { text: 'The Future of ', highlight: true },

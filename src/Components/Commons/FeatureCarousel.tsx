@@ -12,8 +12,8 @@ export interface FeatureProduct {
 }
 
 const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 1280 },
+  desktopLarge: {
+    breakpoint: { max: 3000, min: 1280 },
     items: 3,
     slidesToSlide: 1,
   },
@@ -22,12 +22,13 @@ const responsive = {
     items: 3,
     slidesToSlide: 1,
   },
-  tablet: {    breakpoint: { max: 1024, min: 640 }, // Changed from 768 to 640
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
     items: 2,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 640, min: 0 }, // Changed from 768 to 640
+    breakpoint: { max: 768, min: 0 },
     items: 1,
     slidesToSlide: 1,
   },
@@ -91,7 +92,7 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <div className="flex-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
-                More features to empower hospitality & health care industry
+                More features to empower hospitality & healthcare industry
               </h1>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -126,13 +127,11 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
             arrows={false}
             itemClass="feature-carousel-item"
             dotListClass="feature-dot-list"
-            partialVisible={false} // Add this to prevent partial items
-
           >
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative h-[600px] sm:h-[500px] md:h-[500px] lg:h-[700px] rounded-3xl overflow-hidden bg-black"
+                className="group relative h-[665px] rounded-3xl overflow-hidden bg-black"
               >
                 {feature.image && isVideoMedia(feature.image) ? (
                   <VideoCard src={feature.image} />
