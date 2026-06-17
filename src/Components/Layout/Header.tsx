@@ -21,9 +21,6 @@ const Header: React.FC = () => {
     const isSimpleNav = location.pathname === "/" || location.pathname === "/careers";
     const shouldShowWhiteLogo = location.pathname.includes("/healthcare") || location.pathname.includes("/workplace");
 
-    // Logo logic: 
-    // - On healthcare/workplace routes: show white logo when NOT scrolled, regular logo when scrolled
-    // - On other routes: always show regular logo
     const currentLogo = shouldShowWhiteLogo && !isScrolled ? WhiteLogo : Logo;
 
     const handleSelect = (label: string, path: string) => {
@@ -115,26 +112,15 @@ const Header: React.FC = () => {
                                 </div>
                                 {/* Desktop Navigation */}
                                 <nav className="hidden md:flex items-center gap-8">
-                                    {menuLinks.map((link) =>
-                                        link.name === "Products" ? (
-                                            <button
-                                                key={link.name}
-                                                type="button"
-                                                onClick={handleProductsClick}
-                                                className="font-normal text-[19.2px] transition text-black"
-                                            >
-                                                {link.name}
-                                            </button>
-                                        ) : (
-                                            <Link
-                                                key={link.name}
-                                                to={link.to}
-                                                className="font-normal text-[19.2px] transition text-black"
-                                            >
-                                                {link.name}
-                                            </Link>
-                                        )
-                                    )}
+                                    {menuLinks.map((link) => (
+                                        <Link
+                                            key={link.name}
+                                            to={link.to}
+                                            className="font-inter font-normal text-[19.2px] transition text-black"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
                                     <Button
                                         size="lg"
                                         onClick={() => setOpen(true)}
@@ -188,27 +174,16 @@ const Header: React.FC = () => {
                             {menuOpen && (
                                 <div className="md:hidden absolute h-screen left-0 w-full bg-white shadow-lg z-50 flex items-center justify-center">
                                     <div className="flex flex-col items-center justify-center w-full gap-4">
-                                        {menuLinks.map((link) =>
-                                            link.name === "Products" ? (
-                                                <button
-                                                    key={link.name}
-                                                    type="button"
-                                                    onClick={handleProductsClick}
-                                                    className="font-inter font-semibold text-lg text-black w-full text-center"
-                                                >
-                                                    {link.name}
-                                                </button>
-                                            ) : (
-                                                <Link
-                                                    key={link.name}
-                                                    to={link.to}
-                                                    className="font-inter font-semibold text-lg text-black w-full text-center"
-                                                    onClick={() => setMenuOpen(false)}
-                                                >
-                                                    {link.name}
-                                                </Link>
-                                            )
-                                        )}
+                                        {menuLinks.map((link) => (
+                                            <Link
+                                                key={link.name}
+                                                to={link.to}
+                                                className="font-inter font-normal text-lg text-black w-full text-center"
+                                                onClick={() => setMenuOpen(false)}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))}
                                         <Button
                                             size="lg"
                                             className="

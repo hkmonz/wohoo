@@ -2,7 +2,7 @@ import HomeHeroImg from '../../assets/Images/HeaderGif.mp4'
 import IntelIcon from "../../assets/Icons/hero1.svg"
 import AppleIcon from "../../assets/Icons/hero2.svg"
 import AndriodIcon from "../../assets/Icons/hero3.svg"
-import SmartIcon from '../../assets/Icons/hero4.svg'
+import SmartIcon from '../../assets/Icons/google.svg'
 import UblIcon from '../../assets/Icons/hero5.svg'
 import Button from '../../Components/Commons/Button'
 import { useState } from 'react'

@@ -1,4 +1,4 @@
-import Leadership from './Leadership'
+// import Leadership from './Leadership'
 import Hero from './Hero'
 import ExploreCard from '../../Components/Commons/ExploreCard'
 import AwardCarousel from '../../Components/Commons/AwardCarousel'
@@ -65,7 +65,7 @@ function Careers() {
                     imgWidth={card.imgWidth}
                 />
             ))}
-            <Leadership />
+            {/* <Leadership /> */}
             <AwardCarousel/>
             <InsightSection/>
         </div>

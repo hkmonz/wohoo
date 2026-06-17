@@ -113,16 +113,16 @@ const Description: React.FC = () => {
                       {specIdx === 0 && (
                         <td
                           rowSpan={row.specs.length}
-                          className="py-3 px-4 font-normal  font-inter text-base text-[#606060] bg-[#ECF0F6] w-[220px]  align-middle border border-[#EEF2F6]"
+                          className="py-3 px-4 font-normal  font-inter text-base text-[#606060] bg-[#F9F9F9] w-[220px]  align-middle border border-[#EEF2F6]"
                         >
                           {row.label}
                         </td>
                       )}
-                      <td className="py-3 px-4 align-top  font-normal font-inter text-base text-[#606060] bg-[#ECF0F6] w-[180px] border border-[#EEF2F6]">
+                      <td className="py-3 px-4 align-top  font-normal font-inter text-base text-[#606060] bg-[#F9F9F9] w-[180px] border border-[#EEF2F6]">
                         {spec.name}
                       </td>
 
-                      <td className="py-3 px-4 align-top bg-[#ECF0F6] font-normal font-inter text-base text-[#606060]">
+                      <td className="py-3 px-4 align-top bg-[#F9F9F9] font-normal font-inter text-base text-[#606060]">
                         {spec.value}
                       </td>
                     </tr>
