@@ -166,7 +166,6 @@ function Home() {
       <HealthcareProduct />
       <ProductCarousel products={products} />
       <FeatureCarousel features={Features} />
-      <Smartflow/>
       <HomeLogos
       direction="right"
       marqueeOnLg={true}
@@ -206,6 +205,7 @@ function Home() {
         { src: Logo21, alt: "logo21", link: "" },
       ]} />
       <Plateform />
+      <Smartflow/>
       <Explore />
       <AwardAndRecognition Award={Award} />
       <InsightSection/>

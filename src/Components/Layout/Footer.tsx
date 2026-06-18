@@ -128,29 +128,8 @@ export default function Footer({
                 </ul>
               </div>
 
-              {/* Useful Links */}
-              <div>
-                <h3 className="text-white !font-normal mb-4 sm:mb-6 !text-lg sm:!text-xl">
-                  Useful Links
-                </h3>
-                <ul className="space-y-2 sm:space-y-3">
-                  {['General Info', 'Resources', 'Privacy Policy', 'Terms Of Services', 'Contract & Payment'].map(
-                    (item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
-                          className="text-[#7C8A9F] text-sm sm:text-base lg:text-lg hover:text-white transition-colors"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-
               {/* Connect With Us */}
-              <div className="sm:col-span-2 md:col-span-1">
+              <div>
                 <h3 className="text-white !font-normal mb-4 sm:mb-6 !text-lg sm:!text-xl">
                   Connect With Us
                 </h3>
@@ -164,34 +143,36 @@ export default function Footer({
                   </a>
                 </div>
               </div>
+
+              {/* Subscribe to Our Latest News */}
+              <div className="sm:col-span-2 md:col-span-1">
+                <h3 className="text-white !font-normal mb-4 sm:mb-6 !text-lg sm:!text-xl lg:!text-2xl">
+                  {newsletterTitle}
+                </h3>
+                <form
+                  onSubmit={handleSubscribe}
+                  className="max-w-3xl"
+                >
+                  <div className="flex flex-col sm:flex-row items-center bg-white rounded-full p-1 shadow-[0_10px_30px_rgba(22,22,48,0.12)]">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email here"
+                      className="flex-1 min-w-0 rounded-full border border-transparent bg-white px-6 py-4 text-slate-900 text-sm sm:text-base placeholder:text-slate-400 focus:outline-none"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="mt-3 sm:mt-0 sm:ml-3 inline-flex h-12 items-center justify-center rounded-full bg-[#A081FF] px-8 text-white text-sm sm:text-base font-medium whitespace-nowrap shadow-lg transition hover:bg-[#8a6bec]"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
             </>
           )}
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="py-8 sm:py-10 lg:py-12 border-b border-t border-slate-800">
-          <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-semibold !mb-4 sm:!mb-6">
-            {newsletterTitle}
-          </h3>
-          <form
-            onSubmit={handleSubscribe}
-            className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:items-center max-w-2xl"
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email here"
-              className="w-full flex-1 rounded-full border border-slate-700 bg-white px-5 py-3 sm:py-4 !text-black text-sm sm:text-base placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
-              required
-            />
-            <button
-              type="submit"
-              className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full bg-[#A081FF] px-6 sm:px-8 !text-white text-sm sm:text-base font-normal whitespace-nowrap"
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
 
         {/* Bottom Footer */}
