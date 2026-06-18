@@ -153,18 +153,18 @@ export default function Footer({
                   onSubmit={handleSubscribe}
                   className="max-w-3xl"
                 >
-                  <div className="flex flex-col sm:flex-row items-center bg-white rounded-full p-1 shadow-[0_10px_30px_rgba(22,22,48,0.12)]">
+                  <div className="flex flex-col lg:flex-row items-stretch gap-2  md:bg-none lg:bg-white rounded-full p-1 shadow-[0_10px_30px_rgba(22,22,48,0.12)]">
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Email here"
-                      className="flex-1 min-w-0 rounded-full border border-transparent bg-white px-6 py-4 text-slate-900 text-sm sm:text-base placeholder:text-slate-400 focus:outline-none"
+                      className="flex-1 min-w-0 rounded-full border border-transparent bg-white px-5 py-3 sm:px-6 sm:py-4 text-slate-900 text-sm sm:text-base placeholder:text-slate-400 focus:outline-none"
                       required
                     />
                     <button
                       type="submit"
-                      className="mt-3 sm:mt-0 sm:ml-3 inline-flex h-12 items-center justify-center rounded-full bg-[#A081FF] px-8 text-white text-sm sm:text-base font-medium whitespace-nowrap shadow-lg transition hover:bg-[#8a6bec]"
+                      className="mt-3 sm:mt-0 sm:ml-3 inline-flex w-full sm:w-auto h-13 items-center justify-center rounded-full bg-[#A081FF] px-6 sm:px-8 text-white text-sm sm:text-base font-medium whitespace-nowrap shadow-lg transition hover:bg-[#8a6bec]"
                     >
                       Subscribe
                     </button>
