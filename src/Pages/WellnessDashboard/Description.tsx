@@ -8,7 +8,7 @@ const Specification = [
   { label: "Processor", value: "Quad-Core AI Optimized Processor" },
   { label: "Memory (RAM)", value: "8 GB" },
   { label: "Internal Storage", value: "128 GB SSD" },
-  { label: "Operating System", value: "WooHoo Wellness OS" },
+  { label: "Operating System", value: "WooHoo® Wellness OS" },
   { label: "Connectivity", value: "Wi-Fi 6, Bluetooth 5.2" },
   { label: "Smart Integration", value: "Apple Health, Google Fit, Fitbit" },
   { label: "Health Monitoring", value: "Sleep, Activity, Heart Rate, Hydration" },

@@ -62,6 +62,7 @@ function Careers() {
                     description={card.description}
                     labelColor={card.labelColor}
                     image={card.image}
+                    applyLink={"https://forms.gle/Bjyd7cvytGXY4XtQ8"}
                     imgWidth={card.imgWidth}
                 />
             ))}

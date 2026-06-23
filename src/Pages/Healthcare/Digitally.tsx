@@ -11,7 +11,7 @@ const cards = [
   {
     id: 1,
     logo: SpendspereLogo,
-    title: "WooHoo(R) Personal Wellness Dashboard:",
+    title: "WooHoo® Personal Wellness Dashboard:",
     subTitle: "Your AI-Powered On-Demand and private booth for Employee/Visitor Recharge and Focus",
     img: digitally3,
     description: [
@@ -28,7 +28,7 @@ const cards = [
   {
     id: 2,
     logo: SparklehazeLogo,
-    title: "WooHoo(R) SoundBoard:",
+    title: "WooHoo® SoundBoard:",
     subTitle: "Audio Hub for Your Daily Wellness Rituals by SparkleHaze",
     description: [
       "Expansive Sound Sanctuary with Virtual Surround",
@@ -46,7 +46,7 @@ const cards = [
     id: 3,
     logo: X3niaLogo,
     img: digitally1,
-    title: "WooHoo(R) Y Series For Senior Care:",
+    title: "WooHoo® Y Series For Senior Care:",
     subTitle: "The Proactive AI Companion Redefining Safety, Health, and Connection for Modern Ageing",
     description: [
       "Proactive AI Safety Net with 360° Fall Detection",

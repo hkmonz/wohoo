@@ -37,7 +37,7 @@ const HospitalityHero: React.FC = () => {
     return (
         <div>
             <section
-                className="flex justify-center items-center pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen  bg-[#C0D9CF]"
+                className="flex justify-center items-center md:pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen  bg-[#C0D9CF]"
 
             >
                 <div className="max-w-5xl mx-auto text-center">
@@ -45,12 +45,12 @@ const HospitalityHero: React.FC = () => {
               Hospitality
             </p>
                     <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-normal leading-tight text-[#222]">
-                        Now experience 
-                        the world of{" "}
+                        Now Experience 
+                        the World of{" "}
                         Digital Voice AI
                         Assistants in
                         <span className="text-[#1D6748] "> {" "}
-                        hospitality.
+                        Hospitality.
                         </span>
                             
                     </h1>

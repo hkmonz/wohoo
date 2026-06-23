@@ -172,28 +172,30 @@ const Header: React.FC = () => {
                                 </div>
                             </div>
                             {menuOpen && (
-                                <div className="md:hidden absolute h-screen left-0 w-full bg-white shadow-lg z-50 flex items-center justify-center">
-                                    <div className="flex flex-col items-center justify-center w-full gap-4">
+                                <div className="md:hidden fixed inset-x-0 top-16 h-[calc(100vh-4rem)] bg-white shadow-lg z-50 overflow-y-auto">
+                                    <div className="flex flex-col items-start justify-start w-full gap-4 pt-6 pl-4 pb-8">
                                         {menuLinks.map((link) => (
                                             <Link
                                                 key={link.name}
                                                 to={link.to}
-                                                className="font-inter font-normal text-lg text-black w-full text-center"
+                                                className="font-inter font-normal text-lg text-black w-full text-left pl-2"
                                                 onClick={() => setMenuOpen(false)}
                                             >
                                                 {link.name}
                                             </Link>
                                         ))}
-                                        <Button
-                                            size="lg"
-                                            className="
+                                        <div className="w-full flex justify-start pl-2">
+                                            <Button
+                                                size="lg"
+                                                className="
     bg-gradient-to-r from-[#7D58EE] to-[#2B117E] !text-[19.2px]
     duration-500 hover:scale-105 !text-white !font-normal 
     !px-6 !py-3 !rounded-[16px] shadow transition
   "
-                                        >
-                                            Contact Us
-                                        </Button>
+                                            >
+                                                Contact Us
+                                            </Button>
+                                        </div>
                                     </div>
                                 </div>
                             )}
@@ -316,61 +318,63 @@ const Header: React.FC = () => {
                                 )}
                                 {menuOpen && (
                                     <div
-                                        className="fixed inset-x-0 top-16 h-[calc(100vh-4rem)] bg-white 
-                shadow-lg border-t border-[#e6f4ef] z-50 md:hidden animate-fadeIn"
-                                    >
-                                        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col items-center ">
-                                            <ul className="flex flex-col items-center  w-full">
-                                                {menuLinks.map((link) => (
-                                                    <li key={link.name} className="w-full">
-                                                        {link.name === "Products" ? (
-                                                            <button
-                                                                type="button"
-                                                                onClick={handleProductsClick}
-                                                                className="block w-full text-center px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] text-[#17423b] transition"
-                                                            >
-                                                                {link.name}
-                                                            </button>
-                                                        ) : (
+                                            className="fixed inset-x-0 top-16 h-[calc(100vh-4rem)] bg-white 
+                    shadow-lg border-t border-[#e6f4ef] z-50 md:hidden animate-fadeIn"
+                                        >
+                                            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col items-start">
+                                                <ul className="flex flex-col items-start w-full !mb-0">
+                                                    {menuLinks.map((link) => (
+                                                        <li key={link.name} className="w-full">
+                                                            {link.name === "Products" ? (
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={handleProductsClick}
+                                                                    className="block w-full text-left px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] !text-[#17423b] transition pl-2"
+                                                                >
+                                                                    {link.name}
+                                                                </button>
+                                                            ) : (
+                                                                <Link
+                                                                    to={link.to}
+                                                                    className="block w-full text-left px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] !text-[#17423b] transition pl-2"
+                                                                    onClick={() => setMenuOpen(false)}
+                                                                >
+                                                                    {link.name}
+                                                                </Link>
+                                                            )}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                                <ul className="flex flex-col items-start w-full ">
+                                                    {tabs.map((link) => (
+                                                        <li key={link.name} className="w-full">
                                                             <Link
-                                                                to={link.to}
-                                                                className="block w-full text-center px-5 py-3 font-inter text-lg font-normal rounded-lg hover:bg-[#e6f4ef] text-[#17423b] transition"
+                                                                to={link.path}
+                                                                className="block w-full text-left px-5 py-3 
+                                font-inter text-lg font-normal rounded-lg 
+                                hover:bg-[#e6f4ef] text-[#17423b] transition pl-2"
                                                                 onClick={() => setMenuOpen(false)}
                                                             >
                                                                 {link.name}
                                                             </Link>
-                                                        )}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            <ul className="flex flex-col items-center  w-full">
-                                                {tabs.map((link) => (
-                                                    <li key={link.name} className="w-full">
-                                                        <Link
-                                                            to={link.path}
-                                                            className="block w-full text-center px-5 py-3 
-                            font-inter text-lg font-medium rounded-lg 
-                            hover:bg-[#e6f4ef] text-[#17423b] transition"
-                                                            onClick={() => setMenuOpen(false)}
-                                                        >
-                                                            {link.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                                        </li>
+                                                    ))}
+                                                </ul>
 
-                                            <button
-                                                className="
-        bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
-        duration-500 hover:scale-105 !text-white !font-normal 
-        !px-6 !py-3 !rounded-[16px] shadow transition
-    "
-                                                onClick={handleDemo}
-                                            >
-                                                Book a Demo
-                                            </button>
+                                                <div className="w-full flex justify-start pl-2 pt-2">
+                                                    <button
+                                                        className="
+            bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]
+            duration-500 hover:scale-105 !text-white !font-normal 
+            !px-6 !py-3 !rounded-[16px] shadow transition
+        "
+                                                        onClick={handleDemo}
+                                                    >
+                                                        Book a Demo
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
                                 )}
                             </div>
                         </div>

@@ -69,7 +69,7 @@ const InsightSection: React.FC = () => {
     const newsArticles: NewsArticle[] = [
         {
             id: 1,
-            title: "WooHoo X-Series Selected by Elisium City Hotels for City-Wide Hospitality Upgrade",
+            title: "WooHoo® X-Series Selected by Elisium City Hotels for City-Wide Hospitality Upgrade",
             date: "August 25, 2025",
             author: "WooHoo",
             link: "https://www.forbes.com/sites/jonathanreichental/2025/07/06/inside-the-bold-vision-for-americas-first-cognitive-city/",
@@ -81,9 +81,9 @@ const InsightSection: React.FC = () => {
             author: "WooHoo",
             link: "https://www.arabnews.com/node/2381546/saudi-arabia",
         },
-         {
+        {
             id: 3,
-            title: "WooHoo Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
+            title: "WooHoo® Partners with Intel to Redefine the Hotel Guest Experience with Generative Voice AI Assistant Speaker",
             date: "August 25, 2025",
             author: "WooHoo",
             link: "https://hoteltechnologynews.com/2023/11/woohoo-partners-with-intel-to-redefine-the-hotel-guest-experience-with-next-generation-voice-ai-assistant-speaker/",
@@ -109,7 +109,7 @@ const InsightSection: React.FC = () => {
             author: "WooHoo",
             link: "https://www.linkedin.com/posts/sparklehaze_elisiumkey-usa-elisiumkey-activity-7376716352591392768-_Db5?utm_source=share&utm_medium=member_ios&rcm=ACoAAAElvqsBz0cNSrZXCydh3ToSpuhAPA5J2pk",
         },
-        
+
     ];
 
     const testimonial: Testimonial = {
@@ -121,21 +121,21 @@ const InsightSection: React.FC = () => {
     const featureCards: FeatureCard[] = [
         {
             id: '1',
-            title: 'WooHoo making life easier than ever before',
+            title: 'Digital Transformation: Singapore Tourism Board',
             image: VidImg1,
             description: '',
             color: 'bg-gradient-to-br from-[#A2285D] to-[#570026]',
         },
         {
             id: '2',
-            title: 'WooHoo making life easier than ever before',
+            title: 'UNWTO World Tourism Day',
             image: VidImg2,
             description: '',
             color: 'bg-gradient-to-br from-[#0072AC] to-[#000757]',
         },
         {
             id: '3',
-            title: 'WooHoo making life easier than ever before',
+            title: 'WooHoo® - The Future of Hospitality',
             image: VidImg3,
             description: '',
             color: 'bg-gradient-to-br from-[#00C0CE] to-[#005157]',
@@ -167,18 +167,31 @@ const InsightSection: React.FC = () => {
                         </div>
 
                         {/* Fixed height card */}
-                        <div className="overflow-hidden rounded-[2rem] bg-white p-6 sm:p-8 shadow-xl border border-slate-200 min-h-[400px] sm:min-h-[450px] flex flex-col">
-                            <div className="flex-1 flex flex-col">
+                        <div className="relative overflow-hidden rounded-[2rem] bg-white p-6 sm:p-8 shadow-xl border border-slate-200 min-h-screen sm:min-h-[450px] flex flex-col">
+                            <div className="absolute inset-0 md:hidden">
+                                <img
+                                    src={currentImage}
+                                    alt="Featured news background"
+                                    className="h-full w-full object-cover"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).src =
+                                            'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-black/50" />
+                            </div>
+
+                            <div className="flex-1 flex flex-col relative z-10">
                                 <div className="space-y-4 sm:space-y-6 flex-1">
                                     <div>
-                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 leading-tight line-clamp-3">
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white md:text-slate-900 leading-tight line-clamp-3">
                                             {currentArticle.title}
                                         </h2>
 
-                                        <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                                            <span className="font-medium text-[#000000]">{currentArticle.author}</span>
-                                            <div className="border-l h-5 border-[#00000040]"></div>
-                                            <span className="text-[#000000BF]">{currentArticle.date}</span>
+                                        <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-3 text-sm text-white md:text-slate-500">
+                                            <span className="font-medium text-white md:text-[#000000]">{currentArticle.author}</span>
+                                            <div className="border-l h-5 border-white/60 md:border-[#00000040]"></div>
+                                            <span className="text-white/80 md:text-[#000000BF]">{currentArticle.date}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +201,7 @@ const InsightSection: React.FC = () => {
                                         href={currentArticle.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex h-20  !text-[#7C56EC] text-sm sm:text-base hover:opacity-80 transition-opacity"
+                                        className="inline-flex h-20 text-white text-sm sm:text-base hover:opacity-80 transition-opacity md:!text-[#7C56EC]"
                                     >
                                         Read More →
                                     </a>
@@ -197,14 +210,14 @@ const InsightSection: React.FC = () => {
                                 <div className="mt-4 sm:mt-6 flex justify-center gap-4">
                                     <button
                                         onClick={handlePrevArticle}
-                                        className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black !text-white transition-transform hover:scale-105 active:scale-95"
+                                        className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white text-black md:bg-black md:!text-white transition-transform hover:scale-105 active:scale-95"
                                         aria-label="Previous article"
                                     >
                                         <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
                                     </button>
                                     <button
                                         onClick={handleNextArticle}
-                                        className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black !text-white transition-transform hover:scale-105 active:scale-95"
+                                        className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white text-black md:bg-black md:!text-white transition-transform hover:scale-105 active:scale-95"
                                         aria-label="Next article"
                                     >
                                         <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -216,9 +229,8 @@ const InsightSection: React.FC = () => {
                                         <button
                                             key={idx}
                                             onClick={() => setCurrentArticleIndex(idx)}
-                                            className={`h-2 rounded-full transition-all duration-300 ${
-                                                idx === currentArticleIndex ? 'w-6 bg-[#7C56EC]' : 'w-2 bg-gray-300 hover:bg-gray-400'
-                                            }`}
+                                            className={`h-2 rounded-full transition-all duration-300 ${idx === currentArticleIndex ? 'w-6 bg-[#7C56EC]' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                                                }`}
                                             aria-label={`Go to article ${idx + 1}`}
                                         />
                                     ))}
@@ -228,35 +240,35 @@ const InsightSection: React.FC = () => {
                     </div>
 
                     {/* Right: featured image */}
-                   <div className="overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl h-full">
-    <div className="relative w-full h-full">
-        <img
-            src={currentImage}
-            alt="Featured news"
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
-            onError={(e) => {
-                (e.target as HTMLImageElement).src =
-                    'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
-            }}
-        />
-    </div>
-</div>
+                    <div className="overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl h-full">
+                        <div className="relative w-full h-full">
+                            <img
+                                src={currentImage}
+                                alt="Featured news"
+                                className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-300"
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src =
+                                        'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
+                                }}
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Row 2: Video and Testimonial */}
                 <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[1.05fr_0.95fr]">
                     <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-xl h-full">
-    <div className="relative w-full h-full">
-        <iframe
-            src="https://www.youtube.com/embed/5wh7BBoapxY?&mute=1"
-            className="absolute inset-0 w-full h-full"
-            title="Digital Transformation: Copthorne King's Hotel x Woohoo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-        />
-    </div>
-</div>
+                        <div className="relative w-full h-full">
+                            <iframe
+                                src="https://www.youtube.com/embed/5wh7BBoapxY?&mute=1"
+                                className="absolute inset-0 w-full h-full"
+                                title="Digital Transformation: Copthorne King's Hotel x WooHoo®"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
 
                     <div className="overflow-hidden rounded-[2rem] bg-[#ECECFA] shadow-xl border border-slate-200 flex justify-center items-center">
                         <div className="p-8 sm:p-10 lg:p-8 max-w-sm">

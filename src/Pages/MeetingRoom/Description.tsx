@@ -7,7 +7,7 @@ const Specification = [
   { label: "Processor", value: "Quad-Core ARM Processor" },
   { label: "Memory (RAM)", value: "4 GB" },
   { label: "Internal Storage", value: "64 GB" },
-  { label: "Operating System", value: "WooHoo RoomOS" },
+  { label: "Operating System", value: "WooHoo® Room OS" },
   { label: "Calendar Integration", value: "Google Calendar, Outlook, Microsoft 365" },
   { label: "Meeting Platforms", value: "Zoom, Microsoft Teams, Google Meet" },
   { label: "Connectivity", value: "Wi-Fi 6, Bluetooth 5.1" },

@@ -35,7 +35,7 @@ const WorkplaceHero: React.FC = () => {
     return (
         <div>
             <section
-                className="flex justify-center items-center pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen bg-[#06413F]"
+                className="flex justify-center items-center md:pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen bg-[#06413F]"
 
             >
                 <div className="max-w-3xl mx-auto text-center">

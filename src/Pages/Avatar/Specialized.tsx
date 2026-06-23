@@ -6,7 +6,7 @@ const Carousel = (ReactMultiCarousel as any).default ?? ReactMultiCarousel;
 
 const features = [
   {
-    title: <div>Room AI <br /> (WooHoo)</div>,
+    title: <div>Room AI <br /> (WooHoo®)</div>,
     desc: "Manages individual space comfort, energy, and convenience.",
   },
   {

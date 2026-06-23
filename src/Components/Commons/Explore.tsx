@@ -16,15 +16,14 @@ import ThreeStarImg from '../../assets/Icons/threestar.svg';
 export default function Explore() {
   const sections = [
     {
-      
       category: 'hospitality',
       labelColor: 'text-[#6B9A86]',
       label: 'Hospitality',
       mainTitle: [
-        { text: 'Now experience the world of ', highlight: false },
+        { text: 'Now Experience the World of ', highlight: false },
         { text: 'Digital Voice', highlight: false },
         { text: ' AI Assistants in ', highlight: false },
-        { text: 'hospitality.', highlight: true },
+        { text: 'Hospitality.', highlight: true },
       ],
       logoUrl: woohooLogo,
       highlightText: { color: 'text-[#6B9A86]' },
@@ -141,7 +140,6 @@ export default function Explore() {
       {sections.map((section, index) => (
         <div
           key={index}
-
         >
           <ProductSection
             textWidth={section.textWidth}

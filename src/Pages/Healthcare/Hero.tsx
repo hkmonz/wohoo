@@ -35,7 +35,7 @@ const HospitalityHero: React.FC = () => {
     return (
         <div>
             <section
-                className="flex justify-center items-center pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen bg-[#6366F1]"
+                className="flex justify-center items-center md:pb-30 px-4 sm:px-8 min-h-[90vh] md:h-screen bg-[#6366F1]"
 
             >
                 <div className="max-w-5xl mx-auto text-center">

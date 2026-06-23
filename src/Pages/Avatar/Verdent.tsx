@@ -15,7 +15,7 @@ const features = [
   },
   {
     title: "Hyper-Personalized Resident Services",
-    desc: "Acts as a conversational, multilingual AI assistant for citizens, providing information, managing environments, and facilitating city service access via WooHoo.",
+    desc: "Acts as a conversational, multilingual AI assistant for citizens, providing information, managing environments, and facilitating city service access via WooHoo®.",
   },
 ];
 

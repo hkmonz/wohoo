@@ -88,13 +88,13 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          Empowering Senior Care with the WooHoo Y-Series <br /> In response to the
+          Empowering Senior Care with the WooHoo® Y-Series <br /> In response to the
           critical shortage of caregivers and the needs of a rapidly aging
-          population, WooHoo has developed the Y-Series, an AI-powered digital
+          population, WooHoo® has developed the Y-Series, an AI-powered digital
           voice assistant specifically designed to enhance safety, connectivity,
           and independence in senior care facilities and private homes. The
           Y-Series offers a compelling solution that balances patient safety
-          with a personalized user experience. <br /> <br /> The WooHoo Y-Series is an
+          with a personalized user experience. <br /> <br /> The WooHoo® Y-Series is an
           all-in-one device that acts as a lifeline for seniors and a powerful
           tool for caregivers, directly addressing the staffing shortage in
           healthcare.
@@ -127,7 +127,7 @@ const Description: React.FC = () => {
                           {row.label}
                         </td>
                       )}
-                      <td className="py-3 px-4 align-top font-normal font-inter text-[#606060] bg-[#F9F9F9] bg-[#ECF0F6] w-[180px] border border-[#EEF2F6]">
+                      <td className="py-3 px-4 align-top font-normal font-inter text-[#606060] bg-[#F9F9F9]  w-[180px] border border-[#EEF2F6]">
                         {spec.name}
                       </td>
                       <td className="py-3 px-4 align-top text-[#606060] bg-[#F9F9F9] font-normal font-inter text-base ">
@@ -147,7 +147,7 @@ const Description: React.FC = () => {
               key={idx}
               className="bg-[#ECF0F6] rounded-lg border border-[#EEF2F6] p-0"
             >
-              <div className="px-4 py-3 border-b border-[#EEF2F6] font-inter font-bold text-[#0F172A] text-lg">
+              <div className="px-4 py-3 border-b border-[#EEF2F6] font-inter font-bold text-[#606060] bg-[#F9F9F9] text-lg">
                 {row.label}
               </div>
               <div className="divide-y divide-[#EEF2F6]">
@@ -156,12 +156,12 @@ const Description: React.FC = () => {
               {row.specs.map((spec, specIdx) => (
                 <div
                   key={specIdx}
-                  className="flex flex-col px-4 pb-2 border-b border-[#EEF2F6]"
+                  className="flex flex-col px-4 pb-2 border-b border-[#EEF2F6] text-[#606060] bg-[#F9F9F9]"
                 >
-                  <div className="text-black font-inter text-sm font-medium mb-2">
+                  <div className="text-black font-inter text-sm font-medium mb-2 text-[#606060] bg-[#F9F9F9]">
                     {spec.name}
                   </div>
-                  <div className="font-inter font-normal text-[#606060] text-sm">
+                  <div className="font-inter font-normal text-[#606060] bg-[#F9F9F9] text-sm">
                     {spec.value}
                   </div>
                 </div>

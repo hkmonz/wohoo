@@ -28,7 +28,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ open, onClose, videoUrl, title 
         <iframe
           src={videoUrl}
           className="absolute inset-0 w-full h-full"
-          title={title ?? 'Explore WooHoo Video'}
+          title={title ?? 'Explore WooHoo® Video'}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           loading="lazy"

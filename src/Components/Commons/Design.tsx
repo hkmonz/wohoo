@@ -2,11 +2,10 @@ import Logo from "../../assets/Icons/SmartBeings.svg";
 import Sound from "../../assets/Icons/sound.svg";
 function Design() {
   return (
-    <div className="max-w-6xl mx-auto px-6">
+    <div className="max-w-6xl mx-auto px-6 pb-8">
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="flex justify-center items-center md:justify-start pb-4 md:pb-0" >
           <div>
-
           <img src={Logo} alt="logo img" className="w-auto h-auto" />
           </div>
         </div>

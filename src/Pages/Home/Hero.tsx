@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center ">
             <div>
               <span className="inline-block text-xs sm:text-sm lg:text-[16px] font-normal tracking-[0.2em] text-red-500 uppercase mb-4">
-                WooHoo Gen AI Assistants
+                WooHoo® Gen AI Assistants
               </span>
             </div>
             <div>
@@ -107,7 +107,7 @@ enterprise.</span>
         open={openVideo}
         onClose={() => setOpenVideo(false)}
         videoUrl="https://www.youtube.com/embed/5wh7BBoapxY?&mute=1"
-        title="Digital Transformation: Copthorne King's Hotel x Woohoo"
+        title="Digital Transformation: Copthorne King's Hotel x WooHoo®"
       />
     </section>
   )

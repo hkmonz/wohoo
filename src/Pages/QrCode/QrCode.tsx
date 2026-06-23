@@ -16,10 +16,10 @@ function QrCode() {
       labelColor: 'text-[#6B9A86]',
       label: 'Hospitality',
       mainTitle: [
-        { text: 'Now experience the world of ', highlight: false },
+        { text: 'Now Experience the World of ', highlight: false },
         { text: 'Digital Voice', highlight: false },
         { text: ' AI Assistants in ', highlight: false },
-        { text: 'hospitality.', highlight: true },
+        { text: 'Hospitality.', highlight: true },
       ],
       logoUrl: woohooLogo,
       highlightText: { color: 'text-[#6B9A86]' },
