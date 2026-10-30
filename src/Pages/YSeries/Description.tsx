@@ -88,16 +88,9 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          Empowering Senior Care with the WooHoo® Y-Series <br /> In response to the
-          critical shortage of caregivers and the needs of a rapidly aging
-          population, WooHoo® has developed the Y-Series, an AI-powered digital
-          voice assistant specifically designed to enhance safety, connectivity,
-          and independence in senior care facilities and private homes. The
-          Y-Series offers a compelling solution that balances patient safety
-          with a personalized user experience. <br /> <br /> The WooHoo® Y-Series is an
-          all-in-one device that acts as a lifeline for seniors and a powerful
-          tool for caregivers, directly addressing the staffing shortage in
-          healthcare.
+         Empowering Senior Care with the WooHoo® Y-Series <br />In response to the critical shortage of caregivers and the needs of a rapidly aging population, WooHoo® has developed the Y-Series, an AI-powered digital voice assistant featuring conversational AI and a voice recognition system, specifically designed to enhance safety, connectivity, and independence in senior care facilities and private homes. The Y-Series offers a compelling solution that balances patient safety with a personalized user experience.
+ <br /> <br /> The WooHoo® Y-Series is an all-in-one device that acts as a lifeline for seniors and a powerful tool for caregivers, directly addressing the staffing shortage in healthcare.
+
         </p>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Blueprints
