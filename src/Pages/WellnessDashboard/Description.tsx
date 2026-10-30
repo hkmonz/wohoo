@@ -31,8 +31,9 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          The WooHoo® Wellness Dashboard is a modern all-in-one personal wellness hub designed to help users monitor, manage, and improve their daily health routines from a single intuitive interface. Built for smart homes, hospitality spaces, wellness centers, and premium living environments, the dashboard combines real-time health insights, sleep tracking, activity monitoring, hydration reminders, and personalized wellness recommendations into a seamless digital experience.
-With an elegant touchscreen interface and AI-powered analytics, users can easily track wellness goals, monitor daily performance, review sleep quality, and access actionable insights tailored to their lifestyle. The platform integrates smoothly with wearable devices, smart home ecosystems, and health applications to provide a connected wellness experience.
+          The WooHoo® Wellness Dashboard is a modern all-in-one personal wellness hub designed to help users monitor, manage, and improve their daily health routines from a single intuitive interface. Built for smart homes, hospitality spaces, wellness centers, and premium living environments, the dashboard combines real-time health insights, sleep tracking, activity monitoring, hydration reminders, and personalized wellness recommendations into a seamless digital experience. 
+          With an elegant touchscreen interface, voice activated technology, and AI-powered analytics, users can easily track wellness goals, monitor daily performance, review sleep quality, and access actionable insights tailored to their lifestyle. The platform integrates smoothly with wearable devices, smart home ecosystems, and health applications to provide a connected wellness experience with an intelligent AI assistant.
+
 <br /> <br />
 Designed with simplicity and personalization in mind, the WooHoo® Wellness Dashboard empowers users to build healthier habits while maintaining privacy, comfort, and convenience in everyday life.
         </p>

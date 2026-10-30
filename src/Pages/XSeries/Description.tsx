@@ -97,16 +97,15 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          The WooHoo® X Series is an award-winning, enterprise-grade AI
-          assistant designed for the luxury hospitality industry. This
-          all-in-one device combines a phone, alarm clock, smart hub, and a
-          premium speaker powered by JBL for business, concierge automation,
-          guest data, and service digital menus for hotels. The X Series offers
-          third-party integration support to enable guest controls, automation,
-          menus, data, and beverage digital menus. For hotels, the X Series
-          offers the complete solution—includes personalized branding and voice
-          menus—and seamless integration with over 40+ hospitality systems to
+         The WooHoo® X Series is an award-winning, enterprise-grade AI assistant designed 
+          for the luxury hospitality industry. This all-in-one device combines a phone, alarm 
+          clock, smart hub, and a premium speaker powered by JBL, offering voice activated technology 
+          for business, concierge automation, guest data, and service digital menus for hotels. The X 
+          Series offers third-party integration support to enable guest controls, automation, menus, data, 
+          and beverage digital menus. For hotels, the X Series offers the complete solution for AI for hotels
+          including personalized branding and voice menus and seamless integration with over 40+ hospitality systems to 
           streamline operations.
+
         </p>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Integrations
