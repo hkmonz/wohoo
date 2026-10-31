@@ -8,10 +8,7 @@ function Description() {
         </h1>
         </div>
         <p className="font-inter text-xl text-[#0F172A] font-normal">
-          Unlock your city's potential with Verdant™ AI and specialized AI
-          Agents. We provide the core intelligence for cognitive cities,
-          enhancing citizen experience, advancing sustainability, and optimizing
-          operations.
+          Unlock your city's potential with Verdant™ AI, Generative AI, and specialized AI Agents. We provide the core intelligence for cognitive cities, enhancing citizen experience, advancing sustainability, and optimizing operations.
         </p>
       </div>
     </div>

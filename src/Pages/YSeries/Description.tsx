@@ -1,5 +1,5 @@
 import React from "react";
-import Blueprint from '../../assets/Images/print.webp'
+import Blueprint from "../../assets/Images/print.webp";
 
 const specificationRows = [
   {
@@ -67,9 +67,7 @@ const specificationRows = [
   },
   {
     label: "Bluetooth Spec",
-    specs: [
-      { name: "Version", value: "V5.0 SBC/AAC" },
-    ],
+    specs: [{ name: "Version", value: "V5.0 SBC/AAC" }],
   },
   {
     label: "Wi-Fi spec",
@@ -88,16 +86,18 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          Empowering Senior Care with the WooHoo® Y-Series <br /> In response to the
-          critical shortage of caregivers and the needs of a rapidly aging
-          population, WooHoo® has developed the Y-Series, an AI-powered digital
-          voice assistant specifically designed to enhance safety, connectivity,
-          and independence in senior care facilities and private homes. The
-          Y-Series offers a compelling solution that balances patient safety
-          with a personalized user experience. <br /> <br /> The WooHoo® Y-Series is an
-          all-in-one device that acts as a lifeline for seniors and a powerful
-          tool for caregivers, directly addressing the staffing shortage in
-          healthcare.
+          Empowering Senior Care with the WooHoo® Y-Series
+          <br />
+          In response to the critical shortage of caregivers and the needs of a
+          rapidly aging population, WooHoo® has developed the Y-Series, an
+          AI-powered digital voice assistant featuring conversational AI and a
+          voice recognition system, specifically designed to enhance safety,
+          connectivity, and independence in senior care facilities and private
+          homes. The Y-Series offers a compelling solution that balances patient
+          safety with a personalized user experience.
+          <br /> <br /> The WooHoo® Y-Series is an all-in-one device that acts
+          as a lifeline for seniors and a powerful tool for caregivers, directly
+          addressing the staffing shortage in healthcare.
         </p>
         <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Blueprints
@@ -151,22 +151,20 @@ const Description: React.FC = () => {
                 {row.label}
               </div>
               <div className="divide-y divide-[#EEF2F6]">
-
-              
-              {row.specs.map((spec, specIdx) => (
-                <div
-                  key={specIdx}
-                  className="flex flex-col px-4 pb-2 border-b border-[#EEF2F6] text-[#606060] bg-[#F9F9F9]"
-                >
-                  <div className="text-black font-inter text-sm font-medium mb-2 text-[#606060] bg-[#F9F9F9]">
-                    {spec.name}
+                {row.specs.map((spec, specIdx) => (
+                  <div
+                    key={specIdx}
+                    className="flex flex-col px-4 pb-2 border-b border-[#EEF2F6] text-[#606060] bg-[#F9F9F9]"
+                  >
+                    <div className="text-black font-inter text-sm font-medium mb-2 text-[#606060] bg-[#F9F9F9]">
+                      {spec.name}
+                    </div>
+                    <div className="font-inter font-normal text-[#606060] bg-[#F9F9F9] text-sm">
+                      {spec.value}
+                    </div>
                   </div>
-                  <div className="font-inter font-normal text-[#606060] bg-[#F9F9F9] text-sm">
-                    {spec.value}
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

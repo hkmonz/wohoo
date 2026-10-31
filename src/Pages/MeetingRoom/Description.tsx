@@ -36,8 +36,7 @@ const Description: React.FC = () => {
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
           The WooHoo® Meeting Room Tablet is a smart scheduling and collaboration display built to simplify workplace communication and meeting room management. Designed for modern offices, corporate environments, co-working spaces, and enterprise facilities, the tablet provides real-time room availability, meeting schedules, calendar synchronization, and instant booking functionality through a clean and intuitive interface.
 <br /> <br />
-With seamless integration into platforms such as Microsoft Teams, Google Calendar, and Zoom Rooms, users can efficiently manage meetings, reduce scheduling conflicts, and improve workspace utilization. The sleek touchscreen display offers quick access to upcoming meetings, room status indicators, attendee information, and booking controls all from a single centralized device.
-Powered by enterprise-grade hardware and secure cloud connectivity, the WooHoo® Meeting Room Tablet enhances productivity while maintaining a professional and streamlined meeting experience.
+With seamless integration into platforms such as Microsoft Teams, Google Calendar, and Zoom Rooms, users can efficiently manage meetings, reduce scheduling conflicts, and improve workspace utilization. The sleek touchscreen display offers quick access to upcoming meetings, room status indicators, attendee information, and booking controls all from a single centralized device. Powered by Voice Recognition Technology, an intelligent AI Copilot, enterprise-grade hardware, and secure cloud connectivity, the WooHoo® Meeting Room Tablet enhances productivity while maintaining a professional and streamlined meeting experience.
         </p>
 
        
