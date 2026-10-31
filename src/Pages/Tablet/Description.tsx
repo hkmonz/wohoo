@@ -49,14 +49,7 @@ const Description: React.FC = () => {
           Description
         </h3>
         <p className="text-[#606060] text-base font-inter font-normal mb-6">
-          Transform your guest experience with the WooHoo® Tablet by Samsung.
-          This powerful in-room tablet serves as an all-in-one AI assistant,
-          putting modern, contactless convenience at your guests' fingertips.
-          They can place orders, manage room settings, and connect with staff
-          using simple voice or touch commands. Reinforce your brand with a
-          fully customizable interface and benefit from deep integration with
-          over 40+ property management and POS systems to simplify operations and
-          deliver a truly luxurious stay.
+          Transform your guest experience with the WooHoo® Tablet by Samsung. This powerful in-room tablet serves as an all-in-one AI assistant, bringing AI for the hospitality industry and modern, contactless convenience to your guests' fingertips. They can place orders, manage room settings, and connect with staff using simple voice or touch commands. Reinforce your brand with a fully customizable interface and benefit from deep integration with over 40+ property management and POS systems, along with cloud based hotel phone systems, to simplify operations and deliver a truly luxurious stay.
         </p>
          <h4 className="text-xl font-inter font-bold text-[#0F172A] mb-2">
           Integrations
