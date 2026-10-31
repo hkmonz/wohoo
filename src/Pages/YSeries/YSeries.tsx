@@ -6,6 +6,7 @@ import woohooLogo from '../../assets/Icons/logo.svg';
 import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
 import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
 import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
+import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -57,6 +58,13 @@ function YSeries() {
 
   return (
     <div>
+      <HelmetProvider>
+              <title>Conversational AI for Healthcare Industry | SmartBeings</title>
+              <meta
+                name="description"
+                content="Enhance patient experiences and simplify healthcare workflows with conversational AI solutions designed for modern healthcare environments."
+              />
+      </HelmetProvider>
         <YSeriesHero/>
         <Description/>
         <Design/>
