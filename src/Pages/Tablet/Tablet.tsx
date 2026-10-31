@@ -9,6 +9,7 @@ import ProductSection from "../../Components/Commons/ProductSection";
 import FiveStarImg from '../../assets/Icons/fivestar.svg';
 import FourStarImg from '../../assets/Icons/fourstar.svg';
 import ThreeStarImg from '../../assets/Icons/threestar.svg';
+import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -63,6 +64,13 @@ function Tablet() {
   ];
   return (
     <div>
+      <HelmetProvider>
+                    <title>AI for Hospitality Industry | SmartBeings</title>
+                    <meta
+                      name="description"
+                      content="Discover AI solutions for the hospitality industry that streamline operations, personalize guest services, and support smarter hotel experiences."
+                    />
+         </HelmetProvider>
       <TabletHero />
       <Description />
       <Design />

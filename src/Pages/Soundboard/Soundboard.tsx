@@ -6,6 +6,7 @@ import YSeriesImg from '../../assets/Images/healthcareyseries.webp';
 import WellnessDashboardImg from '../../assets/Images/healthcaredashboard.webp';
 import SoundbarImg from '../../assets/Images/healthcaresoundbar.webp';
 import ProductSection from "../../Components/Commons/ProductSection";
+import { HelmetProvider } from "react-helmet-async";
 
 function Soundboard() {
     const sections = [
@@ -51,6 +52,13 @@ function Soundboard() {
 
     return (
         <div>
+            <HelmetProvider>
+                    <title>AI Assistant for Healthcare Industry | SmartBeings</title>
+                    <meta
+                      name="description"
+                      content="Simplify healthcare workflows with AI assistants that support staff, improve communication, and enhance patient experiences."
+                    />
+            </HelmetProvider>
             <SoundboardHero />
             <Description />
             <Design />

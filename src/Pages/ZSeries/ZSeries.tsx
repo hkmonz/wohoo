@@ -6,6 +6,7 @@ import woohooLogo from '../../assets/Icons/logo.svg';
 import KingdomImg from '../../assets/Images/workplacekingdom.webp';
 import AvatarImg from '../../assets/Images/workplaceavatar.webp';
 import WorkplaceMeetingTabletImg from '../../assets/Images/workplacemeetingtablet.webp';
+import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -56,6 +57,13 @@ function ZSeries() {
 
   return (
     <div>
+         <HelmetProvider>
+                    <title>Voice Activated Technology for Workplace | SmartBeings</title>
+                    <meta
+                      name="description"
+                      content="Transform workplace productivity with voice-activated technology and AI assistants that simplify everyday tasks and improve employee experiences."
+                    />
+         </HelmetProvider>
       <ZSeriesHero />
       <Description />
       <Design />
