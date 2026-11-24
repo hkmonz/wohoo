@@ -6,7 +6,6 @@ import KingdomImg from "../../assets/Images/workplacekingdom.webp";
 import AvatarImg from "../../assets/Images/workplaceavatar.webp";
 import WorkplaceMeetingTabletImg from "../../assets/Images/workplacemeetingtablet.webp";
 import ProductSection from "../../Components/Commons/ProductSection";
-import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -55,13 +54,6 @@ function MeetingRoom() {
   ];
   return (
     <div>
-      <HelmetProvider>
-        <title>Voice Recognition Technology for Workplace | SmartBeings</title>
-        <meta
-          name="description"
-          content="Boost workplace efficiency with voice recognition technology that simplify daily tasks, provide instant information, and enhance employee productivity."
-        />
-      </HelmetProvider>
       <MeetingRoomHero />
       <Description />
       <Design />

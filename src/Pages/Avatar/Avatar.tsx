@@ -9,7 +9,6 @@ import Specialized from "./Specialized";
 import Why from "./Why";
 import Verdent from "./Verdent";
 import Contact from "./Contact";
-import { HelmetProvider } from "react-helmet-async";
 
 function Avatar() {
   const sections = [
@@ -53,13 +52,6 @@ function Avatar() {
   ];
   return (
     <div>
-      <HelmetProvider>
-        <title>Generative AI for Workplace | SmartBeings</title>
-        <meta
-          name="description"
-          content="Discover generative AI for the workplace with intelligent assistants that deliver instant answers, streamline tasks, and support better decision-making."
-        />
-      </HelmetProvider>
       <AvatarHero />
       <Description />
       <Why />

@@ -9,7 +9,6 @@ import ProductSection from "../../Components/Commons/ProductSection";
 import FiveStarImg from "../../assets/Icons/fivestar.svg";
 import FourStarImg from "../../assets/Icons/fourstar.svg";
 import ThreeStarImg from "../../assets/Icons/threestar.svg";
-import { HelmetProvider } from "react-helmet-async";
 function QrCode() {
   const sections = [
     {
@@ -57,13 +56,6 @@ function QrCode() {
   ];
   return (
     <div>
-      <HelmetProvider>
-        <title>AI for Hotels | SmartBeings</title>
-        <meta
-          name="description"
-          content="Improve hotel guest experiences with ai that simplify requests, deliver personalized recommendations, and support hotel services."
-        />
-      </HelmetProvider>
       <QrCodeHero />
       <Description />
       <Design />
