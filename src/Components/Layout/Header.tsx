@@ -108,7 +108,7 @@ const Header: React.FC = () => {
                             <div className="flex justify-between items-center h-16 md:h-20">
                                 <div className="flex-shrink-0">
                                     <Link to="/">
-                                        <img src={Logo} alt="Logo" className="" />
+                                        <img src={Logo} alt="SmartBeings logo" className="" />
                                     </Link>
                                 </div>
                                 {/* Desktop Navigation */}
@@ -215,7 +215,7 @@ const Header: React.FC = () => {
                                 {/* Logo changes based on scroll state and route */}
                                 <img
                                     src={currentLogo}
-                                    alt="Logo"
+                                    alt="SmartBeings logo"
                                     className="md:w-50 lg:w-auto transition-all duration-300"
                                 />
                             </Link>

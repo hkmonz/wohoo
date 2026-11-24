@@ -37,7 +37,7 @@ const responsive = {
 const isVideoMedia = (src?: string) =>
   !!src && /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
 
-function VideoCard({ src }: { src: string }) {
+function VideoCard({ src, title }: { src: string; title: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -63,6 +63,7 @@ function VideoCard({ src }: { src: string }) {
     <video
       ref={videoRef}
       src={src}
+      aria-label={title}
       loop
       muted
       playsInline
@@ -91,9 +92,9 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <div className="flex-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl !font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
                 More features to empower hospitality & healthcare industry
-              </h1>
+              </h2>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
               <button
@@ -134,11 +135,11 @@ export function FeatureCarousel({ features }: { features: FeatureProduct[] }) {
                 className="group relative h-[665px] rounded-3xl overflow-hidden bg-black"
               >
                 {feature.image && isVideoMedia(feature.image) ? (
-                  <VideoCard src={feature.image} />
+                  <VideoCard src={feature.image} title={feature.title ?? "Hospitality and healthcare product feature"} />
                 ) : (
                   <img
                     src={feature.image}
-                    alt={feature.title ?? `Feature ${index + 1}`}
+                    alt={feature.title ?? `WooHoo hospitality and healthcare product feature ${index + 1}`}
                     className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500"
                   />
                 )}

@@ -74,6 +74,7 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
             )}
             <video
               ref={videoRef}
+              aria-label={`Product feature video: ${title}. ${description}`}
               poster={poster || image} 
               loop
               muted
@@ -92,7 +93,7 @@ export function SliderCard({ image, video, title, description, poster }: SliderC
         ) : (
           <img
             src={image}
-            alt={title}
+            alt={`Product feature image: ${title}`}
             loading="lazy"
             className="object-cover p-5 w-full"
           />

@@ -75,11 +75,11 @@ export function ProductCarousel({ products }: { products: CarouselProduct[] }) {
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
               Designed in California. Trusted by the world.
-            </h1>
+            </h2>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
-              Reliable performance engineered for modern spaces. Built with precision materials and intelligent technology to deliver seamless experiences in homes, offices, and commercial environments.
+              Built for hotels, senior-living communities and enterprise workplaces.
             </p>
           </div>
           

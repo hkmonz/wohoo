@@ -67,8 +67,10 @@ export default function ProductSection({
             <ProductCard
               key={index}
               starImg={product.starImg}
+              starAlt={product.starAlt}
               logoUrl={product.logo}
               image={product.image}
+              imageAlt={product.imageAlt}
               logo={product.logo}
               title={product.title}
               description={product.description}

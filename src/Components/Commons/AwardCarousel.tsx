@@ -56,9 +56,9 @@ const AwardCarousel = () => {
             {/* Title */}
             <div className="absolute left-0 right-0 bottom-10">
               <div className="text-center sm:text-left max-w-3xl px-8">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-normal mb-4 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl text-white font-normal mb-4 leading-tight">
                   {slide.title}
-                </h1>
+                </h2>
               </div>
             </div>
           </div>

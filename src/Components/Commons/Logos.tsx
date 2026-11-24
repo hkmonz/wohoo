@@ -19,6 +19,8 @@ type HomeLogosProps = {
   direction?: "left" | "right";
   marqueeOnLg?: boolean;
   bgColor?: string;
+  heading?: string;
+  featuredCustomers?: string[];
 };
 
 const LogoImage = ({
@@ -30,7 +32,7 @@ const LogoImage = ({
 }) => (
   <img
     src={logo.src}
-    alt={logo.alt}
+    alt={`${logo.alt} logo`}
     loading={priority ? "eager" : "lazy"}
     decoding="async"
     width={160}
@@ -44,14 +46,29 @@ function HomeLogos({
   logos = [],
   direction = "left",
   marqueeOnLg = false,
+  heading,
+  featuredCustomers = [],
 }: HomeLogosProps) {
   const hasLogos = logos.length > 0;
+  const captionColor = bgColor?.includes("bg-white") ? "text-slate-800" : "text-white";
 
   return (
     <section
       className={`${bgColor ?? "bg-black"} py-8 overflow-hidden`}
     >
       <div className="px-4 overflow-hidden">
+        {heading && (
+          <div className="mx-auto mb-6 max-w-7xl text-center">
+            <h2 className={`text-2xl sm:text-3xl font-semibold ${captionColor}`}>
+              {heading}
+            </h2>
+            {featuredCustomers.length > 0 && (
+              <p className={`mt-2 text-sm sm:text-base ${captionColor} opacity-80`}>
+                {featuredCustomers.join(" · ")}
+              </p>
+            )}
+          </div>
+        )}
         {!marqueeOnLg && (
           <div className="hidden lg:flex justify-around items-center gap-8 overflow-hidden">
             {logos.map((logo, idx) => (
@@ -61,12 +78,15 @@ function HomeLogos({
                 // target="_blank"
                 rel="noopener noreferrer"
                 aria-label={logo.alt}
-                className="flex justify-center items-center transition-transform duration-300 hover:scale-105"
+                className="flex flex-col justify-center items-center gap-2 transition-transform duration-300 hover:scale-105"
               >
                 <LogoImage
                   logo={logo}
                   priority={idx < 3}
                 />
+                <span className={`text-xs sm:text-sm font-medium text-center ${captionColor}`}>
+                  {logo.alt}
+                </span>
               </a>
             ))}
           </div>
@@ -89,9 +109,12 @@ function HomeLogos({
                   // target="_blank"
                   rel="noopener noreferrer"
                   aria-label={logo.alt}
-                  className="mx-8 py-5 flex justify-center items-center transition-transform duration-300 "
+                  className="mx-8 py-5 flex flex-col justify-center items-center gap-2 transition-transform duration-300"
                 >
                   <LogoImage logo={logo} />
+                  <span className={`text-xs sm:text-sm font-medium text-center whitespace-nowrap ${captionColor}`}>
+                    {logo.alt}
+                  </span>
                 </a>
               ))}
             </Marquee>

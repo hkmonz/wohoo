@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import SmartflowVideo from "../../assets/Images/smartflowvideo.mp4";
+import Button from '../../Components/Commons/Button';
+import BookDemo from '../../Components/Commons/BookDemo';
 
 export default function Smartflow() {
     const [shouldLoad, setShouldLoad] = useState(false);
+    const [demoOpen, setDemoOpen] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -50,7 +53,16 @@ export default function Smartflow() {
                         </video>
                     </div>
                 </div>
+                <div className="mt-8 flex flex-col items-center gap-3">
+                    <Button size="lg" onClick={() => setDemoOpen(true)}>
+                        Book a demo
+                    </Button>
+                    <p className="max-w-2xl text-sm leading-relaxed text-[#616161]">
+                        See how SmartFlow routes guest requests to hotel systems. No camera in guest-room devices; voice is processed on-device.
+                    </p>
+                </div>
             </div>
+            <BookDemo open={demoOpen} onClose={() => setDemoOpen(false)} />
         </section>
     );
 }

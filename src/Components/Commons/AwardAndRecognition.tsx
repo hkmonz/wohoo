@@ -8,6 +8,7 @@ const Carousel = (ReactMultiCarousel as any).default ?? ReactMultiCarousel;
 
 export interface AwardCarousel {
   image: string;
+  alt: string;
 }
 
 const responsive = {
@@ -46,9 +47,9 @@ export function AwardAndRecognition({ Award }: { Award: AwardCarousel[] }) {
       <div className="max-w-7xl mx-auto mb-12 sm:mb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#140D2D] mb-3 sm:mb-4 leading-tight">
               Awards & Recognition
-            </h1>
+            </h2>
             <p className="text-sm sm:text-base md:text-lg text-[#141417BF] max-w-3xl leading-relaxed">
               Recognized globally for innovation, craftsmanship, and product excellence, our solutions continue to earn industry-leading awards across design, performance, and user experience.
             </p>
@@ -91,6 +92,7 @@ export function AwardAndRecognition({ Award }: { Award: AwardCarousel[] }) {
             <div key={`${award.image}-${index}`} className="flex justify-center">
               <AwardCard
                 image={award.image}
+                alt={award.alt}
                 title=""
                 description=""
                 isActive={true}

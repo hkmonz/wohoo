@@ -63,6 +63,7 @@ export interface FeatureCarousel {
 }
 export interface AwardCarousel {
   image: string;
+  alt: string;
 }
 function Home() {
   const location = useLocation();
@@ -122,30 +123,39 @@ function Home() {
     const Award: AwardCarousel[] = [
       {
         image: Award1,
+        alt: "German Design Award Special trophy",
       },
       {
         image: Award2,
+        alt: "WooHoo Innovation and Technology 2023 award for fostering ecosystem partnerships",
       },
       {
         image: Award3,
+        alt: "UNWTO Women in Tech Startup Competition Middle East award",
       },
       {
         image: Award4,
+        alt: "WooHoo Best AI Innovation Award for Cognitive Cities, presented by Elisium",
       },
       {
         image: Award5,
+        alt: "A' Design Award and Competition trophy",
       },
       {
         image: Award6,
+        alt: "Red Herring 100 North America winner award",
       },
       {
         image: Award7,
+        alt: "CES Innovation Awards Best of Innovation trophy",
       },
       {
         image: Award8,
+        alt: "Singapore Tourism Awards trophy",
       },
       {
         image: Award9,
+        alt: "CIO Review award honoring WooHoo among 20 most promising artificial intelligence solution providers",
       },
     ];
 
@@ -154,15 +164,19 @@ function Home() {
   return (
     <div>
       <Hero />
-      <HomeLogos logos={[
-        { src: Logo1, alt: "logo1", link: "https://www.untourism.int/" },
-        { src: Logo2, alt: "logo2", link: "https://elisium.city/" },
-        { src: Logo3, alt: "logo3", link: "https://www.pif.gov.sa/en/" },
-        { src: Logo4, alt: "logo4", link: "https://www.stb.gov.sg/" },
-        { src: Logo5, alt: "logo5", link: "https://www.neom.com/en-us" },
-        { src: Logo6, alt: "logo6", link: "https://www.sta.gov.sa/en/home" },
-        { src: Logo7, alt: "logo7", link: "https://www.dubaidet.gov.ae/en/" },
-      ]} />
+      <HomeLogos
+        heading="Running in properties like"
+        featuredCustomers={["Elisium City Hotels", "Singapore Tourism Board", "UNWTO"]}
+        logos={[
+          { src: Logo1, alt: "UNWTO", link: "https://www.untourism.int/" },
+          { src: Logo2, alt: "Elisium City Hotels", link: "https://elisium.city/" },
+          { src: Logo4, alt: "Singapore Tourism Board", link: "https://www.stb.gov.sg/" },
+          { src: Logo3, alt: "Public Investment Fund", link: "https://www.pif.gov.sa/en/" },
+          { src: Logo5, alt: "NEOM", link: "https://www.neom.com/en-us" },
+          { src: Logo6, alt: "Saudi Tourism Authority", link: "https://www.sta.gov.sa/en/home" },
+          { src: Logo7, alt: "Dubai Department of Economy and Tourism", link: "https://www.dubaidet.gov.ae/en/" },
+        ]}
+      />
       <HealthcareProduct />
       <ProductCarousel products={products} />
       <FeatureCarousel features={Features} />
@@ -170,39 +184,39 @@ function Home() {
       direction="right"
       marqueeOnLg={true}
       logos={[
-        { src: Logo8, alt: "logo8", link: "" },
-        { src: Logo9, alt: "logo9", link: "" },
-        { src: Logo10, alt: "logo10", link: "" },
-        { src: Logo11, alt: "logo11", link: "" },
-        { src: Logo12, alt: "logo12", link: "" },
-        { src: Logo13, alt: "logo13", link: "" },
-        { src: Logo14, alt: "logo14", link: "" },
-         { src: Logo15, alt: "logo15", link: "" },
-        { src: Logo16, alt: "logo16", link: "" },
-        { src: Logo17, alt: "logo17", link: "" },
-        { src: Logo18, alt: "logo18", link: "" },
-        { src: Logo19, alt: "logo19", link: "" },
-        { src: Logo20, alt: "logo20", link: "" },
-        { src: Logo21, alt: "logo21", link: "" },
+        { src: Logo8, alt: "Schneider Electric", link: "" },
+        { src: Logo9, alt: "INTEREL", link: "" },
+        { src: Logo10, alt: "AMX by HARMAN", link: "" },
+        { src: Logo11, alt: "Lightspeed", link: "" },
+        { src: Logo12, alt: "Agilysys", link: "" },
+        { src: Logo13, alt: "TableCheck", link: "" },
+        { src: Logo14, alt: "Knowcross", link: "" },
+        { src: Logo15, alt: "Honeywell", link: "" },
+        { src: Logo16, alt: "Infrasys by Shiji", link: "" },
+        { src: Logo17, alt: "Oracle MICROS Simphony", link: "" },
+        { src: Logo18, alt: "SevenRooms", link: "" },
+        { src: Logo19, alt: "Mews", link: "" },
+        { src: Logo20, alt: "Oracle Hospitality", link: "" },
+        { src: Logo21, alt: "MessageBox", link: "" },
       ]} />
       <HomeLogos
       direction="left"
       marqueeOnLg={true}
       logos={[
-        { src: Logo8, alt: "logo8", link: "" },
-        { src: Logo9, alt: "logo9", link: "" },
-        { src: Logo10, alt: "logo10", link: "" },
-        { src: Logo11, alt: "logo11", link: "" },
-        { src: Logo12, alt: "logo12", link: "" },
-        { src: Logo13, alt: "logo13", link: "" },
-        { src: Logo14, alt: "logo14", link: "" },
-        { src: Logo15, alt: "logo15", link: "" },
-        { src: Logo16, alt: "logo16", link: "" },
-        { src: Logo17, alt: "logo17", link: "" },
-        { src: Logo18, alt: "logo18", link: "" },
-        { src: Logo19, alt: "logo19", link: "" },
-        { src: Logo20, alt: "logo20", link: "" },
-        { src: Logo21, alt: "logo21", link: "" },
+        { src: Logo8, alt: "Schneider Electric", link: "" },
+        { src: Logo9, alt: "INTEREL", link: "" },
+        { src: Logo10, alt: "AMX by HARMAN", link: "" },
+        { src: Logo11, alt: "Lightspeed", link: "" },
+        { src: Logo12, alt: "Agilysys", link: "" },
+        { src: Logo13, alt: "TableCheck", link: "" },
+        { src: Logo14, alt: "Knowcross", link: "" },
+        { src: Logo15, alt: "Honeywell", link: "" },
+        { src: Logo16, alt: "Infrasys by Shiji", link: "" },
+        { src: Logo17, alt: "Oracle MICROS Simphony", link: "" },
+        { src: Logo18, alt: "SevenRooms", link: "" },
+        { src: Logo19, alt: "Mews", link: "" },
+        { src: Logo20, alt: "Oracle Hospitality", link: "" },
+        { src: Logo21, alt: "MessageBox", link: "" },
       ]} />
       <Plateform />
       <Smartflow/>
