@@ -22,7 +22,7 @@ const QrCodeHero: React.FC = () => {
                             alt="Woohoo Logo"
                             className="w-40 md:w-50  "
                         />
-                        <span className="text-base md:text-lg lg:text-[28px] text-[#000000] font-normal">QR Code</span>
+                        <h1 className="text-base md:text-lg lg:text-[28px] text-[#000000] font-normal">QR Code</h1>
                     </div>
                     <div className="flex gap-2">
                         <img src={AppleLogo} alt="Apple Store" className="w-8 sm:w-10" />
@@ -34,10 +34,10 @@ const QrCodeHero: React.FC = () => {
                         <img src={QrCodeImg} alt="QR Code App" className="" />
                     </div>
                     <div className="flex-1 flex flex-col justify-center items-start text-center md:text-left">
-                        <h3 className="font-inter font-normal text-xl sm:text-2xl md:text-[33px] text-black mb-5 max-w-md mx-auto md:mx-0 leading-snug">
+                        <h2 className="font-inter font-normal text-xl sm:text-2xl md:text-[33px] text-black mb-5 max-w-md mx-auto md:mx-0 leading-snug">
                             <span className="font-bold">Redefining luxury</span> in Hospitality
                             with the power of technology
-                        </h3>
+                        </h2>
                         <div className="flex justify-center md:justify-start w-full">
                             <button onClick={() => setOpen(true)} className="
         bg-gradient-to-r from-[#7D58EE] to-[#2B117E]  !text-[19.2px]

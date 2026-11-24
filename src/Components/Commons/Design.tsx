@@ -11,9 +11,9 @@ function Design() {
         </div>
         <div className="flex justify-center items-center text-center md:text-center">
           <div>
-            <h1 className="text-[#606060] font-inter font-medium text-xl">
+            <h2 className="text-[#606060] font-inter font-medium text-xl">
               Design in California, USA
-            </h1>
+            </h2>
             <p className="text-[#606060] font-inter font-normal text-base">
               info@smartbeings.com | www.smartbeings.com
             </p>

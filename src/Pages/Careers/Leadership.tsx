@@ -65,9 +65,9 @@ const Leadership: React.FC = () => {
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-[#C75B66] uppercase tracking-widest !mb-1 ">
                         Leadership
                     </p>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl !font-normal text-[#000000] !mb-4 tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl !font-normal text-[#000000] !mb-4 tracking-tight">
                         Meet the team
-                    </h1>
+                    </h2>
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#5A5C5D] max-w-4xl mx-auto">
                         Working at smartbeings means collaborating with a diverse collective of
                         engineers and designers who value craft above all else.          </p>

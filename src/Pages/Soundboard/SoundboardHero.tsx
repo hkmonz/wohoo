@@ -46,7 +46,7 @@ const SoundBarHero: React.FC = () => {
                                 {brandLogo && (
                                     <img src={brandLogo} alt="Brand logo" className="h-10 sm:h-12" />
                                 )}
-                                <span className="text-xl font-normal">SoundBoard</span>
+                                <h1 className="text-xl font-normal">SoundBoard</h1>
                             </div>
                         </div>
 

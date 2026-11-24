@@ -36,24 +36,26 @@ export default function Hero() {
               </span>
             </div>
             <div>
-              <h1 className="text-[32px] sm:text-[48px] lg:text-[66px] max-w-3xl font-medium text-black leading-[1.2] lg:leading-[71.53px] tracking-tight">
-                The agentic 
-operating system <br />
-<span className='text-[#6B5FEF]'>for the physical 
-enterprise.</span>
+              <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] max-w-3xl font-medium text-black leading-[1.12] tracking-tight">
+                The AI concierge that runs the guest room: <span className='text-[#6B5FEF]'>one spoken request, four systems, zero staff time.</span>
               </h1>
             </div>
-            <p className="text-[16px] sm:text-[18px] lg:text-[23px] max-w-2xl text-[#616161] leading-relaxed lg:leading-[26px] font-normal">
-              We are curating the future of digital AI Assistants through high-precision engineering and human-centric product design.
+            <p className="text-[16px] sm:text-[18px] lg:text-[20px] max-w-2xl text-[#616161] leading-relaxed font-normal">
+              WooHoo devices plus SmartFlow route every guest request to thermostat, POS, housekeeping and PMS automatically, no front-desk staff needed.
             </p>
-            <div className='flex flex-col md:flex-row gap-3'>
-              <Button
-                size="lg"
-                onClick={() => setOpen(true)}
-                className="!px-6 sm:!px-8 lg:!px-10 !py-3 sm:!py-4 !text-sm sm:!text-base lg:!text-lg !font-normal"
-              >
-                Book a demo
-              </Button>
+            <div className='flex flex-col md:flex-row items-start gap-4'>
+              <div className="flex flex-col items-start gap-2">
+                <Button
+                  size="lg"
+                  onClick={() => setOpen(true)}
+                  className="!px-6 sm:!px-8 lg:!px-10 !py-3 sm:!py-4 !text-sm sm:!text-base lg:!text-lg !font-normal"
+                >
+                  Book a demo
+                </Button>
+                <p className="max-w-sm text-xs sm:text-sm leading-relaxed text-[#616161]">
+                  See a guest request move from the room device through SmartFlow. No camera in guest-room devices; voice is processed on-device.
+                </p>
+              </div>
               <Button
               onClick={handleNavigate}
                 size="lg"
@@ -90,7 +92,7 @@ enterprise.</span>
                 <div className="relative ">
                   <img
                     src={partner.icon}
-                    alt={partner.name}
+                    alt={`${partner.name} logo`}
                     className="w-40 h-20 lg:w-45 lg:h-20 object-contain "
                   />
                 </div>

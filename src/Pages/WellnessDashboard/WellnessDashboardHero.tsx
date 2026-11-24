@@ -12,9 +12,9 @@ const WellnessDashboardHero: React.FC = () => {
                 <div className="w-full max-w-7xl mx-auto  rounded-2xl flex flex-col items-center  px-4 md:px-10 relative">
                     <div className="w-full flex items-center justify-center mb-6">
                         <img src={WoohooLogo} alt="Woohoo Logo" className="w-40 md:w-60 " />
-                        <span className="text-lg sm:text-3xl text-[#0F172A] font-inter font-normal">
+                        <h1 className="text-lg sm:text-3xl text-[#0F172A] font-inter font-normal">
                             Wellness Dashboard
-                        </span>
+                        </h1>
                     </div>
                    
                     <div className="w-full flex justify-center mb-8">

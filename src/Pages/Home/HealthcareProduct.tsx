@@ -14,6 +14,7 @@ const healthcareProducts = [
     subTitleColor:'text-[#237C58]',
     logo: WohooLogo,
     image: HealthcareImage1,
+    imageAlt: "WooHoo X-Series AI guestroom device for hotel guests",
     badge: ArrowIcon,
     description:
       "The guestroom, reimagined. Nine native revenue channels and the AI Recommendation Engine that doubles attach rates.",
@@ -33,6 +34,7 @@ const healthcareProducts = [
     subTitleColor:'text-[#6366F1]',
     logo: WohooLogo,
     image: HealthcareImage2,
+    imageAlt: "WooHoo Y-Series care and telehealth device for senior-living residents",
     badge: ArrowIcon,
     description:
       "One caregiver, many patients. Built-in telehealth, medication reminders, social connection, and 330° patient view.",
@@ -52,6 +54,7 @@ const healthcareProducts = [
     subTitleColor:'text-[#06413F]',
     logo: WohooLogo,
     image: HealthcareImage3,
+    imageAlt: "WooHoo Z-Series AI assistant device for enterprise workplaces",
     badge: ArrowIcon,
     description:
       "The office, automated. Meeting room control, visitor management, and ambient AI for the modern workplace.",
@@ -80,9 +83,9 @@ function HealthcareProduct() {
           </div>
         )}
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[55px] !font-medium text-[#0B0B0B] mb-4 sm:mb-6 leading-2rem letter-spacing-[-0.02em]">
+        <h2 className="text-4xl sm:text-5xl lg:text-[55px] !font-medium text-[#0B0B0B] mb-4 sm:mb-6 leading-2rem letter-spacing-[-0.02em]">
           {title}
-        </h1>
+        </h2>
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -96,6 +99,7 @@ function HealthcareProduct() {
               subTitle={product.subTitle}
               subTitleColor={product.subTitleColor}
               image={product.image}
+              imageAlt={product.imageAlt}
               logo={product.logo}
               description={product.description}
               list={product.list}

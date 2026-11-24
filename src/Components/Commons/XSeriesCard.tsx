@@ -98,7 +98,7 @@ const XSeriesCard: React.FC<XSeriesCardProps> = ({
                 {brandLogo && (
                   <img src={brandLogo} alt="Brand logo" className="h-10 sm:h-12" />
                 )}
-                <span className="text-xl font-normal">{title}</span>
+                <h1 className="text-xl font-normal">{title}</h1>
               </div>
             </div>
             

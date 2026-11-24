@@ -55,6 +55,14 @@ const InsightSection: React.FC = () => {
         NewsImage4,
         NewsImage5,
     ];
+    const newsImageAlts = [
+        "Architectural rendering of a waterfront Elisium City development",
+        "Woman presenting a WooHoo guest-room device at an Arab News event",
+        "WooHoo guest-room device displayed beside a hotel bed",
+        "Women leaders gathered at a technology and tourism event",
+        "Forbes feature image of a modern curved building in Elisium City",
+        "Portrait of SparkleHaze co-founder Sharan Bhinder with an article headline about AI products for Elisium",
+    ];
 
     const handleVideoClick = (videoIndex: number) => {
         setCurrentVideoUrl(videoUrls[videoIndex]);
@@ -161,9 +169,9 @@ const InsightSection: React.FC = () => {
                     {/* Left: title + news card */}
                     <div className="space-y-6">
                         <div className="overflow-hidden rounded-[2rem] bg-black px-8 py-10 sm:px-10 sm:py-12 shadow-2xl">
-                            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                                 Insights & News
-                            </h1>
+                            </h2>
                         </div>
 
                         {/* Fixed height card */}
@@ -171,11 +179,12 @@ const InsightSection: React.FC = () => {
                             <div className="absolute inset-0 md:hidden">
                                 <img
                                     src={currentImage}
-                                    alt="Featured news background"
+                                    alt={newsImageAlts[currentArticleIndex]}
                                     className="h-full w-full object-cover"
                                     onError={(e) => {
                                         (e.target as HTMLImageElement).src =
                                             'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
+                                        (e.target as HTMLImageElement).alt = "Hotel exterior surrounded by trees";
                                     }}
                                 />
                                 <div className="absolute inset-0 bg-black/50" />
@@ -244,11 +253,12 @@ const InsightSection: React.FC = () => {
                         <div className="relative w-full h-full">
                             <img
                                 src={currentImage}
-                                alt="Featured news"
+                                alt={newsImageAlts[currentArticleIndex]}
                                 className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-300"
                                 onError={(e) => {
                                     (e.target as HTMLImageElement).src =
                                         'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600';
+                                    (e.target as HTMLImageElement).alt = "Hotel exterior surrounded by trees";
                                 }}
                             />
                         </div>
@@ -294,7 +304,7 @@ const InsightSection: React.FC = () => {
                             <div className="absolute inset-0">
                                 <img
                                     src={card.image}
-                                    alt="Background"
+                                    alt={`Video thumbnail: ${card.title}`}
                                     className="h-full w-full object-cover opacity-30"
                                 />
                             </div>

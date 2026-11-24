@@ -33,7 +33,9 @@ export default function Explore() {
       products: [
         {
           starImg:FiveStarImg,
+          starAlt: "Five-star product rating",
           image: xSeriesImg,
+          imageAlt: "WooHoo X-Series smart speaker and touchscreen for hotel guest rooms",
           logo: woohooLogo,
           title: 'X-Series',
           // description: 'Lorem ipsum dolor sit amet consectetur. Maecenas Fingitiis',
@@ -41,7 +43,9 @@ export default function Explore() {
         },
         {
           starImg:FourStarImg,
+          starAlt: "Four-star product rating",
           image: tabletImg,
+          imageAlt: "WooHoo tablet for accessing hotel guest services",
           logo: woohooLogo,
           title: 'Tablets',
           route: '/tablet',
@@ -49,7 +53,9 @@ export default function Explore() {
         },
         {
           starImg:ThreeStarImg,
+          starAlt: "Three-star product rating",
           image: qrcodeImg,
+          imageAlt: "WooHoo QR code interface for digital hotel guest services",
           logo: woohooLogo,
           title: 'QR Code',
           route: '/qrcode',
@@ -75,6 +81,7 @@ export default function Explore() {
       products: [
         {
           image: YSeriesImg,
+          imageAlt: "WooHoo Y-Series care and telehealth device for senior-living residents",
           logo: woohooLogo,
           title: 'Y-Series',
           route: '/y-series',
@@ -82,6 +89,7 @@ export default function Explore() {
         },
         {
           image: WellnessDashboardImg,
+          imageAlt: "WooHoo wellness dashboard for senior-care monitoring",
           logo: woohooLogo,
           title: 'Wellness Dashboard',
           route: '/wellness-dashboard',
@@ -89,6 +97,7 @@ export default function Explore() {
         },
         {
           image: SoundbarImg,
+          imageAlt: "WooHoo soundbar for a senior-living resident room",
           logo: woohooLogo,
           title: 'Soundboard',
           route: '/soundboard',
@@ -112,6 +121,7 @@ export default function Explore() {
       products: [
         {
           image: KingdomImg,
+          imageAlt: "WooHoo Z-Series workplace assistant for meeting and office services",
           logo: woohooLogo,
           title: 'Z Series',
           route: '/z-series',
@@ -119,6 +129,7 @@ export default function Explore() {
         },
         {
           image: WorkplaceMeetingTabletImg,
+          imageAlt: "WooHoo tablet for meeting-room booking and controls",
           logo: woohooLogo,
           title: 'Meeting Room Tablet',
           route: '/meeting-room-tablet',
@@ -126,6 +137,7 @@ export default function Explore() {
         },
         {
           image: AvatarImg,
+          imageAlt: "WooHoo conversational AI avatar for workplace assistance",
           logo: woohooLogo,
           title: 'Conversational AI Avatar',
           route: '/avatar',
