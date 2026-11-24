@@ -9,7 +9,6 @@ import qrcodeImg from '../../assets/Images/qrcode.webp';
 import FiveStarImg from '../../assets/Icons/fivestar.svg';
 import FourStarImg from '../../assets/Icons/fourstar.svg';
 import ThreeStarImg from '../../assets/Icons/threestar.svg';
-import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -65,15 +64,6 @@ function XSeries() {
 
   return (
     <div>
-        
-      <HelmetProvider>
-        <title>AI Technology in Hospitality Industry | SmartBeings</title>
-        <meta
-          name="description"
-          content="Explore AI technology in the hospitality industry with intelligent voice assistants that streamline hotel operations and improve guest experiences."
-        />
-      </HelmetProvider>
-
         <XSeriesHero/>
         <Description/>
         <Design/>

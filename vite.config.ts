@@ -8,4 +8,7 @@ export default defineConfig({
    optimizeDeps: {
     include: ["react-fast-marquee"], 
   },
+  build: {
+    manifest: true,
+  },
 })

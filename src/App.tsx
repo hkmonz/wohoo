@@ -17,6 +17,8 @@ import Avatar from './Pages/Avatar/Avatar'
 import Hospitality from './Pages/Hospitality/Hospitality'
 import Healthcare from './Pages/Healthcare/Healthcare'
 import Workplace from './Pages/Workplace/Workplace'
+import Blogs from './Pages/Blogs/Blogs'
+import BlogDetails from './Pages/Blogs/BlogDetails'
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path="/products" element={<Hospitality />} />
           <Route path="/healthcare" element={<Healthcare/>} />
           <Route path="/workplace" element={<Workplace/>} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogDetails />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

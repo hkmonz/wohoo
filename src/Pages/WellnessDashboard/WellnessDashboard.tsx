@@ -6,7 +6,6 @@ import YSeriesImg from "../../assets/Images/healthcareyseries.webp";
 import WellnessDashboardImg from "../../assets/Images/healthcaredashboard.webp";
 import SoundbarImg from "../../assets/Images/healthcaresoundbar.webp";
 import ProductSection from "../../Components/Commons/ProductSection";
-import { HelmetProvider } from "react-helmet-async";
 export interface CarouselProduct {
   id: string;
   title: string;
@@ -56,13 +55,6 @@ function WellnessDashboard() {
   ];
   return (
     <div>
-      <HelmetProvider>
-        <title>Voice Activated Technology for Healthcare Industry | SmartBeings</title>
-        <meta
-          name="description"
-          content="Explore voice activated technology for healthcare to streamline workflows, support staff, and deliver smarter, more personalized patient experiences."
-        />
-      </HelmetProvider>
       <WellnessDashboardHero />
       <Description />
       <Design />

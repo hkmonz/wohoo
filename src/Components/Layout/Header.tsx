@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isSimpleNav = location.pathname === "/" || location.pathname === "/careers";
+    const isSimpleNav = location.pathname === "/" || location.pathname === "/careers" || location.pathname ==="/blogs" || location.pathname.startsWith("/blogs/");
     const shouldShowWhiteLogo = location.pathname.includes("/healthcare") || location.pathname.includes("/workplace");
 
     const currentLogo = shouldShowWhiteLogo && !isScrolled ? WhiteLogo : Logo;
@@ -58,6 +58,7 @@ const Header: React.FC = () => {
     const menuLinks = [
         { name: "Home", to: "/" },
         { name: "Products", to: "/products" },
+        { name: "Blogs", to: "/blogs" },
         { name: "Careers", to: "/careers" },
     ];
 
